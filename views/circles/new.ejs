@@ -1,108 +1,155 @@
 <% include ../partials/header %>
 
 
-<div class="container">
-            <h1 style="text-align: center;">Create a new circle!</h1>
-            <br>
+<section class="hero is-light is-fullheight">
+    <div class="hero-body">
+        
+   
+        <div class="container">
+                  <h1 class="title has-text-centered">
+                    <span> new circle</span>
+                  </h1>
+                  <h2 class="subtitle has-text-centered">
+                    create your own learning circle
+                  </h2>
+                  
+                  
+            <div class="column is-8 is-offset-2 ">
+            
+
             <form action="/circles" method="POST" enctype="multipart/form-data">
-                <div class="col-md-6">
-                    <div class="col-md-6">
-                        <label for="title">Title</label>
-                    <input class="form-control" id="title" type="text" name="circle[title]" placeholder="Circle title" required>
-                    </div>
-                    
-                    <br>
-
-                    <!--<label for="category"><i class="fa fa-list"></i> Category</label>-->
-                    <br>
-                    <div class="col-md-9">
-                         <select name="category">
-                        <option value="Other..">Category..</option>
-                        <option value="English language & communication">English language & communication</option>
-                        <option value="Foreign languages, arts & music">Foreign languages, arts & music</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Natural sciences ">Natural sciences</option>
-                        <option value="Social studies (behavioral sciences & humanities)">Social studies (behavioral sciences & humanities)</option>
-                        <option value="Marketing, business & finance">Marketing, business & finance</option>
-                        <option value="Technical skills & trades">Technical skills & trades</option>
-                        <option value="Physical sports & outdoor">Physical sports & outdoor</option>
-                    </select>
-                    </div>
-                   
-                    <br>
-                    <br>
-                    
-                    <div class="col-md-12">
-                        
-                        <div class="form-group">
-                            <label for="image"><i class="fa fa-image"></i> Image</label>
-                            <a class="btn btn-primary" id="imageSelector">ImageSelector</a>
-                            <input class="form-control" id="image_url" type="text" name="circle[image]" placeholder="URL of your cover image">
-                            <input type="file" id="image_upload" name="image_upload" accept="image/*" style="display: none" >
-                        </div>
-                         
-                        <p class="unsplashparagraph">Consider using a free high-quality image from <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
-    
-                        <label for="oneliner">Oneliner</label>
-                        <input class="form-control" id="oneliner" type="text" name="circle[oneliner]" placeholder="Sell your circle in 140 characters or less.." required>
-                    </div>
-            
-                    
-                    <div class="col-md-6">
-                        <br>
-                        <label for="location"><i class="fa fa-map-marker"></i>  Location</label>
-                        <input class="form-control" id="location" type="text" name="circle[location]" placeholder="New York" required>
-    
-                        <label for="when"><i class="fa fa-clock-o"></i> When</label>
-                        <input class="form-control" id="when" type="text" name="circle[when]" placeholder="February 5th, 3pm-5pm" required>
-                    </div>
-
-                    <div class="col-md-6">
-                        <br>
-                        <label for="spots"><i class="fa fa-check-circle-o"></i> Number of spots available</label>
-                        <input class="form-control" id="spots" type="number" name="circle[spots]" placeholder="5" required>
-                        <label for="price"><i class="fa fa-usd"></i>  Price per lesson</label>
-                        <input class="form-control" id="price" type="number" name="circle[price]" placeholder="$ 25" min="5" step="0.50" required>
-                    </div>
                 
+            <div class="box ncb1">
+                    <div class="field">
+                      <label class="label">Title</label>
+                      <div class="control">
+                        <input class="input" id="title" type="text" name="circle[title]" placeholder="Circle title" required>
+                      </div>
+                    </div>
+
+                    <!--<div class="field">-->
+                    <!--<select name="category">-->
+                    <!--    <option value="Other..">Category..</option>-->
+                    <!--    <option value="Foreign languages, arts & music">Arts, media, music & languages</option>-->
+                    <!--    <option value="Marketing, business & finance">Entrepreneurship, business & finance</option>-->
+                    <!--    <option value="Technical skills & trades">Skills & trades</option>-->
+                    <!--    <option value="Physical sports & outdoor">Physical sports & outdoor</option>-->
+                    <!--    <option value="Mathematics & Natural sciences">Mathematics & Natural sciences</option>-->
+                    <!--    <option value="Social studies (behavioral sciences & humanities)">Behavioral sciences</option>-->
+                    <!--</select>-->
+                    <!--</div>-->
+                    <div class="field">
+                        <label class="label" for="image_upload">Cover image</label>
+                        <input class="input" type="file" id="image_upload" name="image_upload" accept="image/*" >
+                    </div>
+                    
+                    <div class="field">
+                    <label class="label">Oneliner</label>
+                    <div class="control">
+                        <input class="input" id="oneliner" type="text" name="circle[oneliner]" placeholder="Sell your circle in 140 characters or less.." required>
+                    </div>
+                    </div>
+                    
+                     <button class="button" disabled>Previous</button>
+                    <button class="button" disabled>1</button>
+                    <button class="button newc1">2</button>
+                    <button class="button newc3">3</button>
+                    <button class="button is-primary newc1">Next</button> 
+
+
+            </div>
+        <div class="box ncb2 is-hidden">
+                
+          <div class="field">  
+             <div class="control">
+              <label class="label">Description</label>
+                    <textarea rows="3" id="description"  class="textarea" name="circle[description]" placeholder="What can your students learn from you?" required></textarea>
+                </div>    
+            </div>
+           
+               <div class="field">
+                   <div class="control">
+                      <label class="label">Students will be able to</label>
+                        <input class="input" type="text" name="swbat1" placeholder="Do this.." required>
+                        <input class="input" type="text" name="swbat2" placeholder="And this.. (optional)">
+                        <input class="input" type="text" name="swbat3" placeholder="And this.. (optional)">
+                   </div>
+               </div>
+               
+                    <button class="button is-primary is-outlined newc1">Previous</button>
+                    <button class="button newc1">1</button>
+                    <button class="button" disabled>2</button>
+                    <button class="button newc2">3</button>
+                    <button class="button is-primary newc2">Next</button>
+          </div>
+          
+          <div class="box ncb3 is-hidden">
+              <label class="label">Details:</label>
+              <div class="columns">
+                  <div class="column">
+                     <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" id="location" type="text" name="circle[location]" placeholder="Location (address)" required>
+                        <span class="icon is-small is-left">
+                      <i class="fa fa-map-marker"></i>
+                    </span>
+                    </div>
+                    </div>
+                    <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" id="when" type="text" name="circle[when]" placeholder="Date & time" required>
+                        <span class="icon is-small is-left">
+                      <i class="fa fa-clock-o"></i>
+                    </span>
+                    </div>
+                    </div> 
+                  </div>
+                  
+                  <div class="column">
+                      <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" id="spots" type="number" name="circle[spots]" placeholder="Spots available" required>
+                            <span class="icon is-small is-left">
+                          <i class="fa fa-users"></i>
+                        </span>
+                        </div>
+                        </div>
+                        <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" id="price" type="number" name="circle[price]" placeholder="Price per session" min="5" step="0.50" required>
+                            <span class="icon is-small is-left">
+                          <i class="fa fa-usd"></i>
+                        </span>
+                        </div>
+                        </div>
+                  </div>
                 </div>
+                
+                <label class="checkbox">
+                  <input id ="terms" name="terms" type="checkbox" checked required>
+                  I accept the <a href="#">terms and conditions</a>
+                </label>
+                
+                <br>
+                <br>
+                  
+                    <button class="button is-primary is-outlined newc2">Previous</button>
+                    <button class="button newc3">1</button>
+                    <button class="button newc2">2</button>
+                    <button class="button" disabled>3</button>
+                    <button id="" type="submit" class="button is-primary"><span class="icon"><i class="fa fa-thumb-tack"></i></span> <span> create new circle</span></button>
+                  
 
-                <div class="col-md-6">
-                     
-                    <label for="description">Description</label>
-                    <textarea rows="5" id="description"  class="form-control" name="circle[description]" placeholder="What can your students learn from you?" required></textarea>
-                    
-                    <br>
-                    <label for="swbat1">Students will be able to*</label>
-                    <input class="form-control" type="text" name="swbat1" placeholder="Do this.." required>
-                    <br>
-                    <input class="form-control" type="text" name="swbat2" placeholder="And this..">
-                    <br>
-                    <input class="form-control" type="text" name="swbat3" placeholder="And this..">
-                    <br>
-    
-                    
-                    <input id ="terms" name="terms" type="checkbox" required>
-                    <label for="terms" style="font-weight: normal">I accept the <a href="#">terms and conditions</a></label>
-
-                    
-                    <button type="submit" class="btn btn-lg btn-third btn-block"><span class="fa fa-thumb-tack"></span> Create circle</button>
-
-                </div>
-
+            </div>    
             </form>
-            
-            
-            <a href="/circles">Go Back</a>
+            </div>
+
+        
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
     
+
+        </div>
 </div>
 
 
