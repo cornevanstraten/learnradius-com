@@ -1,0 +1,353 @@
+<% include ./partials/header %>
+
+
+
+<section class="hero bg-img is-medium is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <span> radius</span>
+      </h1>
+      <h2 class="subtitle">
+        find skilled people near you, <br> 
+        and learn from them directly
+      </h2>
+      <form action="/circles" method="GET" >
+      <div class="columns">
+      <div class="column is-one-quarter">
+      <div class="field">
+        <div class="control">
+          <input name="search" class="input" type="text" placeholder="What do you want to learn?">
+        </div>
+      </div>
+      
+      <div class="columns">
+        <div class="column is-one-half">
+      <div class="field">
+      <div class="control">
+        <div name="distance" class="select">
+          <select>
+            <option>5 miles</option>
+            <option>10 miles</option>
+            <option>15 miles</option>
+            <option selected>20 miles</option>
+          </select>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      
+      <div class="column is-one-half">
+        <div class="field">
+        <div class="control is-flex">
+          <% if(currentUser){ %>
+                      <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="<%=currentUser.zip%>" required data-validation-required-message="Please enter your Zip Code.">
+                    <% } else { %>
+                      <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="30303" required data-validation-required-message="Please enter your Zip Code.">
+                    <% } %>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      <div class="field">
+        <div class="control">
+        <button type="submit" class="button is-primary is-medium is-fullwidth"><span class="icon"><i class="fa fa-search"></i></span> <span> find</span></button>
+      </div>
+      </div>
+      
+      
+    </div> <!---end column --> 
+    </div> <!---end columns --> 
+    </form>
+      
+    </div>
+  </div>
+</section>
+
+
+<!--Blog articles-->
+    <section id="portfolio" class="hero is-light">
+      <div class="hero-body">
+      <div class="container">
+        <h2 class="title"> how does it work?</h2>
+          <p>Imagine you want to learn something. Whatever it may be, wouldn't it be ideal if you could find someone close to you that already knows what you want to learn, so that you could learn from them, directly? Our open marketplace makes this easy: </p>
+        <br>
+        <br>
+        <br>
+        <nav class="level">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="title"><span class="icon is-size-1"><i class="fa fa-search"></i></span></p>
+      <p class="heading is-size-6">find</p>
+      <p>find someone who masters <br>what you want to learn</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="title"><span class="icon is-size-1"><i class="fa fa-check"></i></span></p>
+      <p class="heading is-size-6">join</p>
+      <p>join  his or her circle <br> by subscribing</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="title"><span class="icon is-size-1"><i class="fa fa-cogs"></i></span></p>
+      <p class="heading is-size-6">learn</p>
+      <p>attend and learn directly <br>from the master</p>
+    </div>
+  </div>
+  </div>
+
+</nav>
+
+
+      </div>
+
+    </section>
+
+   <section class="hero">
+     <div class="hero-body">
+      <div class="container">
+
+    
+            <h1 class="title">circles </h1>
+            <h2 class="subtitle">recently added learning circles</h2>
+          
+          <div class="columns">
+            
+            <%circles.forEach(function(circle){%>
+            <div class="column">
+                <div class="card">
+                  <!--<div class="card-image">-->
+                    <figure class="image is-clipped">
+                      <img src="<%=circle.image%>">
+                    </figure>
+                  <!--</div>-->
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-left">
+                        <figure class="image is-48x48">
+                          <img src="<%=circle.educator.avatar%>" alt="Placeholder image">
+                        </figure>
+                      </div>
+                      <div class="media-content">
+                        <p class="title is-4"><%=circle.title%></p>
+                        <p class="subtitle is-6"><%=circle.educator.firstName%> <%=circle.educator.lastName%></p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <%= circle.oneliner %> 
+                      <!--<a>@bulmaio</a>.-->
+                      <!--<a href="#">#css</a> <a href="#">#responsive</a>-->
+                      <br>
+                      <time datetime="2016-1-1" class="is-size-7">created: <%=moment(circle.createdAt).fromNow()%></time>
+                    </div>
+                  </div>
+                    <footer class="card-footer">
+                        <!--<span class="card-footer-item">-->
+                        <!--    <a href="#" class="button is-success">-->
+                        <!--        <i class="fa fa-thumbs-o-up"></i>-->
+                        <!--    </a>-->
+                        <!--</span>-->
+                        <!--<span class="card-footer-item"> -->
+                        <!--    <a href="#" class="button is-danger">-->
+                        <!--        <i class="fa fa-thumbs-o-down"></i>-->
+                        <!--    </a>-->
+                        <!--</span>-->
+                        <span class="card-footer-item">
+                            <a href="/circles/<%=circle._id%>" class="button is-primary is-fullwidth">
+                                <i class="fa fa-search-plus"></i>
+                            </a>
+                        </span>
+                    </footer>
+                </div>
+                </div>
+            <% }); %>
+                    <!--<p class="is-size-7">*Do you have a special skillset too? Let others learn from you, and <a>start your own circle</a>! </p>-->
+
+        </div>
+      </div>
+      </div>
+</section>
+            
+<!--            <nav class="level">-->
+<!--  <div class="level-item has-text-centered">-->
+<!--    <div>-->
+<!--      <p class="heading">Users</p>-->
+<!--      <p class="title">3,456</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="level-item has-text-centered">-->
+<!--    <div>-->
+<!--      <p class="heading">Circles</p>-->
+<!--      <p class="title">123</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="level-item has-text-centered">-->
+<!--    <div>-->
+<!--      <p class="heading">Learners</p>-->
+<!--      <p class="title">456K</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="level-item has-text-centered">-->
+<!--    <div>-->
+<!--      <p class="heading">Likes</p>-->
+<!--      <p class="title">789</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<!--      </div>-->
+<!--   </section>-->
+
+
+
+
+<section class="hero is-dark bg-img2 .overlay">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        our mission:
+      </h1>
+      
+        <!--<div class="columns">-->
+        <!--  <div class="columns ">-->
+            <h2 class="subtitle is-one-half">
+                  Helping you <strong>learn from the people around you</strong> by providing an <br> open marketplace for real life learning.
+             </h2>
+        <!--  </div>-->
+        <!--</div>-->
+     
+    </div>
+  </div>
+      
+</section>
+
+ <section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+
+  
+          <h1 class="title">our vision </h1>
+          
+          <div class="columns">
+            <div class="column is-half">
+              We envision a future where
+          <strong>all learning is decentralized and customized to your individual needs</strong>. 
+          You are in charge of your own development, you pursue your own personal learning goals, and you call on skilled people around you for guidance. 
+  
+            </div>
+            <div class="column">
+              In this future, joining or hosting a learning circle is a completely <strong>natural way to spend your free time</strong>, 
+            because everyone realizes that learning new things is fun, exciting, and a great way to invest in yourself. 
+          </div>
+          </div>
+
+    </div>
+    </div>
+ </section>
+   <section class="hero">
+  <div class="hero-body">
+     <div class="container">
+       <h1 class="title">our team </h1>
+       
+       <div class="columns">
+         <div class="column is-one-third">
+                     <div class="card">
+             <img class="rounded-circle" src="/stylesheets/img/team/OCRteamCorneVanStraten.png" alt="">
+             <h4>Corné</h4>
+             <p class="text-muted">back-end developer<br><strong>founder</strong></p>
+          
+          </div> 
+           
+         </div>
+        
+
+       </div>
+       
+       
+       <div class="card">
+                  <!--<div class="card-image">-->
+                    <figure class="image is-clipped">
+                      <img src="">
+                    </figure>
+                  <!--</div>-->
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-left">
+                        <figure class="image is-48x48">
+                          <img src="" alt="Placeholder image">
+                        </figure>
+                      </div>
+                      <div class="media-content">
+                        <p class="title is-4"></p>
+                        <p class="subtitle is-6"></p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <!--<a>@bulmaio</a>.-->
+                      <!--<a href="#">#css</a> <a href="#">#responsive</a>-->
+                      <br>
+                      <time datetime="2016-1-1" class="is-size-7">created: </time>
+                    </div>
+                  </div>
+                    <footer class="card-footer">
+                        <!--<span class="card-footer-item">-->
+                        <!--    <a href="#" class="button is-success">-->
+                        <!--        <i class="fa fa-thumbs-o-up"></i>-->
+                        <!--    </a>-->
+                        <!--</span>-->
+                        <!--<span class="card-footer-item"> -->
+                        <!--    <a href="#" class="button is-danger">-->
+                        <!--        <i class="fa fa-thumbs-o-down"></i>-->
+                        <!--    </a>-->
+                        <!--</span>-->
+                        <span class="card-footer-item">
+                            <a href="/circles/" class="button is-primary is-fullwidth">
+                                <i class="fa fa-search-plus"></i>
+                            </a>
+                        </span>
+                    </footer>
+                </div>
+       
+       
+       
+
+       <!--<div class="row">-->
+       <!--  <div class="col-sm-4">-->
+       <!--    <div class="team-member">-->
+       <!--      <img class="mx-auto rounded-circle" src="/stylesheets/img/team/OCRteamGerritMaatkamp.jpg" alt="">-->
+       <!--      <h4>Gerrit</h4>-->
+       <!--      <p class="text-muted">front-end developer<br><strong>designer</strong></p>-->
+       <!--    </div>-->
+       <!--  </div>-->
+       <!--  <div class="col-sm-4">-->
+       <!--    <div class="team-member">-->
+       <!--      <img class="mx-auto rounded-circle" src="/stylesheets/img/team/OCRteamCorneVanStraten.png" alt="">-->
+       <!--      <h4>Corné</h4>-->
+       <!--      <p class="text-muted">back-end developer<br><strong>founder</strong></p>-->
+       <!--    </div>-->
+       <!--  </div>-->
+       <!--  <div class="col-sm-4">-->
+       <!--     <div class="team-member">-->
+       <!--      <img class="mx-auto rounded-circle" src="/stylesheets/img/team/OCRteamKatieVanStraten.jpg" alt="">-->
+       <!--      <h4>Katie</h4>-->
+       <!--      <p class="text-muted">business-end developer<br><strong>communicator</strong></p>-->
+       <!--    </div>-->
+       <!--  </div>-->
+       <!--</div>-->
+       
+       
+     </div>
+     </div>
+   </section>
+
+
+
+
+
+
+
+
+<% include ./partials/footer %>

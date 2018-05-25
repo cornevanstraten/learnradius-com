@@ -1,0 +1,85 @@
+<% include ../partials/header %>
+
+<section class="hero is-dark bg-img">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title wit">
+        Learning circles
+      </h1>
+      <h2 class="subtitle wit">
+        in your area
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            
+              
+            <% for (var i = 0; i < circles.length; i++){%>
+            <div class="column is-one-quarter">
+                <div class="card">
+                  <!--<div class="card-image">-->
+                    <figure class="image">
+                      <img src="<%=circles[i].image%>">
+                    </figure>
+                  <!--</div>-->
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-left">
+                        <figure class="image is-48x48">
+                          <img src="<%=circles[i].educator.avatar%>" alt="Placeholder image">
+                        </figure>
+                      </div>
+                      <div class="media-content">
+                        <p class="title is-4"><%=circles[i].title%></p>
+                        <p class="subtitle is-6"><%=circles[i].educator.firstName%> <%=circles[i].educator.lastName%></p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <%= circles[i].oneliner %> 
+                      <!--<a>@bulmaio</a>.-->
+                      <!--<a href="#">#css</a> <a href="#">#responsive</a>-->
+                      <br>
+                      <time datetime="2016-1-1" class="is-size-7">created: <%=moment(circles[i].createdAt).fromNow()%></time>
+                    </div>
+                  </div>
+                    <footer class="card-footer">
+                        <!--<span class="card-footer-item">-->
+                        <!--    <a href="#" class="button is-success">-->
+                        <!--        <i class="fa fa-thumbs-o-up"></i>-->
+                        <!--    </a>-->
+                        <!--</span>-->
+                        <!--<span class="card-footer-item"> -->
+                        <!--    <a href="#" class="button is-danger">-->
+                        <!--        <i class="fa fa-thumbs-o-down"></i>-->
+                        <!--    </a>-->
+                        <!--</span>-->
+                        <span class="card-footer-item">
+                            <a href="/circles/<%=circles[i]._id%>" class="button is-primary is-fullwidth">
+                                <i class="fa fa-search-plus"></i>
+                            </a>
+                        </span>
+                    </footer>
+                </div>
+                </div>
+              <% if(i%3 ==0 && i !== 0) {%>
+                      </div>
+                    </div>
+                </section>
+                  <section class="section">
+                    <div class="container">
+                        <div class="columns">
+              <% }; %>
+            <% }; %>
+              
+            
+        </div>
+    </div>
+</section>
+                  
+ 
+
+<% include ../partials/footer %>

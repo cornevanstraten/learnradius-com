@@ -1,0 +1,85 @@
+<% include ../partials/header2 %>
+
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Edit <strong>"<%=circle.name%>"</strong></h1>
+        <div style="width: 30%; margin: 30px auto;">
+            <form action="/circles/<%=circle._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+               <div class="form-group">
+                    <label for="category">Category</label>
+                    <input class="form-control" id="category" type="text" name="circle[category]" value="<%=circle.category%>">
+                    <select name="circle[category]">
+                        <option value="Other..">Other..</option>
+                        <option value="English language & communication">English language & communication</option>
+                        <option value="Foreign languages, arts & music">Foreign languages, arts & music</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Natural sciences ">Natural sciences</option>
+                        <option value="Social studies (behavioral sciences & humanities)">Social studies (behavioral sciences & humanities)</option>
+                        <option value="Marketing, business & finance">Marketing, business & finance</option>
+                        <option value="Technical skills & trades">Technical skills & trades</option>
+                        <option value="Physical sports & outdoor">Physical sports & outdoor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input class="form-control" id="title" type="text" name="circle[title]" value="<%=circle.title%>" required>
+                </div>
+                <div class="form-group">
+                    <label for="image_upload"><i class="fa fa-image"></i> Change image</label>
+                    <label for="image"><i class="fa fa-image"></i> Image</label>
+                    <a class="btn btn-primary" id="imageSelector">ImageSelector</a>
+                    <input class="form-control" id="image_url" type="text" name="circle[image]" value="<%=circle.image%>">
+                    <input type="file" id="image_new" name="image_new" accept="image/*" style="display: none">
+                    <input id="oldImage" name="oldImage" value="<%=circle.image%>" type="hidden">
+                </div>
+                <div class="form-group">
+                    <label for="oneliner">Oneliner</label>
+                    <input class="form-control" id="oneliner" type="text" name="circle[oneliner]" value="<%=circle.oneliner%>" required>
+                </div>                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" id="location" type="text" name="circle[location]" value="<%=circle.location%>">
+                    <input id="oldLocation" name="oldLocation" value="<%=circle.location%>" type="hidden">
+                </div>            
+                <div class="form-group">
+                    <label for="when">When</label>
+                    <input class="form-control" id="when" type="text" name="circle[when]" value="<%=circle.when%>" required>
+                </div>                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input class="form-control" id="description" type="text" name="circle[description]" value="<%=circle.description%>" required>
+                </div>
+                        <div class="form-group">
+                            <label for="swbat1">Students will be able to</label>
+                            <input class="form-control" id="description" type="text" name="swbat1" value="<%=circle.swbat[0]%>">
+                        </div>  
+                        <div class="form-group">
+                            <label for="swbat2">Students will be able to</label>
+                            <input class="form-control" id="description" type="text" name="swbat2" value="<%=circle.swbat[1]%>">
+                        </div>  
+                        <div class="form-group">
+                            <label for="swbat3">Students will be able to</label>
+                            <input class="form-control" id="description" type="text" name="swbat3" value="<%=circle.swbat[2]%>">
+                        </div> 
+                <div class="form-group">
+                    <label for="spots">Number of spots available</label>
+                    <input class="form-control" id="spots" type="number" name="circle[spots]" value="<%=circle.spots%>" required>
+                </div>  
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input class="form-control" id="price" type="number" name="circle[price]" value="<%=circle.price%>" min="0.05" step="0.05" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <a href="/circles">Go Back</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+<% include ../partials/footer2 %>

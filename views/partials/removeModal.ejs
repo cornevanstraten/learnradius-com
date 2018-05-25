@@ -1,0 +1,29 @@
+                        <!-- removeModal -->
+                        <div id="removeModal<%=agreement._id%>" class="modal" role="dialog">
+                          <div class="modal-dialog">
+                        
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Remove student</h4>
+                              </div>
+                              <div class="modal-body text-right">
+                                  <h3>Remove <strong><%=agreement.studentDetails.firstName%> <%=agreement.studentDetails.lastName%></strong>?</h3>
+                                <p>Are you sure you want to remove this student from your circle?</p>
+                                <p>
+                                  This will terminate this student's enrollment in <strong><%=agreement.circleDetails.title%></strong>. 
+                                  This account will not be charged for future classes.
+                                </p>
+                                <form action="/agreements/<%=agreement._id%>/leave?_method=PUT" method="POST">
+                                    <div class="form-group">
+                                        <button class="btn btn-danger" name="stop" type="submit"><span class="fa fa-minus-circle"></span> Remove <strong><%=agreement.studentDetails.firstName%></strong> </button>
+                                    </div>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>

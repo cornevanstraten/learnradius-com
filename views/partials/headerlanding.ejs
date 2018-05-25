@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>radius - open marketplace for in-person learning</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+    <!-- Custom fonts for this template -->
+    <link href="/stylesheets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Kanit:400,500,600,700,800" rel="stylesheet" type='text/css'>-->
+    
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <!--^^different than Gert: different filepath and file name-->
+    <!--^^different than Gert: no feather icons-->
+
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        
+        <div class="container">
+            <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger alert-dismissable" role="alert"><%=error%>
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
+            <% } %>            
+        
+            <% if(success && success.length > 0){ %>
+                <div class="alert alert-success alert-dismissable" role="alert"><%=success%>
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
+            <% } %>
+        </div>
+      

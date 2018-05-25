@@ -1,0 +1,170 @@
+<!--User DASHBOARD -->
+<% include ../partials/header %>
+
+
+<div class="content">
+    <!-- cover-photo -->
+    <div class="OCR-PD-cover row">
+        <img class="OCR-PD-cover-photo" src="<%=user.coverImage%>" alt="background image">
+        <div class="col-lg-8">
+
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+    </div>
+    
+        <div class="OCR-UP-user-profile row">
+      <!-- user details -->
+      <div class="col-lg-3 OCR-profile-customize">
+        <!-- img -->
+        <div class="OCR-UP-teacher-picture">
+            <img class="OCR-UP-picture" src="<%=user.avatar%>" alt="profile picture"/>
+
+        </div>
+        <div class="OCR-UP-teacher-name">
+        <!-- h2 -->
+        <h2><%=user.firstName%> <%=user.lastName%></h2>
+        <h4><%=user.description%></h4>
+        </div>
+        <div class="OCR-UP-thumbs-rating">
+              <!-- negative vs positive review -->
+              <h3>Student Appreciation</h3>
+              <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> +<%=user.appreciation%></p>
+        </div>
+        
+        <div class="OCR-UP-teacher-mod-buttons">
+          <a class="btn btn-xl btn-block btn-third" href="/users/<%=user.id%>"><i class="fa fa-user" aria-hidden="true"></i> Public Profile</a>
+        </div>
+
+        <div class="OCR-PD-teacher-listings">
+            <!-- Other circles heading -->
+            <h3><i class="fa fa-heart" style="color: red"></i> Favorites (<%=user.fav.length%>)</h3>
+            <!-- Other circles list -->
+            <ul>
+              <% user.fav.forEach(function(circle){ %>
+                <li class="">
+                  <a href="/circles/<%=circle.id%>"> <%=circle.title%></a>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+
+
+      </div>
+      <!--</div>-->
+
+<!--Right side-->
+    <div class="OCR-UP-teacher-appreciation col-lg-9">
+        <div class="row">
+            <div class="OCR-UP-teacher-listings">
+              <!-- Other circles heading -->
+              <h2>Dashboard</h2>
+              <div class="float-right">
+                  <a class="btn btn-lg btn-third" href="/circles/new"><i class="fa fa-thumb-tack" aria-hidden="true"></i> New circle</a>
+              </div>
+              <h3><i class="fa fa-thumb-tack" style="color: #49d5f4;"></i> Your circles (<%=user.circles.length%>)</h3>
+                <br>
+                <br>
+              <!-- circles list -->
+              <ul>
+                <% user.circles.reverse().forEach(function(circle){ %>
+                    <li>
+                       <a href="/circles/<%=circle.id%>"><img class="listing_pic" src="<%=circle.image%>" alt="circle image"></a>
+                         
+                        <a href="/circles/<%=circle.id%>"> <strong> >> <%=circle.title%> </strong></a>
+                        
+                         -  <%=circle.oneliner%>
+
+                      
+                          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%=circle.appreciation%>
+                            <a class="btn btn-third float-right" href="/circles/<%=circle.id%>/edit"><span class="fa fa-pencil-square-o"> Edit</a>
+                            <a class="btn float-right" href="#" data-toggle="modal" data-target="#deleteModal<%=circle.id%>"><span class="fa fa-trash-o" aria-hidden="true"></span> Delete</a>
+                            <% include ../partials/deletemodal.ejs %>
+                            
+                  <%circle.agreements.forEach(function(agreement){%>
+                      
+                      <% }) %>
+                  <div class="well col-md-11 float-right">
+                    <% if(circle.agreements.length > 0) {  %>
+                    <br>
+                    <h5>Participants (<%=circle.students.length %>)</h5>
+                    <hr>
+                    <%circle.agreements.forEach(function(agreement){%>
+                    <% if(!agreement.endedAt){%>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                              <a href="/users/<%=agreement.studentRef%>">
+                                <img class="OP-educator-avatar" src="<%= agreement.studentDetails.avatar %>"> 
+                                <strong><%=agreement.studentDetails.firstName%> <%=agreement.studentDetails.lastName%></strong>
+                                      
+                                  <a class="btn float-right" href="#" data-toggle="modal" data-target="#removeModal<%=agreement._id%>"><span class="fa fa-sign-out" aria-hidden="true"></span> Remove</a>
+                                  <% include ../partials/removeModal.ejs %>
+                                  
+                                <a class="pull-right btn btn-sm btn-success" href="/users/<%=agreement._id%>/endorsements/new"><span class="fa fa-forward"></span> Endorse</a>
+                              </a>
+                            </p>
+                            <hr>
+                                
+                        </div>
+                    </div>
+                    <% } %>
+                    <% }) } %>
+                </div>
+                    </li>
+                <% }) %>
+                </ul>
+            </div>
+        </div>
+        
+        <br>
+                <hr>
+                <br>
+                
+                <div class="OCR-PD-teacher-listings">
+                <h3><i class="fa fa-check-circle" style="color: green"></i> Circles you joined (<%=user.joinedCircles.length%>)</h3>
+                <hr>
+                <ul>
+                  
+                  <% user.joinedCircles.reverse().forEach(function(agreement){ %>
+                    <li class="">
+                      <a href="/circles/<%=agreement.circleRef%>"><img class="listing_pic" src="<%=agreement.circleDetails.image%>" alt="circle image"></a>
+                       <a href="/circles/<%=agreement.circleRef%>"><strong> >> <%=agreement.circleDetails.title%></strong></a> - <%=agreement.circleDetails.oneliner%>
+                       <% if(agreement.reviewRef){ %>
+                        <button class="btn float-right" disabled><span class="fa fa-check" aria-hidden="true"></span> Reviewed</button>
+                       <% } else { %>
+                       <a class="btn btn-primary float-right" href="/circles/<%=agreement._id%>/reviews/new"><span class="fa fa-comments-o" aria-hidden="true"></span> Review</a>
+                       <% } %>
+                       <% if(!agreement.endedAt){ %>
+                        <a class="btn float-right" href="#" data-toggle="modal" data-target="#leaveModal<%=agreement._id%>"><span class="fa fa-sign-out" aria-hidden="true"></span> Leave</a>
+                        <p  style="font-size: 14px;">Joined <%= moment(agreement.createdAt).fromNow()%></p>
+                        <% include ../partials/leaveModal.ejs %>
+                        <% } else { %>
+                          <p style="font-size: 14px;">Ended <%= moment(agreement.endedAt).fromNow()%></p>
+                        <% } %>
+                    </li>
+                    <hr>
+                  <% }) %>
+                </ul>
+              </div>
+        
+        
+    </div>
+                
+                 
+                
+
+
+          
+      </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,10 @@
+
+
+$primary: red;
+$turqoise: red;
+
+@import "vendor/bulma/bulma.sass";
+
+.is-primary {
+  color: $primary;
+}

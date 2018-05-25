@@ -1,0 +1,55 @@
+<% include ./partials/header %>
+
+<section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-grey">sign up</h3>
+                    <p class="subtitle has-text-grey">register a new account</p>
+                    <div class="box">
+                        <form action="/register" method="POST">
+                            <div class="field">
+                                <div class="control has-icons-left">
+                                    <input class="input" name="username" type="email" placeholder="email" autofocus="">
+                                    <span class="icon is-small is-left">
+                                  <i class="fa fa-envelope"></i>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <p class="control has-icons-left">
+                                    <input class="input" name="password" type="password" placeholder="password">
+                                 <span class="icon is-small is-left">
+                                  <i class="fa fa-lock"></i>
+                                </span>
+                                </p>
+                            </div>
+                            <!--<div class="field">-->
+                            <!--  <p class="control has-icons-left">-->
+                            <!--    <input class="input" type="password" placeholder="Password">-->
+                            <!--    <span class="icon is-small is-left">-->
+                            <!--      <i class="fas fa-lock"></i>-->
+                            <!--    </span>-->
+                            <!--  </p>-->
+                            <!--</div>-->
+                            <div class="field">
+                                <label class="checkbox">
+                                <input type="checkbox" required>
+                                I accept the <a href="#">terms and conditions</a>
+                              </label>
+                            </div>
+                            <button class="button is-block is-primary is-outlined is-medium is-fullwidth">sign up</button>
+                        </form>
+                    </div>
+                    <p class="has-text-grey">
+                        <a href="/login">login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<% include ./partials/footer2 %>
+
