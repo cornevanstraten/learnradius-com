@@ -63,7 +63,7 @@ router.get("/", function(req, res){
                 if(foundCircles.length < 1){
                                 findEducator(regex, req, res);
                             } else { //we did find results matching querie
-                            res.render("circles/index2", {circles: foundCircles});
+                            res.render("circles/index", {circles: foundCircles});
                             }
                         }
                     });
