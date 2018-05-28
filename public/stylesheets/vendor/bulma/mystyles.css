@@ -6974,4 +6974,102 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+img {
+  width: 100%; }
+
+.is-danger {
+  background-color: #f82730; }
+
+.button {
+  border: none;
+  background: white; }
+
+.search-button {
+  text-align: center; }
+
+.landing-hero {
+  background: -webkit-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url("/stylesheets/img/radius-header.jpeg");
+  background: -moz-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url("/stylesheets/img/radius-header.jpeg");
+  background: -o-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url("/stylesheets/img/radius-header.jpeg");
+  background-size: cover;
+  background-position: center center;
+  height: 80vh;
+  padding: 17em 0; }
+  .landing-hero h1, .landing-hero h2, .landing-hero p {
+    color: #fff; }
+
+.navbar-item {
+  display: flex; }
+
+.navbar,
+.navbar-menu,
+.navbar-start,
+.navbar-end {
+  align-items: stretch;
+  display: flex;
+  padding: 0; }
+
+.navbar-menu {
+  flex-grow: 1;
+  flex-shrink: 0; }
+
+.navbar-start {
+  justify-content: flex-start;
+  margin-right: auto; }
+
+.navbar-end {
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-top: -3.5em; }
+
+.navbar {
+  box-shadow: 0 1px 10px 0 rgba(100, 100, 100, 0.5); }
+  .navbar .logo {
+    margin-left: -4.5em; }
+  .navbar .is-inverted {
+    margin-top: -1px;
+    box-shadow: 0 1px 1px 1px rgba(100, 100, 100, 0.2); }
+    .navbar .is-inverted:hover {
+      margin-top: -2px;
+      box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.2);
+      background-color: white, #fff; }
+    .navbar .is-inverted:active {
+      margin-top: -1px;
+      box-shadow: 0 1px 1px 1px rgba(248, 51, 60, 0.2); }
+
+.user-button {
+  margin: .6em 1em; }
+
+.mobile-search-bar {
+  padding: .7em .7em 1em .5em;
+  background: rgba(150, 150, 150, 0.4);
+  height: 7vh;
+  position: fixed;
+  top: 6vh;
+  transition: top 0.2s ease-in-out; }
+
+@media (min-width: 768px) {
+  .navbar {
+    width: 100%; }
+    .navbar .logo {
+      margin-left: -4em; }
+
+  .navbar > .container {
+    min-height: none;
+    height: 7vh; }
+
+  nav .searchform {
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+    margin-left: 10em;
+    width: 85%;
+    transition: all 3s linear; }
+  nav .navbar-item img {
+    max-height: 100%; }
+  nav .link__login {
+    margin: 1em 0; }
+
+  .navbar-end {
+    margin-top: .2em; } }
+
 /*# sourceMappingURL=mystyles.css.map */
