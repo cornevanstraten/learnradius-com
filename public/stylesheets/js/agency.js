@@ -53,3 +53,27 @@ $(".closeModal, .modal-background").click(function(){
 })
 
 
+
+$('input[name="search"]').focus();
+
+$(window).scroll(function() {
+
+    if ($(this).scrollTop()>200)
+    {
+        $('.mobile-search-bar').fadeOut("slow");
+    }
+    else
+    {
+      $('.mobile-search-bar').fadeIn("slow");
+    }
+});
+
+$(window).on('scroll', function(){
+    if ($(this).scrollTop() > 500) {
+        $('.searchform').removeClass('is-hidden');
+       
+    } else {
+        $('.searchform').addClass('is-hidden');
+    }
+}); 
+ 

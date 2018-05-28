@@ -8,12 +8,9 @@ $blue: #72d0eb;
 
 $turquoise: #f8333c;
 
-
-
-
 // 3. Set the derived variables
 // Use the new pink as the primary color
-$primary: red;
+$primary: $blue;
 // $primary-invert: $pink-invert;
 // Use the existing orange as the danger color
 // Use the new serif family
@@ -38,3 +35,22 @@ $colors: map-merge($colors, $addColors);
 
 // 6. Import the rest of Bulma
 @import "bulma.sass";
+
+// 7. radius SASS
+@import "radius-sass/abstracts/functions";
+@import "radius-sass/abstracts/mixins";
+@import "radius-sass/abstracts/variables";
+
+@import "radius-sass/base/base";
+@import "radius-sass/base/typography";
+
+@import "radius-sass/components/buttons";
+@import "radius-sass/components/hero";
+@import "radius-sass/components/navbar";
+
+@import "radius-sass/pages/dashboard";
+@import "radius-sass/pages/index";
+@import "radius-sass/pages/landing";
+@import "radius-sass/pages/show";
+@import "radius-sass/pages/user";
+
