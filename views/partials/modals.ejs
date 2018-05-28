@@ -1,65 +1,31 @@
                      <!-- joinModal -->
-                        <div id="joinModal" class="modal" role="dialog">
-                          <div class="modal-dialog">
-                        
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Join circle</h4>
-                              </div>
-                              <div class="modal-body text-right">
-                                  <h3>Join <strong><%=circle.title%></strong>?</h3>
-                                  <br>
-
+                     
+                      <div id="joinModal" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">Join <strong><%=circle.title%></strong>?</p>
+                            <button class="delete closeModal" aria-label="close"></button>
+                          </header>
+                          <section class="modal-card-body">
+                            <!-- Content ... -->
+                            
+                                  <p style="font-size: .8em">circle price: $<%=circle.price%> <br>processing: $<%= (Number(circle.price)*.03).toFixed(2)%></p>
                                   <p><strong>Total: $<%= ((Number(circle.price)*.03) + Number(circle.price)).toFixed(2)%></strong></p>
-                                  <p style="font-size: .8em">circle price: $<%=circle.price%> <br>radius fee: $<%= (Number(circle.price)*.03).toFixed(2)%></p>
 
-                                
-                                
-                                <form action="/agreements/new" method="POST">
+                  
+                          </section>
+                          <footer class="modal-card-foot">
+                            <form action="/agreements/new" method="POST">
                                     <div class="form-group">
                                         <input type="hidden" name="circle[id]" value="<%=circle.id%>">
-                                      
-                                        <button class="btn btn-success" name="join" type="submit"><span class="fa fa-plus-circle"></span> Join <%=circle.title%></button>
+                                        <button type="submit" class="button is-danger is-medium"><span class="icon"><i class="fa fa-plus-circle"></i></span> <span> join <%=circle.title%></span></button>
                                     </div>
-                                </form>
-                                <p>[This is where payment would happen]</p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              </div>
-                            </div>
-                          </div>
+                            </form>
+                          </footer>
                         </div>
-                        
-                        
-                        <!-- deleteModal -->
-                        <div id="deleteModal" class="modal" role="dialog">
-                          <div class="modal-dialog">
-                        
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Delete circle</h4>
-                              </div>
-                              <div class="modal-body text-right">
-                                  <h3>Delete <strong><%=circle.name%></strong>?</h3>
-                                <p>Are you sure you want to delete your circle?</p>
-                              <form id="deleteform" action="/circles/<%=circle._id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
-                                  <div class="form-group">
-                                    <button class="btn btn-danger "><span class="fa fa-trash-o"></span> Delete <strong><%=circle.title%></strong></button>
-                                  </div>
-                              </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>                        
-                        
+                      </div>
+                     
                         
                       
                         

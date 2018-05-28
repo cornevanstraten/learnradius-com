@@ -14,12 +14,16 @@
                   </h2>
                   
                   
-            <div class="column is-8 is-offset-2 ">
+            <div class="column is-8 is-offset-2">
             
 
             <form action="/circles" method="POST" enctype="multipart/form-data">
                 
             <div class="box ncb1">
+                <div class="field">
+                    <progress class="progress is-primary is-small" value="33" max="100">33%</progress>
+                </div>
+                
                     <div class="field">
                       <label class="label">Title</label>
                       <div class="control">
@@ -50,15 +54,25 @@
                     </div>
                     </div>
                     
-                     <button class="button" disabled>Previous</button>
-                    <button class="button" disabled>1</button>
-                    <button class="button newc1">2</button>
-                    <button class="button newc3">3</button>
-                    <button class="button is-primary newc1">Next</button> 
-
-
+                    <div class="field">
+                      <button class="button" disabled>Previous</button>
+                        <button class="button" disabled>1</button>
+                        <button class="button newc1">2</button>
+                        <button class="button newc3">3</button>
+                        <button class="button is-primary newc1">Next</button>   
+                    </div>
+                    
+            
+                
             </div>
+            
+            
+            
+            
         <div class="box ncb2 is-hidden">
+            <div class="field">
+                    <progress class="progress is-primary is-small" value="67" max="100">33%</progress>
+                </div>
                 
           <div class="field">  
              <div class="control">
@@ -76,25 +90,27 @@
                    </div>
                </div>
                
-                    <button class="button is-primary is-outlined newc1">Previous</button>
+               <div class="field">
+                   <button class="button is-primary is-outlined newc1">Previous</button>
                     <button class="button newc1">1</button>
                     <button class="button" disabled>2</button>
                     <button class="button newc2">3</button>
                     <button class="button is-primary newc2">Next</button>
+               </div>
+                
+                
+                 
           </div>
           
           <div class="box ncb3 is-hidden">
+              
+              <div class="field">
+                    <progress class="progress is-primary is-small" value="99" max="100">33%</progress>
+                </div>
+              
               <label class="label">Details:</label>
               <div class="columns">
                   <div class="column">
-                     <div class="field">
-                    <div class="control has-icons-left">
-                        <input class="input" id="location" type="text" name="circle[location]" placeholder="Location (address)" required>
-                        <span class="icon is-small is-left">
-                      <i class="fa fa-map-marker"></i>
-                    </span>
-                    </div>
-                    </div>
                     <div class="field">
                     <div class="control has-icons-left">
                         <input class="input" id="when" type="text" name="circle[when]" placeholder="Date & time" required>
@@ -103,6 +119,14 @@
                     </span>
                     </div>
                     </div> 
+                     <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" id="location" type="text" name="circle[location]" placeholder="Location (address)" required>
+                        <span class="icon is-small is-left">
+                      <i class="fa fa-map-marker"></i>
+                    </span>
+                    </div>
+                    </div>
                   </div>
                   
                   <div class="column">
