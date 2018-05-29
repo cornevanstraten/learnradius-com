@@ -1,25 +1,89 @@
 <% include ../partials/header %>
+<section class="cta">
+  <div class="columns cta-content">
+    <div class="column cta-content--title"><%=circle.title%> by <%=educator.firstName%></div>
+    <div class="column cta-content--price">$<%=circle.price%> /lesson</div>
+    <div class="column cta-content--favorite">
+      <a class="button is-radius-red is-large is-outlined button--favorite">
+        <i class="fa fa-heart-o"></i>
+      </a>
+    </div>
+    <div class="column cta-content--join">
+      <a class="button is-radius-red is-large">
+        <i class="fa fa-plus-circle"></i><p class="join"> Join</p>
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- Product detail page -->
 <div class="content">
-    <div class="cover-photo__lg">
-        <img src="<%=circle.image%>" alt="background image">
+  <section class="hero">
+    <div class="pdp-hero">
+      <div class="">
+        <img src="<%=circle.image%>" alt="background image">  
+      </div>
     </div>
-    <div class="OCR-PD-product-detail-page row">
+    <div class="pdp-mentor">
+      <a href="/users/<%=circle.educator._id%>">
+        <img class="pdp-mentor__picture" src="<%=educator.avatar%>" alt="profile picture"/>
+      </a>
+    </div>
+  </section>
+  
+  <section class="pdp-info">
+    <div class="columns">
+      <div class="column is-1">
+        
+      </div>
+      <div class="column is-4">
+        <div class="pdp-title">
+          <h1 class="title">
+            <%=circle.title%>
+          </h1>
+          <h3 class="spots subtitle">
+            Spots available: <%=circle.spots%>
+          </h3>
+          <p class="pdp-product-synopsis">
+            <%=circle.oneliner%>
+          </p>
+        </div>
+      </div>
+      <div class="column is-3">
+        <h2 class="pdp-info-name"><%=educator.firstName%> <%=educator.lastName%></h2>
+      </div> 
+      <div class="column is-2 pdp-actions">
+            <a class="button is-radius-red is-large"><i class="fa fa-plus-circle"></i> <p class="join"> Join</p></a> <br>
+            <a class="button is-radius-red is-large is-outlined button--favorite"><i class="fa fa-heart-o"></i></a>   
+            <p class="price">$ <%=circle.price%> <span class="thin"> /lesson</span></p>
+      </div>
+      <div class="column is-1">
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="pdp-timeandlocation">
+    <div class="columns">
+      <div class="column is-1">
+        
+      </div>
+      <div class="column is-5 pdp-location">
+         <p><i class="fa fa-map-marker fa-2x"></i> Location: <%=educator.location%></p>
+      </div>
+      <div class="column is-5 pdp-time">
+        <p><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>  <%=circle.when%></p>
+      </div>
+      <div class="column is-1">
+        
+      </div>
+    </div>
+  </section>
 
-
-
-<!-- Teacher details -->
+  <div class="row">
+    <!-- Teacher details -->
       <div class="OCR-PD-teacher-details col-md-3">
-
-
-              <div class="OCR-PD-teacher-picture">
-              <!-- img -->
-              <a href="/users/<%=circle.educator._id%>">
-                <img class="OCR-PD-picture" src="<%=educator.avatar%>" alt="profile picture"/>
-              </a>
-                  
-              </div>
+              
               <div class="OCR-teacher-name">
               <!-- h2 -->
               <h2><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
@@ -70,6 +134,7 @@
             <a class="btn btn-xl btn-third btn-block btn-third " href="/users/<%=circle.educator._id%>"><i class="fa fa-user-circle" aria-hidden="true"></i> <%=educator.firstName%>'s Profile </a>
           </div>
       </div>
+    
 
 
       <div class="OCR-PD-product-details col-md-9">
@@ -105,7 +170,7 @@
                   <a class="btn btn-xl btn-block btn-third" name="booked" disabled><span class="fa fa-ban" aria-hidden="true"></span> Booked to capacity</a>
               
               <% } else if (currentUser) { %>
-                  <a class="btn btn-xl btn-block btn-primary" href="#"  data-toggle="modal" data-target="#joinModal"><i class="fa fa-plus-circle" aria-hidden="true"></i> Join</a>
+                  <a id="joinButton" class="button is-danger"><span class="icon"><i class="fa fa-plus-circle"></i></span> <span> join <%=circle.title%></span></a>
                    <div class="form-group">
                     <form id="favform" action="/users/<%=currentUser._id%>" method="POST">
                       <input type="hidden" name="circle[id]" value="<%=circle.id%>">

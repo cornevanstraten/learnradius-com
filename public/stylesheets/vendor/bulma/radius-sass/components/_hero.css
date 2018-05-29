@@ -1,0 +1,30 @@
+.landing-hero {
+  background: -webkit-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url("/stylesheets/img/radius-header.jpeg");
+  background: -moz-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url("/stylesheets/img/radius-header.jpeg");
+  background: -o-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url("/stylesheets/img/radius-header.jpeg");
+  background-size: cover;
+  background-position: center center;
+  height: 80vh;
+  padding: 9em 2em; }
+  .landing-hero h1, .landing-hero h2, .landing-hero p {
+    color: #fff; }
+  .landing-hero .r-search .select select {
+    width: 23em; }
+
+@media (min-width: 768px) {
+  .landing-hero {
+    height: 80vh;
+    padding: 13em 0; }
+    .landing-hero h1, .landing-hero h2, .landing-hero p {
+      color: #fff; }
+    .landing-hero .r-search .r-search-distance {
+      padding-right: 0; }
+    .landing-hero .r-search .r-search-location {
+      padding-left: 0; }
+    .landing-hero .r-search .select select {
+      width: 9em; }
+    .landing-hero button[type=submit] {
+      margin-top: -.5em;
+      margin-bottom: 0; } }
+
+/*# sourceMappingURL=_hero.css.map */

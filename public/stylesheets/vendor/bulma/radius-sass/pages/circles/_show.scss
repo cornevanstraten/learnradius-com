@@ -1,0 +1,83 @@
+// this is the pdp
+.cta {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    .cta-content {
+        position: fixed;
+        top: 6vh;
+        left: 15%;
+        z-index: 10;
+        margin: 0 auto;
+        padding: .3em;
+        transform: rotateX(90deg);
+        transition: all .7s ease;
+        width: 70%;
+        height: 7vh;
+        background: whitesmoke;
+        box-shadow: 0 20px 20px 20px rgba(100,100,100, 1);
+        border-radius: 0 0 3px 3px;
+        .button{
+            margin-top: -.5em;
+        }
+    }
+    .cta-visible{
+        top: 7.5vh;
+        transform: rotateX(0deg);
+        box-shadow: 0 1px 10px 0px rgba(100,100,100, 1); 
+    }
+}
+
+.pdp-hero {
+    padding: 0;
+    position: relative;
+    img {
+        object-fit: cover; 
+        height: 60vh;
+        width: 100%;
+    }
+}
+
+    .pdp-mentor {
+        position: absolute;
+        top: 47vh;
+        left: 40%;
+        img {
+            object-fit: cover;
+            height: 20em;
+            width: 20em;
+            border: 10px solid $white;
+            border-radius: 50%;
+            box-shadow: 0 1px 50px 50px rgba(255,255,255, 0.4);
+        }
+    }
+    
+.pdp-info {
+    padding: 5em;
+    background-color: whitesmoke;
+    .pdp-title{
+        margin-top: -4.3em;
+    }
+    .pdp-actions{
+        margin-top: -8em;
+        padding: 2em;
+    }
+    .price {
+        text-align: center;
+        font-size: 1.7em;
+        margin: 0 auto;
+    }
+    .pdp-info-name{
+        margin-top: 3em;
+        margin-bottom: -6em;
+    }
+}
+.pdp-timeandlocation{
+    height: 30vh;
+    background: $white;
+    padding: 5em;
+    text-align: center;
+    i{
+        font-size: 2em;
+    }
+}

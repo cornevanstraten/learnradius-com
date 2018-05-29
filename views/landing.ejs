@@ -2,8 +2,8 @@
 
 
 
-<section class="hero bg-img is-medium is-dark">
-  <div class="hero-body">
+<section class="hero">
+  <div class="hero-body landing-hero">
     <div class="container">
       <h1 class="title">
         <span> radius</span>
@@ -14,7 +14,7 @@
       </h2>
       <form action="/circles" method="GET" >
       <div class="columns">
-      <div class="column is-one-quarter">
+      <div class="column is-one-quarter r-search">
       <div class="field">
         <div class="control">
           <input name="search" class="input" type="text" placeholder="What do you want to learn?">
@@ -22,23 +22,23 @@
       </div>
       
       <div class="columns">
-        <div class="column is-one-half">
-      <div class="field">
-      <div class="control">
-        <div name="distance" class="select">
-          <select>
-            <option>5 miles</option>
-            <option>10 miles</option>
-            <option>15 miles</option>
-            <option selected>20 miles</option>
-          </select>
+      <div class="column is-one-half-tablet r-search-distance">
+        <div class="field">
+          <div class="control">
+            <div name="distance" class="select">
+              <select>
+                <option>5 miles</option>
+                <option>10 miles</option>
+                <option>15 miles</option>
+                <option selected>20 miles</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-      </div>
       
       
-      <div class="column is-one-half">
+      <div class="column is-one-half-tablet r-search-location">
         <div class="field">
         <div class="control is-flex">
           <% if(currentUser){ %>

@@ -43,9 +43,36 @@ $(window).scroll(function() {
 $(window).on('scroll', function(){
     if ($(this).scrollTop() > 500) {
         $('.searchform').removeClass('is-hidden');
-       
     } else {
         $('.searchform').addClass('is-hidden');
     }
 }); 
- 
+
+$(document).ready(function(){
+    $('.searchform--expand--button').click(function(){
+        var link = $(this);
+        $('.searchform--expand').toggleClass('is-hidden', function() {
+            if ($(this).is(":visible")) {
+                 link.html(' <i class="fa fa-angle-left"></i>');                
+            } else {
+                 link.html('<i class="fa fa-angle-right"></i>');                
+            }        
+        });
+            
+    });
+});
+
+$('.button--favorite').hover(
+       function(){ $(this).html('<i class="fa fa-heart"></i>') },
+       function(){ $(this).html('<i class="fa fa-heart-o"></i>') }
+);
+
+var header = $(".cta-content");
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+      if (scroll >= 600) {
+          header.addClass("cta-visible");
+        } else {
+          header.removeClass("cta-visible");
+        }
+});
