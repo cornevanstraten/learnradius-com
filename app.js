@@ -69,9 +69,7 @@ console.log(process.env.CLAPISECRET);
 console.log(process.env.GAPIKEY);
 
 app.use("/", indexRoutes);
-// app.use("/openclassrooms", openclassroomRoutes);
 app.use("/circles", circleRoutes);
-// app.use("/openclassrooms/:id/reviews", reviewRoutes);
 app.use("/circles/:id/reviews", reviewRoutes);
 app.use("/users/:id/endorsements", endorsementRoutes);
 app.use("/agreements", agreementRoutes);
