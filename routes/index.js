@@ -79,7 +79,7 @@ router.get("/logout", function(req, res){
 //USER PROFILE PAGE SHOW ROUTE
 router.get("/users/:id", function(req, res){
     //find the User matching the id in the DB
-    User.findById(req.params.id).populate("circles").populate({path: "circles", populate: {path: "reviews"}}).populate({path: "circles", populate: {path: "endorsementRef"}}).exec(function(err, foundUser){
+    User.findById(req.params.id).populate("circles").populate({path: "circles", populate: {path: "reviews"}}).populate({path: "joinedCircles", populate: {path: "endorsementRef"}}).exec(function(err, foundUser){
         if(err){
             console.log(err);
             req.flash("error", "This user doesn't exist");
