@@ -17,7 +17,7 @@
             <div class="column is-8 is-offset-2">
             
 
-            <form action="/circles" method="POST" enctype="multipart/form-data">
+            <form action="/circles/<%=circle._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                 
             <div class="box ncb1">
                 <div class="field">
@@ -34,6 +34,7 @@
                     <div class="field">
                         <label class="label" for="image_upload">Cover image</label>
                         <input class="input" type="file" id="image_upload" name="image_upload" accept="image/*" >
+                        <input id="oldImage" name="oldImage" value="<%=circle.image%>" type="hidden">
                     </div>
                     
                     <div class="field">

@@ -7,46 +7,56 @@
         <div class="container">
             <div class="column is-10 is-offset-1 ">
                 <div class="box">
-            <figure class="image is-128x128">
-                <img class="OP-header-avatar" src="<%=user.avatar%>">
-            </figure>
+            
             <h3 class="title has-text-grey"><%=user.username%></h3>
                 <p class="subtitle has-text-grey">edit your profile</p>
-            <form action="/users/<%=user._id%>?_method=PUT" method="POST">
+            <form action="/users/<%=user._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+              <div class="field">
+                    <label for="coverImage">cover photo</label>
+                    <div class="control has-icons-left">
+                    <input class="input" id="coverImage" type="text" name="user[coverImage]" value="<%=user.coverImage%>" required>
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-picture-o"></i>
+                    </span>
+                    </div>
+                </div> 
                 <div class="columns">
                     <div class="column">
+                        <figure class="image is-128x128">
+                            <img class="OP-header-avatar" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_150,h_150/<%=user.avatar%>" >
+                        </figure>
                         <div class="field">
-                            <label for="Avatar">avatar</label>
-                            <div class="control has-icons-left">
-                            <input class="input" id="Avatar" type="text" name="user[avatar]" value="<%=user.avatar%>" required>
-                            <span class="icon is-small is-left">
-                              <i class="fa fa-user-circle"></i>
-                            </span>
-                            </div>
+                            <label class="label" for="avatar_upload">avatar</label>
+                            <input class="input" type="file" id="avatar_upload" name="avatar_upload" accept="image/*" >
+                            <input id="oldImage" name="oldAvatar" value="<%=user.avatar%>" type="hidden">
                         </div>
+                        <!--<div class="field">-->
+                        <!--    <label for="Avatar">avatar</label>-->
+                        <!--    <div class="control has-icons-left">-->
+                        <!--    <input class="input" id="Avatar" type="text" name="user[avatar]" value="<%=user.avatar%>" required>-->
+                        <!--    <span class="icon is-small is-left">-->
+                        <!--      <i class="fa fa-user-circle"></i>-->
+                        <!--    </span>-->
+                        <!--    </div>-->
+                        <!--</div>-->
                     </div>
-                    <div class="column">
-                        <div class="field">
-                            <label for="coverImage">cover photo</label>
-                            <div class="control has-icons-left">
-                            <input class="input" id="coverImage" type="text" name="user[coverImage]" value="<%=user.coverImage%>" required>
-                            <span class="icon is-small is-left">
-                              <i class="fa fa-picture-o"></i>
-                            </span>
-                            </div>
-                        </div> 
-                    </div>
+                    <!--<div class="column">-->
+                    <!--<div class="field">-->
+                    <!--    <label class="label" for="background_upload">background image</label>-->
+                    <!--    <input class="input" type="file" id="background_upload" name="background_upload" accept="image/*" >-->
+                    <!--</div>-->
+                    <!--</div>-->
                 </div>
                 <div class="columns">
                     <div class="column">
                         <div class="field">
-                            <label for="firstName">first name</label>
+                            <label class="label" for="firstName">first name</label>
                             <input class="input" id="firstName" type="text" name="user[firstName]" value="<%=user.firstName%>" required>
                         </div> 
                     </div>
                     <div class="column">
                         <div class="field">
-                            <label for="lastName">last name</label>
+                            <label class="label" for="lastName">last name</label>
                             <input class="input" id="lastName" type="text" name="user[lastName]" value="<%=user.lastName%>" required>
                         </div>
                     </div>
@@ -54,7 +64,7 @@
                 <div class="columns">
                     <div class="column">
                         <div class="field">
-                            <label for="email">email (not public)</label>
+                            <label class="label" for="email">email (not public)</label>
                             <div class="control has-icons-left">
                             <input class="input" id="email" type="email" name="user[email]" value="<%=user.email%>" required>
                             <span class="icon is-small is-left">
@@ -65,7 +75,7 @@
                     </div>
                     <div class="column">
                         <div class="field">
-                            <label for="location">city</label>
+                            <label class="label" for="location">city</label>
                             <div class="control has-icons-left">
                             <input class="input" id="location" type="text" name="user[location]" value="<%=user.location%>" required>
                             <span class="icon is-small is-left">
@@ -76,7 +86,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label for="description">biography</label>
+                    <label class="label" for="description">biography</label>
                     <div class="control has-icons-left">
                     <input class="input" id="description" type="text" name="user[description]" value="<%=user.description%>">
                     <span class="icon is-small is-left">
