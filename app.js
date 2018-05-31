@@ -32,6 +32,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs")
 //Tell our app to serve the public directory 
 app.use(express.static(__dirname + "/public"));
+app.use(sslRedirect());
 app.use(methodOverride("_method"));
 app.use(flash());
 
