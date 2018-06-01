@@ -1,6 +1,137 @@
 <!--User show page -->
 <% include ../partials/header %>
 
+<div class="up">
+  <section class="hero" id="hero">
+    <div class="up-hero">
+        <img src="<%=circle.image%>" alt="background image">  
+    </div>
+  </section>
+
+  <div class="columns">
+    <div class="column sidebar--left is-hidden-mobile">
+      <ul>
+        <li><a href="#hero">Overview</a></li>
+        <li><a href="#tal">Description</a></li>
+        <li><a href="#Reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="column pdp-content is-8">
+      <section class="pdp-info" id="Overview">
+        <div class="columns">
+          <div class="column is-4">
+            <div class="pdp-title">
+              <h1 class="title">
+                <%=circle.title%>
+              </h1>
+              <p class="pdp-product-synopsis">
+                <%=circle.oneliner%>
+              </p>
+            </div>
+          </div>
+          <div class="column is-4 pdp-mentor">
+            <div class="pdp-mentor--center">
+              <a href="/users/<%=circle.educator._id%>">
+                <img class="pdp-mentor--center--picture" src="<%=educator.avatar%>" alt="profile picture"/>
+                <div class="pdp-mentor--center--name">
+                  <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
+                </div>
+              </a>
+            </div> 
+            </div>
+          <div class="column is-4 pdp-actions">
+                <a class="button is-radius-red is-large"><i class="fa fa-plus-circle"></i> <p class="join"> Join</p></a> <br>
+                <a class="button is-radius-red is-large is-outlined button--favorite"><i class="fa fa-heart-o"></i></a>   
+                <p class="price">$ <%=circle.price%> <span class="thin"> /lesson</span></p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="pdp-timeandlocation" id="tal">
+        <div class="columns">
+          <div class="column is-4 pdp-location">
+             <p><i class="fa fa-map-marker fa-2x"></i> Location: <%=educator.location%></p>
+          </div>
+          <div class="column is-4 pdp-time">
+            <p><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>  <%=circle.when%></p>
+          </div>
+          <div class="column is-4 pdp-spots">
+            <p><i class="fa fa-users fa-2x" aria-hidden="true"></i> Spots available: <%=circle.spots%></p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="pdp-what" id="Description">
+        <div class="columns">
+          <div class="column is-6">
+            <h2 class="title">Description</h2>
+            <p><%=circle.description%></p>
+          </div>
+          <div class="column is-6">
+            <ul>
+                <% circle.swbat.forEach(function(element){ %>
+                  <% if(element.length >0) { %>
+              <li><%=element%></li>
+                  <% } %>
+               <% }) %>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="pdp-map">
+        <div class="columns">
+          <div class="column">
+            <img src="../stylesheets/img/rottermap.png" alt="map">
+          </div>
+        </div>
+      </section>
+      
+      <section class="pdp-reviews" id="Reviews">
+        <h2>Reviews (<%=circle.reviews.length%>)</h2>
+        
+        <div class="columns pdp-review">
+          <div class="column is-2">
+            <img class="pdp-review--picture" src="<%=educator.avatar%>" alt="profile picture"/>
+          </div>  
+          <div class="column">
+            <div class="pdp-review--author">
+                <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
+                <hr>
+                <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
+              </div>
+          </div>  
+          <div class="column is-1 pdp-review--recommend">
+             <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
+          </div>  
+        </div>
+        
+        <div class="columns pdp-review">
+          <div class="column is-2">
+            <img class="pdp-review--picture" src="<%=educator.avatar%>" alt="profile picture"/>
+          </div>  
+          <div class="column">
+            <div class="pdp-review--author">
+                <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
+                <hr>
+                <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
+              </div>
+          </div>  
+          <div class="column is-1 pdp-review--recommend">
+             <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
+          </div>  
+        </div>
+      </section>
+    </div>
+    <div class="column sidebar--right is-hidden-mobile">
+      <a class="top is-hidden" href="#hero">
+        <p><i class="fa fa-long-arrow-up" aria-hidden="true"></i></p>
+      </a>
+    </div>
+  </div>
+
+
+
+
 
 <!-- Product detail page -->
 <div class="content">

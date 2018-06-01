@@ -3,18 +3,7 @@
 @import "sass/utilities/functions";
 
 // 2. Set your own initial variables
-// Update blue
-$blue: #72d0eb;
-
 $turquoise: #f8333c;
-
-// 3. Set the derived variables
-// Use the new pink as the primary color
-$primary: $blue;
-// $primary-invert: $pink-invert;
-// Use the existing orange as the danger color
-// Use the new serif family
-// $family-primary: $family-serif;
 
 // 4. Setup your Custom Colors
 $linkedin: #0077b5;
@@ -23,13 +12,16 @@ $twitter: #55acee;
 $twitter-invert: findColorInvert($twitter);
 $github: #333;
 $github-invert: findColorInvert($github);
+$radius-red: #f8333c;
+$radius-invert: findColorInvert($radius-red);
 
 // 5. Add new color variables to the color map.
 @import "sass/utilities/derived-variables";
 $addColors: (
   "twitter":($twitter, $twitter-invert),
   "linkedin": ($linkedin, $linkedin-invert),
-  "github": ($github, $github-invert)
+  "github": ($github, $github-invert),
+  "radius-red": ($radius-red, $radius-invert)
 );
 $colors: map-merge($colors, $addColors);
 
@@ -47,10 +39,12 @@ $colors: map-merge($colors, $addColors);
 @import "radius-sass/components/buttons";
 @import "radius-sass/components/hero";
 @import "radius-sass/components/navbar";
+@import "radius-sass/components/sidebar";
 
 @import "radius-sass/pages/dashboard";
 @import "radius-sass/pages/index";
 @import "radius-sass/pages/landing";
-@import "radius-sass/pages/show";
+
+@import "radius-sass/pages/circles/show";
 @import "radius-sass/pages/user";
 

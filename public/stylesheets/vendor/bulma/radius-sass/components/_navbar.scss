@@ -1,0 +1,127 @@
+a:hover{
+  i{
+  color: $radius-red;
+  } 
+}
+
+.navbar-item {
+  display: flex;
+}
+
+.navbar,
+.navbar-menu,
+.navbar-start,
+.navbar-end {
+  align-items: stretch;
+  display: flex;
+  padding: 0;
+}
+
+.navbar-menu {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.navbar-start {
+  justify-content: flex-start;
+  margin-right: auto;
+}
+.navbar-end {
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-top: -3.5em;
+}
+
+.navbar {
+  box-shadow: 0 1px 10px 0 rgba(100,100,100, .5);
+  z-index: 100;
+  .logo {
+    margin-left: -4.5em;
+  }
+  .is-inverted {
+    margin-top: -1px;
+    box-shadow: 0 1px 1px 1px rgba(100,100,100, .2);  
+    &:hover {
+    margin-top: -2px;
+    box-shadow: 0 1px 10px 0px rgba(100,100,100, .2);  
+    background-color: $white, #fff;
+    }
+    &:active {
+    margin-top: -1px;
+    box-shadow: 0 1px 1px 1px rgba($radius-red, .2);  
+    }
+  }
+}
+.user-button {
+  margin: .6em 1em;
+  i{
+  color: lightgrey;
+  transition: all .2s;
+  }
+}
+
+.mobile-search-bar {
+  padding: .7em .7em 1em .5em;
+  background: rgba(150,150,150, .4);
+  height: 7vh;
+  position: fixed;
+  top: 6vh;
+  transition: top 0.2s ease-in-out;
+}
+
+
+
+@media(min-width:768px) {
+  .navbar {
+    width: 100%;
+    .logo {
+      margin-left: -4em;
+      }
+  }
+  .navbar > .container {
+      min-height: none;
+      height: 7.5vh;
+    }
+  
+  nav{
+    .searchform {
+        &--basic {
+          margin-top: 0.8em;
+          margin-bottom: 1em;
+          margin-left: 10em;
+          width: 85%;
+          transition: all 3s linear;
+        }
+        &--expand{
+          visibility: none ;
+          &--button {
+            margin: .8em 1em !important;
+            z-index: 0;
+          }
+        }
+        
+        .dropdown-content {
+          width: 7em;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+        
+        input[name="ZIP"]{
+            width: 5em;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+    
+    .navbar-item {
+        img {
+            max-height: 100%;
+        }
+    }
+    .link__login {
+      margin: 1em 0;
+    }
+  }
+  .navbar-end {
+    margin-top: .2em;
+  }
+}
