@@ -1,5 +1,5 @@
 //CR prototype app.js
-var sslRedirect = require('heroku-ssl-redirect'),//redirects http to https
+var sslRedirect = require('heroku-ssl-redirect'),//SSL
     express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
@@ -9,9 +9,7 @@ var sslRedirect = require('heroku-ssl-redirect'),//redirects http to https
     passport            = require("passport"),
     LocalStrategy       = require("passport-local"),
     methodOverride      = require("method-override"),
-    
     Circle      = require("./models/circle"),
-
     Review      = require("./models/review"),
     Endorsement = require("./models/endorsement"),
     User        = require("./models/user"),
