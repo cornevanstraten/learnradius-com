@@ -1,0 +1,19 @@
+.sidebar {
+    &--left {
+        padding: 4em 3em;
+        font-size: 1.3em;
+        position: relative;
+        ul{
+            position: fixed;
+        }
+    }
+    &--right{
+        padding: 4em;
+        i{
+            position: fixed;
+            right: 5em;
+            bottom: 1em;
+            font-size: 2em;
+        }
+    }
+}

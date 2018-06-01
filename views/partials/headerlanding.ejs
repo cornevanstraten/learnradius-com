@@ -8,11 +8,29 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>radius - open marketplace for in-person learning</title>
+    <title>radius - learn from skilled people near you</title>
     
-    <!-- Bootstrap core CSS -->
-    <link href="/stylesheets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--favicon-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../favicon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../favicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../favicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../favicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../favicon/mstile-310x310.png" />
 
     <!-- Custom fonts for this template -->
     <link href="/stylesheets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -21,27 +39,118 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
-    <!--<link href="https://fonts.googleapis.com/css?family=Kanit:400,500,600,700,800" rel="stylesheet" type='text/css'>-->
     
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/stylesheets/main.css">
-    <!--^^different than Gert: different filepath and file name-->
-    <!--^^different than Gert: no feather icons-->
+    <link rel="stylesheet" media="screen"  href="/stylesheets/vendor/bulma/mystyles.css">
 
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-        <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
     </head>
-    <body>
+<body class="has-navbar-fixed-top">
         
-        <div class="container">
-            <% if(error && error.length > 0){ %>
-                <div class="alert alert-danger alert-dismissable" role="alert"><%=error%>
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
-            <% } %>            
         
-            <% if(success && success.length > 0){ %>
-                <div class="alert alert-success alert-dismissable" role="alert"><%=success%>
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
-            <% } %>
+    
+<!-- Navigation navbar-->
+<nav class="navbar is-fixed-top">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/" style="font-weight:bold;">
+          <img class="logo" src="../stylesheets/img/logos/radiusfill.svg" />
+        </a>
+      </div>
+        <div class="navbar-end">
+          <div class="searchform is-hidden-mobile is-hidden">
+            <div class="field has-addons has-addons-center">
+              <p class="control">
+                <input class="input" type="text" placeholder="anything" name="subject">
+              </p>
+              <p class="control">
+                <a class="button is-primary is-inverted search-button">
+                   <i class="fa fa-search"> </i> </span>
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="user-button dropdown is-hoverable is-right">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                <i class="fa fa-user-circle fa-2x" style="color: lightgray;"></i>
+              </button>
+            </div>
+            <% if (!currentUser){ %>
+            <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                <div class="dropdown-content">
+                    <a class="dropdown-item" href="/login">
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
+                  <hr class="dropdown-divider">
+                    <a class="dropdown-item" href="/register">
+                        <i class="fa fa-user-plus"></i> Sign up</i>
+                    </a>
+                  <hr class="dropdown-divider">
+                  <a href="#" class="dropdown-item">
+                    This is a link
+                  </a>
+                </div>
+            </div>
+            <% } else { %>
+            <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                <div class="dropdown-content">
+                    <a class="dropdown-item" href="/users/<%=currentUser.id%>/dashboard">
+                        <i class="fa fa-sliders"></i> Dashboard
+                    </a>
+                  <hr class="dropdown-divider">
+                    <a class="dropdown-item" href="/users/<%=currentUser.id%>">
+                          <i class="fa fa-user"></i> Profile
+                    </a>
+                  <hr class="dropdown-divider">
+                    <a class="dropdown-item" href="/logout">
+                        <i class="fa fa-sign-out"></i> Logout</i>
+                    </a>
+                </div>
+            </div>
+             <% } %>
+          </div>
         </div>
-      
+      <!--</div>-->
+    </div>
+    
+    <div class="mobile-search-bar is-hidden-desktop">
+            <div class="searchform--mobile">
+          <div class="field has-addons has-addons-center">
+            <p class="control">
+              <input class="input" type="text" placeholder="anything" name="subject">
+            </p>
+            <p class="control">
+              <span class="select">
+                <select name="">
+                  <option>10 mi</option>
+                  <option>15 mi</option>
+                  <option>20 mi</option>
+                  <option>25 mi</option>
+                </select>
+              </span>
+            </p>
+            <p class="control">
+              <input class="input" type="text" placeholder="30330" name="ZIP">
+            </p>
+            <p class="control">
+              <a class="button is-primary search-button">
+                 <i class="fa fa-search"> </i> </span>
+              </a>
+            </p>
+          </div>
+        </div>
+    </div>
+</nav>
+
+<div class="">
+  <% if(error && error.length > 0){ %>
+    <div id="notification1" class="notification has-text-centered is-danger">
+        <%=error%>
+    </div>
+  <% } %>   
+  <% if(success && success.length > 0){ %>
+    <div id="notification1" class="notification has-text-centered is-success">
+        <%=success%>
+    </div>
+  <% } %> 
+</div>

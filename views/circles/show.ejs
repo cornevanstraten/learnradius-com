@@ -1,203 +1,151 @@
 <% include ../partials/header %>
+<section class="cta">
+  <div class="columns cta-content">
+    <div class="column cta-content--title label"><%=circle.title%> by <%=educator.firstName%></div>
+    <div class="column cta-content--price label">$<%=circle.price%> /lesson</div>
+    <div class="column cta-content--favorite">
+      <a class="button is-radius-red is-large is-outlined button--favorite">
+        <i class="fa fa-heart-o"></i>
+      </a>
+    </div>
+    <div class="column cta-content--join">
+      <a class="button is-radius-red is-large">
+        <i class="fa fa-plus-circle"></i><p class="join"> Join</p>
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- Product detail page -->
-<div class="content">
-    <div class="cover-photo__lg">
-        <img src="<%=circle.image%>" alt="background image">
+<div class="pdp">
+  <section class="hero" id="hero">
+    <div class="pdp-hero">
+        <img src="<%=circle.image%>" alt="background image">  
     </div>
-    <div class="OCR-PD-product-detail-page row">
+  </section>
 
-
-
-<!-- Teacher details -->
-      <div class="OCR-PD-teacher-details col-md-3">
-
-
-              <div class="OCR-PD-teacher-picture">
-              <!-- img -->
-              <a href="/users/<%=circle.educator._id%>">
-                <img class="OCR-PD-picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=educator.avatar%>" alt="profile picture"/>
-              </a>
-                  
-              </div>
-              <div class="OCR-teacher-name">
-              <!-- h2 -->
-              <h2><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
-              </div>
-
-          <div class="OCR-PD-teacher-credentials">
-          <!-- own description -->
-          <p><%=educator.description%> </p>
-          
-          </div>
-          <div class="OCR-UP-thumbs-rating">
-              <!-- negative vs positive review -->
-              <h3>Student Appreciation</h3>
-              <p>
-                <% if(educator.appreciation >= 0){ %>
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> +<%=educator.appreciation%>
-                <% } else { %>
-                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <%=educator.appreciation%>
-                <% } %>
+  <div class="columns">
+    <div class="column sidebar--left is-hidden-mobile">
+      <ul>
+        <li><a href="#hero">Overview</a></li>
+        <li><a href="#tal">Description</a></li>
+        <li><a href="#Reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="column pdp-content is-8">
+      <section class="pdp-info" id="Overview">
+        <div class="columns">
+          <div class="column is-4">
+            <div class="pdp-title">
+              <h1 class="title">
+                <%=circle.title%>
+              </h1>
+              <p class="pdp-product-synopsis">
+                <%=circle.oneliner%>
               </p>
-        </div>
-          <div class="OCR-PD-teacher-type">
-          <!-- Worldview -->
-          <% if (educator.worldview !== "Other..") { %>
-          <p>
-            <i class="fa fa-globe" aria-hidden="true"></i> Worldview: <%=educator.worldview%>
-          </p>
-          <% }  %>
-          <p>
-            <i class="fa fa-map-marker"></i> Location: <%=educator.location%>
-          </p>
+            </div>
           </div>
-          <div class="OCR-PD-teacher-listings">
-            <!-- Other circles heading -->
-            <h3>Circles by <%=educator.firstName%></h3>
-            <!-- Other circles list -->
+          <div class="column is-4 pdp-mentor">
+            <div class="pdp-mentor--center">
+              <a href="/users/<%=circle.educator._id%>">
 
+                <img class="pdp-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=educator.avatar%>" alt="profile picture"/>
+                <div class="pdp-mentor--center--name">
+                  <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
+                </div>
+              </a>
+            </div> 
+            </div>
+          <div class="column is-4 pdp-actions">
+                <a class="button is-radius-red is-large"><i class="fa fa-plus-circle"></i> <p class="join"> Join</p></a> <br>
+                <a class="button is-radius-red is-large is-outlined button--favorite"><i class="fa fa-heart-o"></i></a>   
+                <p class="price">$ <%=circle.price%> <span class="thin"> /lesson</span></p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="pdp-timeandlocation" id="tal">
+        <div class="columns">
+          <div class="column is-4 pdp-location">
+             <p><i class="fa fa-map-marker fa-2x"></i> Location: <%=educator.location%></p>
+          </div>
+          <div class="column is-4 pdp-time">
+            <p><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>  <%=circle.when%></p>
+          </div>
+          <div class="column is-4 pdp-spots">
+            <p><i class="fa fa-users fa-2x" aria-hidden="true"></i> Spots available: <%=circle.spots%></p>
+
+          </div>
+        </div>
+      </section>
+      
+      <section class="pdp-what" id="Description">
+        <div class="columns">
+          <div class="column is-6">
+            <h2 class="title">Description</h2>
+            <p><%=circle.description%></p>
+          </div>
+          <div class="column is-6">
             <ul>
-              <% educator.circles.forEach(function(circle){ %>
-                <li class="">
-                  <a href="/circles/<%=circle.id%>"> <%=circle.title%></a>
-                </li>
-              <% }) %>
+                <% circle.swbat.forEach(function(element){ %>
+                  <% if(element.length >0) { %>
+              <li><%=element%></li>
+                  <% } %>
+               <% }) %>
             </ul>
           </div>
-          <!-- more -->
-          <div class="OCR-teacher-profile-button">
-            <a class="btn btn-xl btn-third btn-block btn-third " href="/users/<%=circle.educator._id%>"><i class="fa fa-user-circle" aria-hidden="true"></i> <%=educator.firstName%>'s Profile </a>
+        </div>
+      </section>
+      <section class="pdp-map">
+        <div class="columns">
+          <div class="column">
+            <img src="../stylesheets/img/rottermap.png" alt="map">
           </div>
-      </div>
-
-
-      <div class="OCR-PD-product-details col-md-9">
-          <div class="OCR-PD-product-head row">
-            <div class="OCR-PD-product-title col-md-9">
-              <h1><%=circle.title%></h1>
-              <br>
-              <p>Spots available: <%=circle.spots%></p>
-            </div>
-            <div class="OCR-UP-thumbs-rating">
-              <!-- negative vs positive review -->
-              <h3>Student Appreciation</h3>
-              <p>
-                <% if(circle.appreciation >= 0){ %>
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> +<%=circle.appreciation%>
-                <% } else { %>
-                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <%=circle.appreciation%>
-                <% } %>
-              </p>
-            </div>
-            
-            <div class="col-md-3 join-button">
-            <!--This is where the magic happens-->
-              <% if(currentUser && circle.educator._id.equals(currentUser._id)){%>
-                  <a class="btn btn-xl btn-block btn-third" href="/circles/<%=circle._id%>/edit"><span class="fa fa-pencil-square-o"> Edit</a>
-                  <a class="btn btn-xl btn-block btn-primary" href="#" data-toggle="modal" data-target="#deleteModal"><span class="fa fa-trash-o" aria-hidden="true"></span> Delete</a>
-
-              <% } else if(visitorIsStudent) { %>
-                  <a class="btn btn-xl btn-block btn-third" href="/circles/<%=circle._id%>/reviews/new"><span class="fa fa-check-circle" aria-hidden="true"></span> Review</a>
-
-
-              <% } else if(circle.spots < 1) { %>
-                  <a class="btn btn-xl btn-block btn-third" name="booked" disabled><span class="fa fa-ban" aria-hidden="true"></span> Booked to capacity</a>
-              
-              <% } else if (currentUser) { %>
-                  <a id="joinButton" class="button is-danger"><span class="icon"><i class="fa fa-plus-circle"></i></span> <span> join <%=circle.title%></span></a>
-                   <div class="form-group">
-                    <form id="favform" action="/users/<%=currentUser._id%>" method="POST">
-                      <input type="hidden" name="circle[id]" value="<%=circle.id%>">
-                      <input type="hidden" name="circle[title]" value="<%=circle.title%>">
-                        <% if(!isFav){ %>
-                        <button class="btn btn-xl btn-block" type="submit">
-                        <i class="fa fa-heart-o" aria-hidden="true" style="color: red"></i> Favorite
-                        <% } else { %>
-                        <button class="btn btn-xl btn-block" type="submit">
-                        <i class="fa fa-heart" aria-hidden="true" style="color: red"></i> Favorited
-                        <% } %>
-                        </button>
-                      </form>
-                  </div>
-              <% } else { %>
-                  <a class="btn btn-xl btn-block btn-third" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login to join</a>
-                  <a class="btn btn-xl btn-block" href="/login"><i class="fa fa-heart-o" style="color: red" aria-hidden="true"></i> Favorite</a>
-                  <br>
-                  <br>
-              <% } %>
-            
-           
-
-             </div>
-          </div>
-          <div class="row OCR-PD-product-synopsisandprice">
-            <div class="col-md-9 OCR-PD-product-synopsis">
-              <!-- p -->
-              <p><%=circle.oneliner%></p>
-            </div>
-            <div class="col-md-3">
-              <!-- price per lesson -->
-              <div class="OCR-PD-price">
-                <p>$ <%=circle.price%> <span class="thin">/lesson</span></p>
+        </div>
+      </section>
+      
+      <section class="pdp-reviews" id="Reviews">
+        <h2>Reviews (<%=circle.reviews.length%>)</h2>
+        
+        <div class="columns pdp-review">
+          <div class="column is-2">
+            <img class="pdp-review--picture" src="<%=educator.avatar%>" alt="profile picture"/>
+          </div>  
+          <div class="column">
+            <div class="pdp-review--author">
+                <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
+                <hr>
+                <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
               </div>
-            </div>
-          </div>
-
-
-                       <% include ../partials/modals.ejs %>
-          
-                    <div class="OCR-PD-product-timeandlocation row">
-            <div class="col-md-6">
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i>  <%=circle.when%></p>
-            </div>
-            <div class="col-md-6">
-                <p><!-- var City/location --> <i class="fa fa-map-marker" aria-hidden="true"></i> <%=circle.location%> </p>
-            </div>
-          </div>
-          <div class="OCR-PD-product-description row">
-            <!-- list -->
-            <div class="col-md-3">
-              <h3>Description</h3>
-              <p><%=circle.description%></p>
-            </div>
-            <div class="col-md-4">
-              <ul>
-                  <% circle.swbat.forEach(function(element){ %>
-                    <% if(element.length >0) { %>
-                <li><%=element%></li>
-                    <% } %>
-                 <% }) %>
-              </ul>
-            </div>
-          </div>
-          
-          <!--Participants-->
-          <% if(currentUser && circle.educator._id.equals(currentUser._id) || visitorIsStudent){%>
-                
-                <div class="well">
-                    <% if(circle.students.length > 0) {  %>
-                    <br>
-                    <h3>Participants (<%=circle.students.length %>)</h3>
-                    <hr>
-                    <% circle.students.forEach(function(student){ %>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>
-                              <a href="/users/<%=student.id%>">
-                                <img class="OP-educator-avatar" src="<%= student.avatar %>"> 
-                                <strong><%=student.firstName%> <%=student.lastName%></strong>
-                              </a>
-                            </p>
-                            <hr>
-                                
-                        </div>
-                    </div>
-                    <% }) } %>
-                </div>
-                
-                <% } %>
-
+          </div>  
+          <div class="column is-1 pdp-review--recommend">
+             <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
+          </div>  
+        </div>
+        
+        <div class="columns pdp-review">
+          <div class="column is-2">
+            <img class="pdp-review--picture" src="<%=educator.avatar%>" alt="profile picture"/>
+          </div>  
+          <div class="column">
+            <div class="pdp-review--author">
+                <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
+                <hr>
+                <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
+              </div>
+          </div>  
+          <div class="column is-1 pdp-review--recommend">
+             <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
+          </div>  
+        </div>
+      </section>
+    </div>
+    <div class="column sidebar--right is-hidden-mobile">
+      <a class="top is-hidden" href="#hero">
+        <p><i class="fa fa-long-arrow-up" aria-hidden="true"></i></p>
+      </a>
+    </div>
+  </div>
 
 
 
@@ -207,9 +155,7 @@
            <div id="map"></div>
           </div>
 
-          <div class="OCR-PD-reviews">
-            <h2>Reviews (<%=circle.reviews.length%>)</h2>
-            
+          
             <% circle.reviews.forEach(function(review){ %>
             
             <div class="OCR-PD-review">
@@ -232,8 +178,8 @@
                 </div>
               </div>
 
-              <div class="OCR-PD-product-reviewer row">
-                  <div class="OCR-PD-picture-reviewer col-md-2">
+              <div class="OCR-PD-product-reviewer columns">
+                  <div class="pdp-review--picture column is-2">
                     <!-- var user profile picture -->
                     <img class="" src="<%=review.author.avatar%>" alt="profile picture student"/>
                   </div>
@@ -245,10 +191,6 @@
             </div>
             
             <% }) %>
-            
-            
-            
-            
           </div>
       </div>
     </div>
