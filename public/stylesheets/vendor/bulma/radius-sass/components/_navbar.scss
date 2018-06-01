@@ -17,10 +17,10 @@ a:hover{
   padding: 0;
 }
 
-.navbar-menu {
-  flex-grow: 1;
-  flex-shrink: 0;
-}
+// .navbar-menu {
+//   flex-grow: 1;
+//   flex-shrink: 0;
+// }
 .navbar-start {
   justify-content: flex-start;
   margin-right: auto;
@@ -34,20 +34,23 @@ a:hover{
 .navbar {
   box-shadow: 0 1px 10px 0 rgba(100,100,100, .5);
   z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100% !important;
   .logo {
     margin-left: -4.5em;
   }
   .is-inverted {
-    margin-top: -1px;
-    box-shadow: 0 1px 1px 1px rgba(100,100,100, .2);  
-    &:hover {
-    margin-top: -2px;
-    box-shadow: 0 1px 10px 0px rgba(100,100,100, .2);  
-    background-color: $white, #fff;
-    }
-    &:active {
-    margin-top: -1px;
-    box-shadow: 0 1px 1px 1px rgba($radius-red, .2);  
+      margin-top: -1px;
+      box-shadow: 0 1px 1px 1px rgba(100,100,100, .2);  
+      &:hover {
+      margin-top: -2px;
+      box-shadow: 0 1px 10px 0px rgba(100,100,100, .2);  
+      background-color: $white, #fff;
+      }
+      &:active {
+      margin-top: -1px;
+      box-shadow: 0 1px 1px 1px rgba($radius-red, .2);  
     }
   }
 }
@@ -62,13 +65,16 @@ a:hover{
 .mobile-search-bar {
   padding: .7em .7em 1em .5em;
   background: rgba(150,150,150, .4);
-  height: 7vh;
+  height: 7.5vh;
   position: fixed;
-  top: 6vh;
+  top: 7.5vh;
   transition: top 0.2s ease-in-out;
 }
 
-
+.userloggedin{
+  border-radius: 50%;
+  width: 90%;
+}
 
 @media(min-width:768px) {
   .navbar {

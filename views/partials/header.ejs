@@ -93,12 +93,13 @@
           </a>
           
           <div class="user-button dropdown is-hoverable is-right">
+            <% if (!currentUser){ %>
             <div class="dropdown-trigger">
               <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
                 <i class="fa fa-user-circle fa-2x"></i>
               </button>
             </div>
-            <% if (!currentUser){ %>
+           
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                 <div class="dropdown-content">
                     <a class="dropdown-item" href="/login">
@@ -111,6 +112,11 @@
                 </div>
             </div>
             <% } else { %>
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                <img class="userloggedin" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_40,h_40/<%=currentUser.avatar%>">
+              </button>
+            </div>
             <div class="dropdown-menu" id="dropdown-menu3" role="menu">
                 <div class="dropdown-content">
                     <a class="dropdown-item" href="/users/<%=currentUser.id%>/dashboard">
