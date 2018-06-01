@@ -1,30 +1,69 @@
+<!--REVIEW-->
 <% include ../partials/header %>
 
-  <div class="OCR-login">
-    <div class="OCR-login-overlay">
-      <div class="row">
-        <div class="col-md-6 OCR-login-logo">
-          <h1>review: <strong>"<%=agreement.circleDetails.title%>"</strong></h1>
-        </div>
-        <div class="col-md-6">
-          <div class="OCR-login-form">
+
+<section class="hero is-light is-fullheight">
+    <div class="hero-body">
+        
+   
+        <div class="container">
+                  <h1 class="title has-text-centered">
+                    <span> review</span>
+                  </h1>
+                  <h2 class="subtitle has-text-centered">
+                    <%=agreement.circleDetails.title%>
+                  </h2>
+                  
+                  
+            <div class="column is-8 is-offset-2">
+            
+
             <form action="/circles/<%=agreement._id%>/reviews" method="POST">
-              <div class="duimpjes">
-                      <input id="recommendyes" type="radio" name="recommend" value="recommend" checked> 
-                      <label for="recommendyes"> +1  <span class="fa fa-thumbs-o-up"></span></label>
-                    <input  id="recommendno" type="radio" name="recommend" value="false"> 
-                    <label for="recommendno"> -1  <span class="fa fa-thumbs-o-down"></span></label>
-               </div>
-              <input type="text" name="review[title]" placeholder="Title" class="OCR-login-form-input"></br>
-              <textarea rows="4" name="review[text]" placeholder="Write your review here.." class="OCR-login-form-input"></textarea></br>
-              <input type="submit" value="Submit" class="btn btn-xl btn-primary btn-block"><br>
+                
+            <div class="box">
+              <div class="field">  
+                <div class="control has-text-centered is-size-5">
+                  <label class="radio plus1 is-size-3">
+                    <input id="plus1" class="is-hidden" type="radio" name="recommend" value="recommend" checked>
+                    +1 <span class="icon">
+                      <i class="fa fa-thumbs-o-up"></i>
+                    </span>
+                  </label>
+                  <label class="radio has-text-grey-light min1">
+                    <input id="min1" class="is-hidden" type="radio" name="recommend" value="false">
+                    -1 <span class="icon">
+                      <i class="fa fa-thumbs-o-down"></i>
+                    </span>
+                  </label>
+                </div>
+              </div>
+                
+                
+
+                    <!--  <input id="recommendyes" type="radio" name="recommend" value="recommend" checked> -->
+                    <!--  <label for="recommendyes"> +1  <span class="fa fa-thumbs-o-up"></span></label>-->
+                    <!--<input  id="recommendno" type="radio" name="recommend" value="false"> -->
+                    <!--<label for="recommendno"> -1  <span class="fa fa-thumbs-o-down"></span></label>-->
+               <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" name="review[title]" placeholder="Title">
+                    </span>
+                    </div>               
+              </div>                 
+            <div class="field">  
+             <div class="control">
+                  <textarea rows="3" name="review[text]" placeholder="Write your review here.." class="textarea"></textarea>
+                </div>    
+            </div>
+               
+              <input type="submit" value="Submit" class="button is-primary is-fullwidth"><br>
             </form>
-            <a href="/circles">back</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
+</section>
+
 
 
 

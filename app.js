@@ -1,5 +1,6 @@
 //CR prototype app.js
-var express     = require("express"),
+var sslRedirect = require('heroku-ssl-redirect'),//redirects http to https
+    express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
     mongoose    = require("mongoose"),
@@ -7,23 +8,18 @@ var express     = require("express"),
     flash       = require("connect-flash"),
     passport            = require("passport"),
     LocalStrategy       = require("passport-local"),
-    methodOverride   = require("method-override"),
+    methodOverride      = require("method-override"),
     
-    // OpenClassroom   = require("./models/openclassroom"),
     Circle      = require("./models/circle"),
 
     Review      = require("./models/review"),
     Endorsement = require("./models/endorsement"),
-    // seedDB      = require("./seeds"),
     User        = require("./models/user"),
     Agreement   = require("./models/agreement")
-
-// seedDB(); //seed the database with dummy data
 
 
 //requiring ROUTES
 var indexRoutes         = require("./routes/index");
-// var openclassroomRoutes = require("./routes/openclassrooms.js");
 var circleRoutes        = require("./routes/circles.js");
 var reviewRoutes        = require("./routes/reviews.js");
 var endorsementRoutes   = require("./routes/endorsements.js");
@@ -36,6 +32,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs")
 //Tell our app to serve the public directory 
 app.use(express.static(__dirname + "/public"));
+app.use(sslRedirect());
 app.use(methodOverride("_method"));
 app.use(flash());
 
@@ -69,9 +66,7 @@ console.log(process.env.CLAPISECRET);
 console.log(process.env.GAPIKEY);
 
 app.use("/", indexRoutes);
-// app.use("/openclassrooms", openclassroomRoutes);
 app.use("/circles", circleRoutes);
-// app.use("/openclassrooms/:id/reviews", reviewRoutes);
 app.use("/circles/:id/reviews", reviewRoutes);
 app.use("/users/:id/endorsements", endorsementRoutes);
 app.use("/agreements", agreementRoutes);

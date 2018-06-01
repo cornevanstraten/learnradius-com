@@ -19,7 +19,7 @@ var UserSchema = mongoose.Schema({
             }
         ],
     //Educator    
-    avatar:     {type: String, default: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"}, //image URL; 
+    avatar:     {type: String, default: "v1527757254/userdefault.png"}, //image URL; 
     coverImage: {type: String, default: "https://wallpaper-house.com/data/out/9/wallpaper2you_302390.jpg"}, 
     firstName:  String,
     lastName:   String, 

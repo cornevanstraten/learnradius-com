@@ -1,4 +1,30 @@
-                        <!-- removeModal -->
+<!-- removeModal -->
+<div id="removeModal<%=agreement._id%>" class="modal">
+<div class="modal-background"></div>
+<div class="modal-card">
+  <header class="modal-card-head">
+    <p class="modal-card-title"> Remove <%=agreement.studentDetails.firstName%>?</p>
+    <button class="delete closeModal" aria-label="close"></button>
+  </header>
+  <section class="modal-card-body">
+    <!-- Content ... -->
+        <p>Are you sure you want to remove <%=agreement.studentDetails.firstName%> from your circle?</p>
+        <p>
+          This will terminate <%=agreement.studentDetails.firstName%>'s enrollment in <%=agreement.circleDetails.title%>. 
+
+        </p>
+
+  </section>
+  <footer class="modal-card-foot">
+        <form action="/agreements/<%=agreement._id%>/leave?_method=PUT" method="POST">
+            <div class="form-group">
+                <button class="button is-primary is-medium" name="stop" type="submit"><span class="icon"><i class="fa fa-minus-circle"></i></span> <span> Remove <%=agreement.studentDetails.firstName%></button>
+            </div>
+    </form>
+  </footer>
+</div>
+</div>
+
                         <div id="removeModal<%=agreement._id%>" class="modal" role="dialog">
                           <div class="modal-dialog">
                         

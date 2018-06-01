@@ -160,7 +160,7 @@ router.get("/:id/edit", middleware.checkCircleOwnership, function(req, res){
             })
 })
 //UPDATE
-router.put("/:id", middleware.checkCircleOwnership, upload.single('image_new'), function(req, res){
+router.put("/:id", middleware.checkCircleOwnership, upload.single('image_upload'), function(req, res){
     var newData = req.body.circle
         newData.swbat = [];
         newData.swbat.push(req.body.swbat1, req.body.swbat2, req.body.swbat3);

@@ -48,7 +48,8 @@
           <div class="column is-4 pdp-mentor">
             <div class="pdp-mentor--center">
               <a href="/users/<%=circle.educator._id%>">
-                <img class="pdp-mentor--center--picture" src="<%=educator.avatar%>" alt="profile picture"/>
+
+                <img class="pdp-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=educator.avatar%>" alt="profile picture"/>
                 <div class="pdp-mentor--center--name">
                   <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
                 </div>
@@ -73,6 +74,7 @@
           </div>
           <div class="column is-4 pdp-spots">
             <p><i class="fa fa-users fa-2x" aria-hidden="true"></i> Spots available: <%=circle.spots%></p>
+
           </div>
         </div>
       </section>

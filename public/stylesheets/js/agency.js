@@ -9,21 +9,49 @@ setTimeout(function(){
 }, 3000);
 
 
-//pagination new circle form
+//PAGINATION
+//from 1 to 2 or vice versa
 $(".newc1").click(function(){
   $(".ncb1").toggleClass("is-hidden");
   $(".ncb2").toggleClass("is-hidden");
 })
-
+//from 2 to 3 or vice versa
 $(".newc2").click(function(){
   $(".ncb2").toggleClass("is-hidden");
   $(".ncb3").toggleClass("is-hidden");
 })
-
+//from 1 to 3 or vice versa
 $(".newc3").click(function(){
   $(".ncb1").toggleClass("is-hidden");
   $(".ncb3").toggleClass("is-hidden");
 })
+
+
+//MODALS
+
+//joinmodal
+$("#joinButton").click(function(){
+  $("#joinModal").addClass("is-active")
+})
+//deletemodal
+$(".deleteButton").click(function(event){
+  $("#deleteModal" + event.target.getAttribute("circle")).addClass("is-active")
+})
+
+//leavemodal
+$(".leaveButton").click(function(event){
+  $("#leaveModal" + event.target.getAttribute("agreement")).addClass("is-active")
+})
+//removemodal
+$(".removeButton").click(function(event){
+  $("#removeModal" + event.target.getAttribute("agreement")).addClass("is-active")
+})
+
+//close modal (universal)
+$(".closeModal, .modal-background").click(function(){
+  $(".modal").removeClass("is-active")
+})
+
 
 
 $('input[name="search"]').focus();
@@ -130,3 +158,19 @@ $(window).on('scroll', function(){
       $('.top').addClass('is-hidden');
   }
 });
+ 
+
+//review javascript 
+$("#min1").click(function(){
+  $(".min1").removeClass("has-text-grey-light")
+  $(".plus1").removeClass("is-size-3")
+  $(".plus1").addClass("has-text-grey-light")
+  $(".min1").addClass("is-size-3")
+})
+
+$("#plus1").click(function(){
+  $(".plus1").removeClass("has-text-grey-light")
+  $(".min1").removeClass("is-size-3")
+  $(".min1").addClass("has-text-grey-light")
+  $(".plus1").addClass("is-size-3")
+})
