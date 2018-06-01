@@ -7196,6 +7196,9 @@ img {
 .is-danger {
   background-color: #f8333c; }
 
+.rotate-out {
+  background-color: white !important; }
+
 .search-button {
   text-align: center; }
   .search-button i {
@@ -7204,12 +7207,24 @@ img {
 .is-radius-red {
   background-color: #f8333c;
   width: 100%;
-  color: white; }
+  color: white;
+  transition: all .5s ease-in; }
   .is-radius-red i {
     margin-right: 1em; }
   .is-radius-red:hover {
-    background-color: white !important;
-    color: #f8333c !important; }
+    background-color: #d70711 !important;
+    margin-top: -2px;
+    margin-bottom: 7px;
+    box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.4); }
+    .is-radius-red:hover i {
+      color: white !important; }
+  .is-radius-red:active {
+    background-color: #fb7d83 !important;
+    margin-top: -1px;
+    margin-bottom: 6px;
+    box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.4); }
+    .is-radius-red:active i {
+      color: white !important; }
 
 i.fa-heart, i.fa-heart-o {
   margin-left: 1em; }
@@ -7347,6 +7362,20 @@ a:hover i {
 
   .navbar-end {
     margin-top: .2em; } }
+.sidebar--left {
+  padding: 4em 3em;
+  font-size: 1.3em;
+  position: relative; }
+  .sidebar--left ul {
+    position: fixed; }
+.sidebar--right {
+  padding: 4em; }
+  .sidebar--right i {
+    position: fixed;
+    right: 5em;
+    bottom: 1em;
+    font-size: 2em; }
+
 .cta {
   width: 100%;
   position: relative;
@@ -7374,46 +7403,106 @@ a:hover i {
 
 .pdp-hero {
   padding: 0;
-  position: relative; }
+  position: relative;
+  height: 60vh; }
   .pdp-hero img {
     object-fit: cover;
     height: 60vh;
     width: 100%; }
 
-.pdp-mentor {
+.pdp-content {
+  background: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: -5px 2px 10px 0 rgba(150, 150, 150, 0.1), 5px 2px 10px 0 rgba(150, 150, 150, 0.1);
+  margin: -2em;
+  z-index: 2 !important; }
+
+.pdp-product-synopsis {
+  margin-top: -1em; }
+
+.pdp-mentor--center {
+  z-index: 1;
+  margin-top: -10em;
   position: absolute;
-  top: 47vh;
-  left: 40%; }
-  .pdp-mentor img {
+  left: 50%; }
+  .pdp-mentor--center--name {
+    background-color: white;
+    position: relative;
+    top: -3.5em;
+    left: -50%;
+    z-index: 99;
+    padding: .5em 2em;
+    box-shadow: 0 5px 10px -5px rgba(150, 150, 150, 0.7); }
+    .pdp-mentor--center--name h2.title {
+      text-align: center;
+      background: white;
+      border-radius: 3px;
+      transition: all .7s ease;
+      font-size: 1.5em;
+      color: #0a0a0a;
+      z-index: 5; }
+  .pdp-mentor--center img {
+    display: block;
+    margin: 0 auto;
     object-fit: cover;
-    height: 20em;
-    width: 20em;
+    width: 15em;
+    height: 15em;
     border: 10px solid white;
     border-radius: 50%;
-    box-shadow: 0 1px 50px 50px rgba(255, 255, 255, 0.4); }
+    box-shadow: 0 1px 40px 40px rgba(255, 255, 255, 0.4);
+    z-index: 1;
+    position: relative;
+    left: -50%;
+    transition: all .3s ease-in; }
+    .pdp-mentor--center img:hover {
+      box-shadow: 0 0px 2px 2px #f8333c; }
 
 .pdp-info {
-  padding: 5em;
+  padding: 2.3em 3em 3em 3em;
   background-color: whitesmoke; }
-  .pdp-info .pdp-title {
-    margin-top: -4.3em; }
   .pdp-info .pdp-actions {
-    margin-top: -8em;
-    padding: 2em; }
+    margin-top: -4.5em; }
+    .pdp-info .pdp-actions div {
+      margin-bottom: 2em; }
   .pdp-info .price {
     text-align: center;
     font-size: 1.7em;
     margin: 0 auto; }
-  .pdp-info .pdp-info-name {
-    margin-top: 3em;
-    margin-bottom: -6em; }
 
 .pdp-timeandlocation {
-  height: 30vh;
   background: white;
   padding: 5em;
   text-align: center; }
   .pdp-timeandlocation i {
     font-size: 2em; }
+
+.pdp-what {
+  background: whitesmoke;
+  padding: 2em 5em 3em 5em; }
+
+.pdp-reviews .pdp-review {
+  padding: 3em; }
+  .pdp-reviews .pdp-review--picture {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    margin-left: -6.2em;
+    border: 5px solid white;
+    box-shadow: -10px 1px 10px 0px rgba(100, 100, 100, 0.1);
+    transition: all .5s ease; }
+    .pdp-reviews .pdp-review--picture:hover {
+      box-shadow: -5px 0px 2px -2px #f8333c; }
+  .pdp-reviews .pdp-review--author hr {
+    background-color: black; }
+  .pdp-reviews .pdp-review--recommend {
+    margin-top: .3em;
+    padding: 0 0 1em .2em;
+    border-radius: 3px;
+    background: #ABFF4F;
+    font-size: 4em;
+    height: 1.5em;
+    color: #fff;
+    border-radius: 10%; }
 
 /*# sourceMappingURL=mystyles.css.map */

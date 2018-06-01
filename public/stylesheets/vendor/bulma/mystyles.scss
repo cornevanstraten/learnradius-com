@@ -39,11 +39,11 @@ $colors: map-merge($colors, $addColors);
 @import "radius-sass/components/buttons";
 @import "radius-sass/components/hero";
 @import "radius-sass/components/navbar";
+@import "radius-sass/components/sidebar";
 
 @import "radius-sass/pages/dashboard";
 @import "radius-sass/pages/index";
 @import "radius-sass/pages/landing";
-
 
 @import "radius-sass/pages/circles/show";
 @import "radius-sass/pages/user";
