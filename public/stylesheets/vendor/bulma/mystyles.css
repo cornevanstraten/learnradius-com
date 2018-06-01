@@ -7199,6 +7199,10 @@ img {
 .rotate-out {
   background-color: white !important; }
 
+#map {
+  height: 300px;
+  width: 100%; }
+
 .search-button {
   text-align: center; }
   .search-button i {
