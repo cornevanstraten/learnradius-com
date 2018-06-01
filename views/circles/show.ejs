@@ -1,15 +1,16 @@
+<div>
 <% include ../partials/header %>
-<section class="cta">
+<section class="cta is-hidden-mobile">
   <div class="columns cta-content">
-    <div class="column cta-content--title label"><%=circle.title%> by <%=educator.firstName%></div>
-    <div class="column cta-content--price label">$<%=circle.price%> /lesson</div>
-    <div class="column cta-content--favorite">
-      <a class="button is-radius-red is-large is-outlined button--favorite">
+    <div class="column is-half-mobile cta-content--title label"><%=circle.title%> by <%=educator.firstName%></div>
+    <div class="column is-half-mobile cta-content--price label">$<%=circle.price%> /lesson</div>
+    <div class="column is-half-mobile cta-content--favorite">
+      <a class="button button__mobile is-radius-red is-large is-outlined button--favorite">
         <i class="fa fa-heart-o"></i>
       </a>
     </div>
-    <div class="column cta-content--join">
-      <a class="button is-radius-red is-large">
+    <div class="column is-half-mobile cta-content--join">
+      <a class="button button__mobile is-radius-red is-large">
         <i class="fa fa-plus-circle"></i><p class="join"> Join</p>
       </a>
     </div>
@@ -18,7 +19,7 @@
 
   <!-- Product detail page -->
 <div class="pdp">
-  <section class="hero" id="hero">
+  <section class="hero" id="top">
     <div class="pdp-hero">
         <img src="<%=circle.image%>" alt="background image">  
     </div>
@@ -86,33 +87,40 @@
             <p><%=circle.description%></p>
           </div>
           <div class="column is-6">
-            <ul>
-                <% circle.swbat.forEach(function(element){ %>
-                  <% if(element.length >0) { %>
-              <li><%=element%></li>
-                  <% } %>
-               <% }) %>
-            </ul>
+            <div class="content">
+              <ul>
+                  <% circle.swbat.forEach(function(element){ %>
+                    <% if(element.length >0) { %>
+                      
+                <li><%=element%></li>
+                    <% } %>
+                 <% }) %>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
       <section class="pdp-map">
-          <div class="OCR-PD-product-location">
+        <div class="columns">
+          <div class="column">
+             <div class="OCR-PD-product-location">
           <!-- Google map -->
            <div id="map"></div>
+          </div>
           </div>
       </section>
       
       <section class="pdp-reviews" id="Reviews">
         <h2>Reviews (<%=circle.reviews.length%>)</h2>
         
+        <% circle.reviews.forEach(function(review){ %>
         <div class="columns pdp-review">
           <div class="column is-2">
-            <img class="pdp-review--picture" src="<%=educator.avatar%>" alt="profile picture"/>
+            <img class="pdp-review--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=review.author.avatar%>" alt="profile picture"/>
           </div>  
           <div class="column">
             <div class="pdp-review--author">
-                <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
+                <h2 class="title"><%=review.author.firstName%>: <%=review.title%> <!-- Var 1stname + var lastname --></h2>
                 <hr>
                 <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
               </div>
@@ -121,72 +129,24 @@
              <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
           </div>  
         </div>
-        
-        <div class="columns pdp-review">
-          <div class="column is-2">
-            <img class="pdp-review--picture" src="<%=educator.avatar%>" alt="profile picture"/>
-          </div>  
-          <div class="column">
-            <div class="pdp-review--author">
-                <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
-                <hr>
-                <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
-              </div>
-          </div>  
-          <div class="column is-1 pdp-review--recommend">
-             <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
-          </div>  
-        </div>
+        <% }) %> 
+
       </section>
+        <div class="back-to-top">
+          <a class="top is-hidden is-hidden-tablet" href="#top">
+            <p><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></p>
+          </a>
+        </div>
     </div>
     <div class="column sidebar--right is-hidden-mobile">
-      <a class="top is-hidden" href="#hero">
-        <p><i class="fa fa-long-arrow-up" aria-hidden="true"></i></p>
+      <a class="top is-hidden" href="#top">
+        <p><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></p>
       </a>
     </div>
   </div>
 
-
           
-            <% circle.reviews.forEach(function(review){ %>
             
-            <div class="OCR-PD-review">
-              <div class="row">
-                <div class="col-md-2">
-
-                </div>
-                <div class="OCR-PD-picture-review-title col-md-7">
-                  <!-- review-title -->
-                  <h3><%=review.author.firstName%>: <%=review.title%></h3>
-                </div>
-                <div class="OCR-product-validation col-md-3">
-                    <!-- negative vs positive review -->
-                    <% if(!review.recommend){ %>
-                    <p><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> -1</p>
-                    <% } else { %>
-                      <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> +1</p>
-                    <% } %>
-                    <p></p>
-                </div>
-              </div>
-
-              <div class="OCR-PD-product-reviewer columns">
-                  <div class="pdp-review--picture column is-2">
-                    <!-- var user profile picture -->
-                    <img class="" src="<%=review.author.avatar%>" alt="profile picture student"/>
-                  </div>
-                  <div class="OCR-PD-picture-review-text col-md-10">
-                    <!-- review-text -->
-                    <p><%=review.text%></p>
-                  </div>
-              </div>
-            </div>
-            
-            <% }) %>
-          </div>
-      </div>
-    </div>
-</div>
 
 
 
@@ -220,4 +180,5 @@
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRLolo1bWIm89Vv4iROVwv1AYxz3GEXjY&callback=initMap"></script>
 
-<% include ../partials/footer %>
+<% include ../partials/footer %>  
+</div>

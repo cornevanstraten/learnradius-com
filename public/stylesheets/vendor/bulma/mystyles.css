@@ -7200,8 +7200,9 @@ img {
   background-color: white !important; }
 
 #map {
-  height: 300px;
-  width: 100%; }
+
+  width: 100%;
+  height: 30em; }
 
 .search-button {
   text-align: center; }
@@ -7212,7 +7213,7 @@ img {
   background-color: #f8333c;
   width: 100%;
   color: white;
-  transition: all .5s ease-in; }
+  transition: all .8s; }
   .is-radius-red i {
     margin-right: 1em; }
   .is-radius-red:hover {
@@ -7252,7 +7253,7 @@ i.fa-heart, i.fa-heart-o {
   background-size: cover;
   background-position: center center;
   height: 80vh;
-  padding: 9em 2em; }
+  padding: 9vh 2vh; }
   .landing-hero h1, .landing-hero h2, .landing-hero p {
     color: #fff; }
   .landing-hero .r-search .select select {
@@ -7287,10 +7288,6 @@ a:hover i {
   display: flex;
   padding: 0; }
 
-.navbar-menu {
-  flex-grow: 1;
-  flex-shrink: 0; }
-
 .navbar-start {
   justify-content: flex-start;
   margin-right: auto; }
@@ -7302,7 +7299,10 @@ a:hover i {
 
 .navbar {
   box-shadow: 0 1px 10px 0 rgba(100, 100, 100, 0.5);
-  z-index: 100; }
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100% !important; }
   .navbar .logo {
     margin-left: -4.5em; }
   .navbar .is-inverted {
@@ -7325,10 +7325,14 @@ a:hover i {
 .mobile-search-bar {
   padding: .7em .7em 1em .5em;
   background: rgba(150, 150, 150, 0.4);
-  height: 7vh;
+  height: 7.5vh;
   position: fixed;
-  top: 6vh;
+  top: 7.5vh;
   transition: top 0.2s ease-in-out; }
+
+.userloggedin {
+  border-radius: 50%;
+  width: 90%; }
 
 @media (min-width: 768px) {
   .navbar {
@@ -7371,7 +7375,7 @@ a:hover i {
   font-size: 1.3em;
   position: relative; }
   .sidebar--left ul {
-    position: fixed; }
+    position: relative; }
 .sidebar--right {
   padding: 4em; }
   .sidebar--right i {
@@ -7380,38 +7384,13 @@ a:hover i {
     bottom: 1em;
     font-size: 2em; }
 
-.cta {
-  width: 100%;
-  position: relative;
-  text-align: center; }
-  .cta .cta-content {
-    position: fixed;
-    top: 6vh;
-    left: 15%;
-    z-index: 10;
-    margin: 0 auto;
-    padding: .3em;
-    transform: rotateX(90deg);
-    transition: all .7s ease;
-    width: 70%;
-    height: 7vh;
-    background: whitesmoke;
-    box-shadow: 0 20px 20px 20px #646464;
-    border-radius: 0 0 3px 3px; }
-    .cta .cta-content .button {
-      margin-top: -.5em; }
-  .cta .cta-visible {
-    top: 7.5vh;
-    transform: rotateX(0deg);
-    box-shadow: 0 1px 10px 0px #646464; }
-
 .pdp-hero {
   padding: 0;
   position: relative;
-  height: 60vh; }
+  height: 50vh; }
   .pdp-hero img {
     object-fit: cover;
-    height: 60vh;
+    height: 40vh;
     width: 100%; }
 
 .pdp-content {
@@ -7419,54 +7398,55 @@ a:hover i {
   border-radius: 5px;
   border: 1px solid white;
   box-shadow: -5px 2px 10px 0 rgba(150, 150, 150, 0.1), 5px 2px 10px 0 rgba(150, 150, 150, 0.1);
-  margin: -2em;
+  margin-top: -2em;
   z-index: 2 !important; }
-
-.pdp-product-synopsis {
-  margin-top: -1em; }
-
-.pdp-mentor--center {
-  z-index: 1;
-  margin-top: -10em;
-  position: absolute;
-  left: 50%; }
-  .pdp-mentor--center--name {
-    background-color: white;
-    position: relative;
-    top: -3.5em;
-    left: -50%;
-    z-index: 99;
-    padding: .5em 2em;
-    box-shadow: 0 5px 10px -5px rgba(150, 150, 150, 0.7); }
-    .pdp-mentor--center--name h2.title {
-      text-align: center;
-      background: white;
-      border-radius: 3px;
-      transition: all .7s ease;
-      font-size: 1.5em;
-      color: #0a0a0a;
-      z-index: 5; }
-  .pdp-mentor--center img {
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
-    width: 15em;
-    height: 15em;
-    border: 10px solid white;
-    border-radius: 50%;
-    box-shadow: 0 1px 40px 40px rgba(255, 255, 255, 0.4);
-    z-index: 1;
-    position: relative;
-    left: -50%;
-    transition: all .3s ease-in; }
-    .pdp-mentor--center img:hover {
-      box-shadow: 0 0px 2px 2px #f8333c; }
 
 .pdp-info {
   padding: 2.3em 3em 3em 3em;
   background-color: whitesmoke; }
+  .pdp-info .pdp-title {
+    padding: 2em 0 3em 0; }
+  .pdp-info .pdp-product-synopsis {
+    margin-top: 0em; }
+  .pdp-info .pdp-mentor {
+    margin-top: -5em;
+    margin-bottom: 1em; }
+    .pdp-info .pdp-mentor--center {
+      z-index: 1;
+      position: absolute;
+      left: 50%;
+      top: 27.5vh; }
+      .pdp-info .pdp-mentor--center--name {
+        background-color: white;
+        position: relative;
+        top: -1.5em;
+        left: -50%;
+        z-index: 99;
+        padding: .5em 2em;
+        box-shadow: 0 5px 10px -5px rgba(150, 150, 150, 0.7); }
+        .pdp-info .pdp-mentor--center--name h2.title {
+          text-align: center;
+          background: white;
+          border-radius: 3px;
+          transition: all .7s ease;
+          font-size: 1.5em;
+          color: #0a0a0a;
+          z-index: 5; }
+    .pdp-info .pdp-mentor img {
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      border: 10px solid white;
+      border-radius: 50%;
+      box-shadow: 0 1px 30px 30px rgba(100, 100, 100, 0.4);
+      z-index: 1;
+      position: relative;
+      left: -50%;
+      transition: all .3s ease-in; }
+      .pdp-info .pdp-mentor img:hover {
+        box-shadow: 0 0px 2px 2px #f8333c; }
   .pdp-info .pdp-actions {
-    margin-top: -4.5em; }
+    margin-top: 0; }
     .pdp-info .pdp-actions div {
       margin-bottom: 2em; }
   .pdp-info .price {
@@ -7488,10 +7468,11 @@ a:hover i {
 .pdp-reviews .pdp-review {
   padding: 3em; }
   .pdp-reviews .pdp-review--picture {
+    position: relative;
+    margin: 0 auto;
     height: 10em;
     width: 10em;
     border-radius: 50%;
-    margin-left: -6.2em;
     border: 5px solid white;
     box-shadow: -10px 1px 10px 0px rgba(100, 100, 100, 0.1);
     transition: all .5s ease; }
@@ -7503,10 +7484,117 @@ a:hover i {
     margin-top: .3em;
     padding: 0 0 1em .2em;
     border-radius: 3px;
-    background: #ABFF4F;
     font-size: 4em;
     height: 1.5em;
-    color: #fff;
+    width: 1.5em;
+    color: #000;
     border-radius: 10%; }
+    .pdp-reviews .pdp-review--recommend i {
+      margin-left: .1em;
+      margin-top: .25em; }
+
+.back-to-top {
+  padding-bottom: 3em; }
+  .back-to-top .top {
+    margin: 0 auto;
+    text-align: center; }
+
+@media (min-width: 768px) {
+  .cta {
+    width: 100%;
+    position: relative;
+    text-align: center; }
+    .cta .cta-content {
+      position: fixed;
+      top: 6vh;
+      left: 15%;
+      z-index: 10;
+      margin: 0 auto;
+      padding: .3em;
+      transform: rotateX(90deg);
+      transition: all .7s ease;
+      width: 70%;
+      height: 7vh;
+      background: whitesmoke;
+      box-shadow: 0 20px 20px 20px #646464;
+      border-radius: 0 0 3px 3px; }
+      .cta .cta-content .button {
+        margin-top: -.5em; }
+    .cta .cta-visible {
+      top: 7.5vh;
+      transform: rotateX(0deg);
+      box-shadow: 0 1px 10px 0px #646464; }
+
+  .pdp-hero {
+    padding: 0;
+    position: relative;
+    height: 75vh; }
+    .pdp-hero img {
+      object-fit: cover;
+      height: 75vh;
+      width: 100%; }
+
+  .pdp-content {
+    background: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    box-shadow: -5px 2px 10px 0 rgba(150, 150, 150, 0.1), 5px 2px 10px 0 rgba(150, 150, 150, 0.1);
+    margin-top: -6em;
+    z-index: 2 !important; }
+
+  .pdp-info {
+    padding: 2.3em 3em 3em 3em;
+    background-color: whitesmoke; }
+    .pdp-info .pdp-product-synopsis {
+      margin-top: -1em; }
+    .pdp-info .pdp-mentor--center {
+      z-index: 1;
+      position: absolute;
+      left: 50%;
+      top: 52vh; }
+      .pdp-info .pdp-mentor--center--name {
+        background-color: white;
+        position: relative;
+        top: -1.5em;
+        left: -50%;
+        z-index: 99;
+        padding: .5em 2em;
+        box-shadow: 0 5px 10px -5px rgba(150, 150, 150, 0.7); }
+        .pdp-info .pdp-mentor--center--name h2.title {
+          text-align: center;
+          background: white;
+          border-radius: 3px;
+          transition: all .7s ease;
+          font-size: 1.5em;
+          color: #0a0a0a;
+          z-index: 5; }
+    .pdp-info .pdp-mentor img {
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      border: 10px solid white;
+      border-radius: 50%;
+      box-shadow: 0 1px 30px 30px rgba(100, 100, 100, 0.4);
+      z-index: 1;
+      position: relative;
+      left: -50%;
+      transition: all .3s ease-in; }
+      .pdp-info .pdp-mentor img:hover {
+        box-shadow: 0 0px 2px 2px #f8333c; }
+    .pdp-info .pdp-actions {
+      margin-top: -4.5em; }
+      .pdp-info .pdp-actions div {
+        margin-bottom: 2em; }
+    .pdp-info .price {
+      text-align: center;
+      font-size: 1.7em;
+      margin: 0 auto; }
+
+  .pdp-reviews .pdp-review {
+    padding: 3em; }
+    .pdp-reviews .pdp-review--picture {
+      height: 10em;
+      width: 10em;
+      margin-left: -6.2em; } }
 
 /*# sourceMappingURL=mystyles.css.map */
