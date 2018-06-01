@@ -53,8 +53,9 @@ $(".closeModal, .modal-background").click(function(){
 })
 
 
-
+//auto-focus for searchbar
 $('input[name="search"]').focus();
+
 
 $(window).scroll(function() {
 

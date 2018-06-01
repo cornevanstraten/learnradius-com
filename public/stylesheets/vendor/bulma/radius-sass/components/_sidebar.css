@@ -3,7 +3,7 @@
   font-size: 1.3em;
   position: relative; }
   .sidebar--left ul {
-    position: fixed; }
+    position: relative; }
 .sidebar--right {
   padding: 4em; }
   .sidebar--right i {

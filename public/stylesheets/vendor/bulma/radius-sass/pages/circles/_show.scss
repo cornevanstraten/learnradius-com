@@ -1,86 +1,68 @@
 // this is the pdp
-.cta {
-    width: 100%;
-    position: relative;
-    text-align: center;
-    .cta-content {
-        position: fixed;
-        top: 6vh;
-        left: 15%;
-        z-index: 10;
-        margin: 0 auto;
-        padding: .3em;
-        transform: rotateX(90deg);
-        transition: all .7s ease;
-        width: 70%;
-        height: 7vh;
-        background: whitesmoke;
-        box-shadow: 0 20px 20px 20px rgba(100,100,100, 1);
-        border-radius: 0 0 3px 3px;
-        .button{
-            margin-top: -.5em;
-        }
-    }
-    .cta-visible{
-        top: 7.5vh;
-        transform: rotateX(0deg);
-        box-shadow: 0 1px 10px 0px rgba(100,100,100, 1); 
-    }
-}
+
 
 .pdp-hero {
     padding: 0;
     position: relative;
-    height: 60vh;
+    height: 50vh;
     img {
         object-fit: cover; 
-        height: 60vh;
+        height: 40vh;
         width: 100%;
     }
 }
+
 .pdp-content {
     background: $white;
     border-radius: 5px;
     border: 1px solid white;
     box-shadow: -5px 2px 10px 0 rgba(150,150,150, .1), 5px 2px 10px 0 rgba(150,150,150, .1);
-    margin: -2em;
+    margin-top: -2em;
     z-index: 2 !important;
 }
-    .pdp-product-synopsis{
-        margin-top: -1em;
+.pdp-info {
+    padding: 2.3em 3em 3em 3em;
+    background-color: whitesmoke;
+    .pdp-title {
+       padding: 2em 0 3em 0; 
     }
-    .pdp-mentor--center {
-        z-index: 1;
-        margin-top: -10em;
-        position: absolute;
-        left: 50%;
-        &--name {
-            background-color: $white;
-            position: relative;
-            top: -3.5em;
-            left: -50%;
-            z-index: 99;
-            padding: .5em 2em;
-            box-shadow: 0 5px 10px -5px rgba(150,150,150, .7);
-            h2.title {
-                text-align: center;
-                background: $white;
-                border-radius: 3px;
-                transition: all .7s ease;
-                font-size: 1.5em;
-                color: $black;
-                z-index: 5;
+    .pdp-product-synopsis{
+        margin-top: 0em;
+    }
+    .pdp-mentor {
+        margin-top: -5em;
+        margin-bottom: 1em;
+        &--center {
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 27.5vh;
+            &--name {
+                background-color: $white;
+                position: relative;
+                top: -1.5em;
+                left: -50%;
+                z-index: 99;
+                padding: .5em 2em;
+                box-shadow: 0 5px 10px -5px rgba(150,150,150, .7);
+                h2.title {
+                    text-align: center;
+                    background: $white;
+                    border-radius: 3px;
+                    transition: all .7s ease;
+                    font-size: 1.5em;
+                    color: $black;
+                    z-index: 5;
+                }
             }
         }
         img {
             display: block;
             margin: 0 auto;
             object-fit: cover;
-            width: 15em;
-            height: 15em;
             border: 10px solid white;
             border-radius: 50%;
-            box-shadow: 0 1px 40px 40px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 1px 30px 30px rgba(100, 100, 100, 0.4);
             z-index: 1;
             position: relative;
             left: -50%;
@@ -91,15 +73,8 @@
         }
         
     }
-    
-.pdp-info {
-    padding: 2.3em 3em 3em 3em;
-    background-color: whitesmoke;
-    .pdp-title {
-
-    }
     .pdp-actions {
-        margin-top: -4.5em;
+        margin-top: 0;
         div {
             margin-bottom: 2em;
         }
@@ -111,6 +86,7 @@
     }
  
 }
+
 .pdp-timeandlocation {
     background: $white;
     padding: 5em;
@@ -129,10 +105,11 @@
     .pdp-review {
         padding: 3em;
         &--picture {
+            position: relative;
+            margin: 0 auto;
             height: 10em;
             width: 10em;
             border-radius: 50%;
-            margin-left: -6.2em;
             border: 5px solid white;
             box-shadow: -10px 1px 10px 0px rgba(100,100,100, .1);
             transition: all .5s ease;
@@ -149,11 +126,151 @@
             margin-top: .3em;
             padding: 0 0 1em .2em;
             border-radius: 3px;
-            background: #ABFF4F;
             font-size: 4em;
             height: 1.5em;
-            color: #fff;
+            width: 1.5em;
+            color: #000;
             border-radius: 10%;
+            i{
+                margin-left: .1em;
+                margin-top: .25em;
+            }
         }
     }
+}
+
+.back-to-top{
+    
+    padding-bottom: 3em;
+    .top{
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+@media(min-width:768px) {
+     .cta {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        .cta-content {
+            position: fixed;
+            top: 6vh;
+            left: 15%;
+            z-index: 10;
+            margin: 0 auto;
+            padding: .3em;
+            transform: rotateX(90deg);
+            transition: all .7s ease;
+            width: 70%;
+            height: 7vh;
+            background: whitesmoke;
+            box-shadow: 0 20px 20px 20px rgba(100,100,100, 1);
+            border-radius: 0 0 3px 3px;
+            .button{
+                margin-top: -.5em;
+            }
+        }
+        .cta-visible{
+            top: 7.5vh;
+            transform: rotateX(0deg);
+            box-shadow: 0 1px 10px 0px rgba(100,100,100, 1); 
+        }
+    }
+    
+    .pdp-hero {
+        padding: 0;
+        position: relative;
+        height: 75vh;
+        img {
+            object-fit: cover; 
+            height: 75vh;
+            width: 100%;
+        }
+    }
+    
+    .pdp-content {
+        background: $white;
+        border-radius: 5px;
+        border: 1px solid white;
+        box-shadow: -5px 2px 10px 0 rgba(150,150,150, .1), 5px 2px 10px 0 rgba(150,150,150, .1);
+        margin-top: -6em;
+        z-index: 2 !important;
+    }
+        
+    .pdp-info {
+        padding: 2.3em 3em 3em 3em;
+        background-color: whitesmoke;
+        .pdp-title {
+    
+        }
+        .pdp-product-synopsis{
+            margin-top: -1em;
+        }
+        .pdp-mentor {
+        &--center {
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 52vh;
+            &--name {
+                background-color: $white;
+                position: relative;
+                top: -1.5em;
+                left: -50%;
+                z-index: 99;
+                padding: .5em 2em;
+                box-shadow: 0 5px 10px -5px rgba(150,150,150, .7);
+                h2.title {
+                    text-align: center;
+                    background: $white;
+                    border-radius: 3px;
+                    transition: all .7s ease;
+                    font-size: 1.5em;
+                    color: $black;
+                    z-index: 5;
+                }
+            }
+        }
+            img {
+                display: block;
+                margin: 0 auto;
+                object-fit: cover;
+                border: 10px solid white;
+                border-radius: 50%;
+                box-shadow: 0 1px 30px 30px rgba(100, 100, 100, 0.4);
+                z-index: 1;
+                position: relative;
+                left: -50%;
+                transition: all .3s ease-in;
+                &:hover{
+                    box-shadow: 0 0px 2px 2px rgba($primary, 1);
+                }
+            }
+            
+        }
+        .pdp-actions {
+            margin-top: -4.5em;
+            div {
+                margin-bottom: 2em;
+            }
+        }
+        .price {
+            text-align: center;
+            font-size: 1.7em;
+            margin: 0 auto;
+        }
+     
+    }
+    
+    .pdp-reviews {
+        .pdp-review {
+            padding: 3em;
+            &--picture {
+                height: 10em;
+                width: 10em;
+                margin-left: -6.2em;
+            }
+        }
+    }   
 }

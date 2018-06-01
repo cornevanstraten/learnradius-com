@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$white".
-        on line 42 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/circles/_show.scss
+        on line 16 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/circles/_show.scss
 
-37:         height: 60vh;
-38:         width: 100%;
-39:     }
-40: }
-41: .pdp-content {
-42:     background: $white;
-43:     border-radius: 5px;
-44:     border: 1px solid white;
-45:     box-shadow: -5px 2px 10px 0 rgba(150,150,150, .1), 5px 2px 10px 0 rgba(150,150,150, .1);
-46:     margin: -2em;
-47:     z-index: 2 !important;
+11:         width: 100%;
+12:     }
+13: }
+14: 
+15: .pdp-content {
+16:     background: $white;
+17:     border-radius: 5px;
+18:     border: 1px solid white;
+19:     box-shadow: -5px 2px 10px 0 rgba(150,150,150, .1), 5px 2px 10px 0 rgba(150,150,150, .1);
+20:     margin-top: -2em;
+21:     z-index: 2 !important;
 
 Backtrace:
-/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/circles/_show.scss:42
+/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/circles/_show.scss:16
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$white\".\A         on line 42 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/circles/_show.scss\A \A 37:         height: 60vh;\A 38:         width: 100%;\A 39:     }\A 40: }\A 41: .pdp-content {\A 42:     background: $white;\A 43:     border-radius: 5px;\A 44:     border: 1px solid white;\A 45:     box-shadow: -5px 2px 10px 0 rgba(150,150,150, .1), 5px 2px 10px 0 rgba(150,150,150, .1);\A 46:     margin: -2em;\A 47:     z-index: 2 !important;"; }
+  content: "Error: Undefined variable: \"$white\".\A         on line 16 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/circles/_show.scss\A \A 11:         width: 100%;\A 12:     }\A 13: }\A 14: \A 15: .pdp-content {\A 16:     background: $white;\A 17:     border-radius: 5px;\A 18:     border: 1px solid white;\A 19:     box-shadow: -5px 2px 10px 0 rgba(150,150,150, .1), 5px 2px 10px 0 rgba(150,150,150, .1);\A 20:     margin-top: -2em;\A 21:     z-index: 2 !important;"; }
