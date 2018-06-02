@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$radius-red".
-        on line 2 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss
+        on line 2 of /home/ubuntu/workspace/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss
 
 1: .button:hover i, a:hover i{
 2:     color: $radius-red;
@@ -11,7 +11,7 @@ Error: Undefined variable: "$radius-red".
 7: 
 
 Backtrace:
-/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss:2
+/home/ubuntu/workspace/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss:2
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$radius-red\".\A         on line 2 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss\A \A 1: .button:hover i, a:hover i{\A 2:     color: $radius-red;\A 3:     &:hover{\A 4:         color: $radius-red;\A 5:     }\A 6: }\A 7: "; }
+  content: "Error: Undefined variable: \"$radius-red\".\A         on line 2 of /home/ubuntu/workspace/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss\A \A 1: .button:hover i, a:hover i{\A 2:     color: $radius-red;\A 3:     &:hover{\A 4:         color: $radius-red;\A 5:     }\A 6: }\A 7: "; }
