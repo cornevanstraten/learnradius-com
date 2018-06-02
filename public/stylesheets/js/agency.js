@@ -106,6 +106,8 @@ var header = $(".cta-content");
         }
 });
 
+
+
 $(window).scroll(function() {    
   var scroll = $(window).scrollTop();
     if (scroll >= 620) {
@@ -115,6 +117,7 @@ $(window).scroll(function() {
       }
 });
 
+//Whats is this JS for. Label it?
 // Select all links with hashes
 $('a[href*="#"]')
   // Remove links that don't actually link to anything
@@ -151,7 +154,8 @@ $('a[href*="#"]')
       }
     }
   });
-  
+
+//back to top button  
 $(window).on('scroll', function(){
   if ($(this).scrollTop() > 800) {
       $('.top').removeClass('is-hidden');
@@ -175,3 +179,44 @@ $("#plus1").click(function(){
   $(".min1").addClass("has-text-grey-light")
   $(".plus1").addClass("is-size-3")
 })
+
+//card height equalizer
+$(document).ready(function(){
+    $('.circles').each(function(){  
+      
+      var highestBox = 0;
+      $('.card-content', this).each(function(){
+        if($(this).height() > highestBox) {
+          highestBox = $(this).height(); 
+        }
+      });  
+      $('.card-content',this).height(highestBox);
+    }); 
+
+});
+$(document).ready(function(){
+    $('.circles').each(function(){  
+      
+      var highestBox = 0;
+      $('.circle--oneliner', this).each(function(){
+        if($(this).height() > highestBox) {
+          highestBox = $(this).height(); 
+        }
+      });  
+      $('.circle--oneliner',this).height(highestBox);
+    }); 
+
+});
+$(document).ready(function(){
+    $('.circles').each(function(){  
+      
+      var highestBox = 0;
+      $('.circle--title', this).each(function(){
+        if($(this).height() > highestBox) {
+          highestBox = $(this).height(); 
+        }
+      });  
+      $('.circle--title',this).height(highestBox);
+    }); 
+
+});

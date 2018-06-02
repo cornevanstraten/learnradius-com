@@ -49,7 +49,17 @@ i.fa-heart, i.fa-heart-o {
             margin-top: 0px;
         }
     }
-    &--favorite {
-  
+}
+.button{
+    color: $radius-red;
+    &:hover{
+        color: darken($radius-red, 15%);
+    }
+}
+a.dropdown-item{
+    i{
+        &:hover{
+        color: $radius-red;    
+        }
     }
 }
