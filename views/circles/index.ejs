@@ -15,55 +15,50 @@
 
 <section class="section">
     <div class="container">
-        <div class="columns">
+        <div class="columns circles">
             
-              
+  
             <% for (var i = 0; i < circles.length; i++){%>
-            <div class="column is-one-quarter">
-                <div class="card">
-                  <!--<div class="card-image">-->
-                    <figure class="image">
+            <div class="column is-one-quarter single-circle">
+              <a href="/circles/<%=circles[i]._id%>" class="circle">
+                <div class="card circle">
+                  <figure class="image circle--image">
                       <img src="<%=circles[i].image%>">
-                    </figure>
-                  <!--</div>-->
+                  </figure>
                   <div class="card-content">
                     <div class="media">
                       <div class="media-left">
-                        <figure class="image is-48x48">
-                          <img src="<%=circles[i].educator.avatar%>" alt="Placeholder image">
+                        <figure class="image mentor--image">
+                          <img src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=circles[i].educator.avatar%>" alt="Placeholder image">
                         </figure>
                       </div>
-                      <div class="media-content">
-                        <p class="title is-4"><%=circles[i].title%></p>
+                      <div class="media-content mentor--name">
                         <p class="subtitle is-6"><%=circles[i].educator.firstName%> <%=circles[i].educator.lastName%></p>
                       </div>
                     </div>
-                    <div class="content">
+                    <div class="content columns">
+                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                        <p class="title is-4"><%=circles[i].title%></p>
+                      </div>
+                      <div class="circle--appreciation column is-one-quarter">
+                        <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div>
+                    <div class="circle--oneliner">
                       <%= circles[i].oneliner %> 
-                      <!--<a>@bulmaio</a>.-->
-                      <!--<a href="#">#css</a> <a href="#">#responsive</a>-->
-                      <br>
-                      <time datetime="2016-1-1" class="is-size-7">created: <%=moment(circles[i].createdAt).fromNow()%></time>
+                    </div>
+                      <div class="columns circle--footer">
+                          <time datetime="2016-1-1" class="column is-half is-size-7">created: <br> <%=moment(circles[i].createdAt).format('ll')%></time>
+                        <div class="column is-half circle--more">
+                          <p>more</p>
+                        </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                    <footer class="card-footer">
-                        <!--<span class="card-footer-item">-->
-                        <!--    <a href="#" class="button is-success">-->
-                        <!--        <i class="fa fa-thumbs-o-up"></i>-->
-                        <!--    </a>-->
-                        <!--</span>-->
-                        <!--<span class="card-footer-item"> -->
-                        <!--    <a href="#" class="button is-danger">-->
-                        <!--        <i class="fa fa-thumbs-o-down"></i>-->
-                        <!--    </a>-->
-                        <!--</span>-->
-                        <span class="card-footer-item">
-                            <a href="/circles/<%=circles[i]._id%>" class="button is-primary is-fullwidth">
-                                <i class="fa fa-search-plus"></i>
-                            </a>
-                        </span>
-                    </footer>
-                </div>
+                </a>
+              
                 </div>
               <% if(i%3 ==0 && i !== 0) {%>
                       </div>
