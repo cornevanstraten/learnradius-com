@@ -2,7 +2,7 @@
 <% include ../partials/header %>
 <section class="cta is-hidden-mobile">
   <div class="columns cta-content">
-    <div class="column is-half-mobile cta-content--title label"><%=circle.title%> by <%=educator.firstName%></div>
+    <div class="column is-half-mobile cta-content--title label"><%=circle.title%></div>
     <div class="column is-half-mobile cta-content--price label">$<%=circle.price%> /lesson</div>
     <div class="column is-half-mobile cta-content--favorite">
       <a class="button button__mobile is-radius-red is-large is-outlined button--favorite">
@@ -30,7 +30,7 @@
       <ul>
         <li><a href="#hero">Overview</a></li>
         <li><a href="#tal">Description</a></li>
-        <li><a href="#Reviews">Reviews</a></li>
+        <li><a href="#Reviews">Reviews (<%=circle.reviews.length%>)</a></li>
       </ul>
     </div>
     <div class="column pdp-content is-8">
@@ -114,7 +114,7 @@
       </section>
       
       <section class="pdp-reviews" id="Reviews">
-        <h2>Reviews (<%=circle.reviews.length%>)</h2>
+        <h2 class="title">Reviews (<%=circle.reviews.length%>)</h2>
         
         <% circle.reviews.forEach(function(review){ %>
         <div class="columns pdp-review">
@@ -125,7 +125,7 @@
             <div class="pdp-review--author">
                 <h2 class="title"><%=review.author.firstName%>: <%=review.title%> <!-- Var 1stname + var lastname --></h2>
                 <hr>
-                <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
+                <p><%=review.text%> </p>
               </div>
           </div>  
           <div class="column is-1 pdp-review--recommend">

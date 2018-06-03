@@ -60,13 +60,13 @@ $('input[name="search"]').focus();
 
 $(window).scroll(function() {
 
-    if ($(this).scrollTop()>200)
+    if ($(this).scrollTop() > 200)
     {
-        $('.mobile-search-bar').fadeOut("slow");
+        $('.mobile-search-bar').fadeIn("slow");
     }
     else
     {
-      $('.mobile-search-bar').fadeIn("slow");
+      $('.mobile-search-bar').fadeOut("slow");
     }
 });
 
@@ -181,9 +181,7 @@ $("#plus1").click(function(){
   $(".plus1").addClass("is-size-3")
 })
 
-
-
-//card height equalizer
+//card height equalizer (deze code kan vast beter geschreven worden)
 $(document).ready(function(){
     $('.circles').each(function(){  
       

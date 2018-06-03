@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$radius-red".
-        on line 6 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss
+        on line 10 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss
 
 
 1: img{
@@ -9,14 +9,20 @@ Error: Undefined variable: "$radius-red".
 4: 
 5: .is-danger{
 6:     background-color: $radius-red;
+5: img{
+6:     width: 100%;
 7: }
 8: 
-9: .rotate-out{
-10:     background-color: $white !important;
+9: .is-danger{
+10:     background-color: $radius-red;
 11: }
+12: 
+13: .rotate-out{
+14:     background-color: $white !important;
+15: }
 
 Backtrace:
-/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss:6
+/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss:10
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'

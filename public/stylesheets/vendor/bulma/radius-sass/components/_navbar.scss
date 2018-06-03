@@ -17,10 +17,10 @@ a:hover{
   padding: 0;
 }
 
-// .navbar-menu {
-//   flex-grow: 1;
-//   flex-shrink: 0;
-// }
+.navbar-menu {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
 .navbar-start {
   justify-content: flex-start;
   margin-right: auto;
@@ -55,7 +55,15 @@ a:hover{
   }
 }
 .user-button {
-  margin: .6em 1em;
+  img{
+  // background-color: $white;
+  border: .5em solid white;
+  border-radius: 50%;
+  // padding-top: 1vh;
+  // padding-bottom: 1vh;
+  // width: 4em;
+  // height: 4em;
+  }
   i{
   color: lightgrey;
   transition: all .2s;
@@ -72,8 +80,8 @@ a:hover{
 }
 
 .userloggedin{
-  border-radius: 50%;
-  width: 90%;
+  // border-radius: 50%;
+  // width: 90%;
 }
 
 @media(min-width:768px) {
@@ -124,10 +132,11 @@ a:hover{
         }
     }
     .link__login {
-      margin: 1em 0;
+      // margin: 1em 0;
+      // height: 100%;
     }
   }
   .navbar-end {
-    margin-top: .2em;
+    margin-top: 0em;
   }
 }
