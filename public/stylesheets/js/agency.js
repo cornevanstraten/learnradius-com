@@ -30,7 +30,7 @@ $(".newc3").click(function(){
 //MODALS
 
 //joinmodal
-$("#joinButton").click(function(){
+$(".joinButton").click(function(){
   $("#joinModal").addClass("is-active")
 })
 //deletemodal
@@ -42,6 +42,7 @@ $(".deleteButton").click(function(event){
 $(".leaveButton").click(function(event){
   $("#leaveModal" + event.target.getAttribute("agreement")).addClass("is-active")
 })
+
 //removemodal
 $(".removeButton").click(function(event){
   $("#removeModal" + event.target.getAttribute("agreement")).addClass("is-active")
@@ -180,6 +181,8 @@ $("#plus1").click(function(){
   $(".plus1").addClass("is-size-3")
 })
 
+
+
 //card height equalizer
 $(document).ready(function(){
     $('.circles').each(function(){  
@@ -220,3 +223,9 @@ $(document).ready(function(){
     }); 
 
 });
+
+
+// dashboard chevron
+$(".card-header-icon").click(function(event){
+  $(".manageCircle" + event.target.getAttribute("circle")).toggleClass("is-hidden")
+})
