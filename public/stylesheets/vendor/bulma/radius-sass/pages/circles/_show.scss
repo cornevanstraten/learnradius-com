@@ -75,6 +75,7 @@
     }
     .pdp-actions {
         margin-top: 0;
+        z-index: 99;
         div {
             margin-bottom: 2em;
         }
@@ -89,8 +90,7 @@
 
 .pdp-timeandlocation {
     background: $white;
-    padding: 5em;
-    text-align: center;
+    padding: 3em;
     i {
         font-size: 2em;
     }
@@ -98,17 +98,19 @@
 
 .pdp-what {
     background: whitesmoke;
-    padding: 2em 5em 3em 5em;
+    padding: 3em;
 }
 
 .pdp-reviews {
+    padding: 3em;
+    .title {
+        padding-top: 1em;
+    }
     .pdp-review {
         padding: 3em;
         &--picture {
             position: relative;
             margin: 0 auto;
-            height: 10em;
-            width: 10em;
             border-radius: 50%;
             border: 5px solid white;
             box-shadow: -10px 1px 10px 0px rgba(100,100,100, .1);
@@ -267,8 +269,6 @@
         .pdp-review {
             padding: 3em;
             &--picture {
-                height: 10em;
-                width: 10em;
                 margin-left: -6.2em;
             }
         }

@@ -7185,6 +7185,9 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+.hide {
+  display: none; }
+
 img {
   width: 100%; }
 
@@ -7198,6 +7201,24 @@ img {
   width: 100%;
   height: 30em; }
 
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5 {
+    font-weight: bold !important; }
+
+  h1 {
+    font-size: 1.5em !important; }
+
+  h2 {
+    font-size: 1em !important; }
+
+  h3 {
+    font-size: .9em !important; }
+
+  h4 {
+    font-size: .8em !important; }
+
+  h5 {
+    font-size: .7em !important; } }
 .search-button {
   text-align: center; }
   .search-button i {
@@ -7290,6 +7311,10 @@ a:hover i {
   display: flex;
   padding: 0; }
 
+.navbar-menu {
+  flex-grow: 1;
+  flex-shrink: 0; }
+
 .navbar-start {
   justify-content: flex-start;
   margin-right: auto; }
@@ -7318,11 +7343,12 @@ a:hover i {
       margin-top: -1px;
       box-shadow: 0 1px 1px 1px rgba(248, 51, 60, 0.2); }
 
-.user-button {
-  margin: .6em 1em; }
-  .user-button i {
-    color: lightgrey;
-    transition: all .2s; }
+.user-button img {
+  border: .5em solid white;
+  border-radius: 50%; }
+.user-button i {
+  color: lightgrey;
+  transition: all .2s; }
 
 .mobile-search-bar {
   padding: .7em .7em 1em .5em;
@@ -7331,10 +7357,6 @@ a:hover i {
   position: fixed;
   top: 7.5vh;
   transition: top 0.2s ease-in-out; }
-
-.userloggedin {
-  border-radius: 50%;
-  width: 90%; }
 
 @media (min-width: 768px) {
   .navbar {
@@ -7367,11 +7389,9 @@ a:hover i {
     border-bottom-right-radius: 0; }
   nav .navbar-item img {
     max-height: 100%; }
-  nav .link__login {
-    margin: 1em 0; }
 
   .navbar-end {
-    margin-top: .2em; } }
+    margin-top: 0em; } }
 .sidebar--left {
   padding: 4em 3em;
   font-size: 1.3em;
@@ -7459,6 +7479,9 @@ a:hover i {
     margin-top: -.5em;
     text-align: right;
     font-size: .8em; } }
+.three-steps .level-item {
+  padding-bottom: 1.8em; }
+
 .pdp-hero {
   padding: 0;
   position: relative;
@@ -7521,7 +7544,8 @@ a:hover i {
       .pdp-info .pdp-mentor img:hover {
         box-shadow: 0 0px 2px 2px #f8333c; }
   .pdp-info .pdp-actions {
-    margin-top: 0; }
+    margin-top: 0;
+    z-index: 99; }
     .pdp-info .pdp-actions div {
       margin-bottom: 2em; }
   .pdp-info .price {
@@ -7531,42 +7555,43 @@ a:hover i {
 
 .pdp-timeandlocation {
   background: white;
-  padding: 5em;
-  text-align: center; }
+  padding: 3em; }
   .pdp-timeandlocation i {
     font-size: 2em; }
 
 .pdp-what {
   background: whitesmoke;
-  padding: 2em 5em 3em 5em; }
-
-.pdp-reviews .pdp-review {
   padding: 3em; }
-  .pdp-reviews .pdp-review--picture {
-    position: relative;
-    margin: 0 auto;
-    height: 10em;
-    width: 10em;
-    border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: -10px 1px 10px 0px rgba(100, 100, 100, 0.1);
-    transition: all .5s ease; }
-    .pdp-reviews .pdp-review--picture:hover {
-      box-shadow: -5px 0px 2px -2px #f8333c; }
-  .pdp-reviews .pdp-review--author hr {
-    background-color: black; }
-  .pdp-reviews .pdp-review--recommend {
-    margin-top: .3em;
-    padding: 0 0 1em .2em;
-    border-radius: 3px;
-    font-size: 4em;
-    height: 1.5em;
-    width: 1.5em;
-    color: #000;
-    border-radius: 10%; }
-    .pdp-reviews .pdp-review--recommend i {
-      margin-left: .1em;
-      margin-top: .25em; }
+
+.pdp-reviews {
+  padding: 3em; }
+  .pdp-reviews .title {
+    padding-top: 1em; }
+  .pdp-reviews .pdp-review {
+    padding: 3em; }
+    .pdp-reviews .pdp-review--picture {
+      position: relative;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: -10px 1px 10px 0px rgba(100, 100, 100, 0.1);
+      transition: all .5s ease; }
+      .pdp-reviews .pdp-review--picture:hover {
+        box-shadow: -5px 0px 2px -2px #f8333c; }
+    .pdp-reviews .pdp-review--author hr {
+      background-color: black; }
+    .pdp-reviews .pdp-review--recommend {
+      margin-top: .3em;
+      padding: 0 0 1em .2em;
+      border-radius: 3px;
+      font-size: 4em;
+      height: 1.5em;
+      width: 1.5em;
+      color: #000;
+      border-radius: 10%; }
+      .pdp-reviews .pdp-review--recommend i {
+        margin-left: .1em;
+        margin-top: .25em; }
 
 .back-to-top {
   padding-bottom: 3em; }
@@ -7668,8 +7693,6 @@ a:hover i {
   .pdp-reviews .pdp-review {
     padding: 3em; }
     .pdp-reviews .pdp-review--picture {
-      height: 10em;
-      width: 10em;
       margin-left: -6.2em; } }
 
 /*# sourceMappingURL=mystyles.css.map */
