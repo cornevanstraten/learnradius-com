@@ -100,9 +100,13 @@ a:hover{
           margin-left: 10em;
           width: 85%;
           transition: all 3s linear;
+          form{
+            display: flex;
+          }
         }
         &--expand{
           visibility: none ;
+          
           &--button {
             margin: .8em 1em !important;
             z-index: 0;
