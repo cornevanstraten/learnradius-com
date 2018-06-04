@@ -101,7 +101,7 @@ router.post("/", middleware.isLoggedIn, middleware.checkEducator, upload.single(
               }
             if(req.file){
             cloudinary.uploader.upload(req.file.path, function(result) {
-                newData.image = result.secure_url; // add cloudinary url for the image to the campground object under image property
+                newData.image = imageName(result.secure_url); // add cloudinary url for the image to the campground object under image property
                 //Circle.create
                 createListing(newData, req, res);
             });
@@ -178,7 +178,7 @@ router.put("/:id", middleware.checkCircleOwnership, upload.single('image_upload'
                 }
                 if (req.file){
                     cloudinary.uploader.upload(req.file.path, function(result) {
-                        newData.image = result.secure_url; // add cloudinary url for the image to the campground object under image property
+                        newData.image = imageName(result.secure_url); // add cloudinary url for the image to the campground object under image property
                         updateListing(newData, req, res);
                     });
                 } else {
