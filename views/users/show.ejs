@@ -1,14 +1,13 @@
-
 <!--User show page -->
 <% include ../partials/header %>
 
-<div class="pdp">
-<section class="hero is-dark is-large" id="top">
-  <div class="hero-body">
+<div class="profile">
+<section class="is-small is-dark" id="top">
+  <div class="hero-body--small hero-body--small__dark">
   </div>
 </section>
 
-  <div class="columns">
+  <div class="columns is-gapless">
     <div class="column sidebar--left is-hidden-mobile">
       <ul>
         <!--<li><a href="#hero">Overview</a></li>-->
@@ -19,32 +18,35 @@
     
     
     <div class="column pdp-content is-8"> <!-- center column -->
-      <section class="pdp-info" id="Overview">
-        <div class="columns">
-          <div class="column is-4">
-            <div class="pdp-title">
-              <p class="pdp-product-synopsis">
-                <p>joined: <%=moment(user.joinedAt).format('ll')%></p>
-              </p>
-            </div>
-          </div>
-          <div class="column is-4 pdp-mentor">
-            <div class="pdp-mentor--center">
+      <section class="user" id="Overview">
+            <div class="user--center">
               <a href="/users/<%=user.id%>">
-                <img class="pdp-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>"alt="profile picture"/>
-                <div class="pdp-mentor--center--name">
-                  <h2 class="title"><%=user.firstName%> <%=user.lastName%> <!-- Var 1stname + var lastname --></h2>
-                  <h2 class="title"><%=user.location%></h2>
-                </div>
+                <img class="user--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>"alt="profile picture"/>
               </a>
             </div> 
-            </div>
-        </div>
+                <div class="user--center--name">
+                  <h2 class="title"><%=user.firstName%> <%=user.lastName%> <!-- Var 1stname + var lastname --></h2>
+                  <h2 class="subtitle"><%=user.location%></h2>
+                </div>
       </section>
       
       <section class="pdp-timeandlocation" id="tal">
         <h2 class="title">bio</h2>
-            <p><%=user.description%></p>
+        <div class="columns">
+          <div class="column is-6">
+            <div class="pdp-title">
+              <p class="pdp-product-synopsis">
+                <p><%=user.description%></p>
+              </p>
+            </div>
+          </div> 
+          <div class="column is-6">
+            <div class="pdp-title">
+              <p class="pdp-product-synopsis">
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
       
       <section class="hero">
