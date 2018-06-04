@@ -1,8 +1,8 @@
 <!--User DASHBOARD -->
 <% include ../partials/header %>
 
-<div class="pdp">
-<section class="hero is-dark is-large" id="top">
+<div class="pdp dashboard">
+<section class="hero is-dark" id="top">
   <div class="hero-body">
   </div>
 </section>
@@ -30,11 +30,11 @@
               <!--</h1>-->
             </div>
           </div>
-          <div class="column is-4 pdp-mentor">
-            <div class="pdp-mentor--center">
+          <div class="column is-4 dash-mentor">
+            <div class="dash-mentor--center">
               <a href="/users/<%=user._id%>">
 
-                <img class="pdp-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>" alt="profile picture"/>
+                <img class="dash-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>" alt="profile picture"/>
                 <!--<div class="pdp-mentor--center--name">-->
                 <!--  <h2 class="title"><%=user.firstName%> <%=user.lastName%></h2>-->
                 <!--</div>-->
@@ -57,7 +57,7 @@
           
           
           
-          <div class="column is-11">
+          <div class="column">
         <% user.circles.reverse().forEach(function(circle){ %>
           <div class="card" id="<%=circle.id%>">
             <header class="card-header">
@@ -74,35 +74,39 @@
             </header>
             <div class="card-content is-hidden manageCircle<%=circle.id%>"> <!--toggle is-hidden here-->
                 <% if(circle.students.length > 0) {  %>
-              <div class="content">
-                  <p><strong>Participants (<%=circle.students.length %>)</strong></p>
-                <%circle.agreements.forEach(function(agreement){%>
-                <ul>
-                  <%circle.agreements.forEach(function(agreement){%>
-                  
-                    <% if(!agreement.endedAt){%>
-                      <a href="/users/<%=agreement.studentRef%>">
-                          <!--<img class="userloggedin" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_40,h_40/<%=agreement.studentDetails.avatar%>">-->
-                          <%=agreement.studentDetails.firstName%>
-                          <%=agreement.studentDetails.lastName%>
-                          <a class="button is-success" href="/users/<%=agreement._id%>/endorsements/new"><span> endorse</span></a>
-                          <a class="button removeButton is-light" agreement="<%=agreement._id%>"><span class="fa fa-user-times" agreement="<%=agreement._id%>"></span></a>
-                                  <% include ../partials/removeModal.ejs %>
-                      </a>
-                    <% } %>
-                <% }) %>
-                </ul>
-                <% }) %>
+              <div class="content columns">
+                  <h2>Participants (<%=circle.students.length %>)</h2>
+                  <br>
+                  <!--<ul>-->
+                    <%circle.agreements.forEach(function(agreement){%>
+                      <% if(!agreement.endedAt){%>
+                      <div class="column">
+                        <a class="student" href="/users/<%=agreement.studentRef%>">
+                            <!--<img class="userloggedin" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_40,h_40/<%=agreement.studentDetails.avatar%>">-->
+                            <p class="student--name"><%=agreement.studentDetails.firstName%>
+                            <%=agreement.studentDetails.lastName%></p>
+                            <a class="button is-success" href="/users/<%=agreement._id%>/endorsements/new"><span> endorse</span></a>
+                            <a class="button removeButton is-light" agreement="<%=agreement._id%>"><span class="fa fa-user-times" agreement="<%=agreement._id%>"></span></a>
+                                    <% include ../partials/removeModal.ejs %>
+                        </a>
+                      </div>
+                      <% } %>
+                    <% }) %>
+                  <!--</ul>-->
+                
                 </div>
                 <% } else {%>
                 <p><%=circle.title%> has no participants at the moment</p>
                 <% } %>
-              
             </div>
-            <footer class="card-footer">
-              <a class="button deleteButton is-light card-footer-item" circle="<%=circle.id%>"><span class="icon"><i class="fa fa-trash-o" circle="<%=circle.id%>"></i></span></a>
-              <% include ../partials/deletemodal.ejs %>
-              <a href="/circles/<%=circle.id%>/edit" class="button is-success is-fullwidth card-footer-item"><span class="icon"><i class="fa fa-pencil-square-o"></i></span> <span> edit</span></a>
+            <footer class="card-footer columns">
+              <div class="column is-1">
+                <a class="button deleteButton is-light card-footer-item" circle="<%=circle.id%>"><span class="icon"><i class="fa fa-trash-o" circle="<%=circle.id%>"></i></span></a>
+                <% include ../partials/deletemodal.ejs %>
+              </div>
+              <div class="column is-11">
+                <a href="/circles/<%=circle.id%>/edit" class="button is-success is-fullwidth card-footer-item"><span class="icon"><i class="fa fa-pencil-square-o"></i></span> <span> edit</span></a>
+              </div>
             </footer>
           </div>
           <br>

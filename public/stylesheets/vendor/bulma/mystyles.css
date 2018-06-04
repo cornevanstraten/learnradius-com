@@ -7480,6 +7480,35 @@ a:hover i {
     margin-top: -.5em;
     text-align: right;
     font-size: .8em; } }
+.dashboard .hero-body {
+  padding: 4rem 1.5rem; }
+.dashboard .pdp-info {
+  padding: 2.3em 1em 3em 1em; }
+.dashboard .student {
+  margin-left: 0; }
+  .dashboard .student--name {
+    color: #0a0a0a; }
+
+.dash-mentor {
+  margin-top: -5em;
+  margin-bottom: 1em; }
+  .dash-mentor--center {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 12vh; }
+    .dash-mentor--center--picture {
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      border: 10px solid white;
+      border-radius: 50%;
+      box-shadow: 0 1px 30px 30px rgba(100, 100, 100, 0.4);
+      z-index: 1;
+      position: relative;
+      left: -50%;
+      transition: all .3s ease-in; }
+
 .three-steps .level-item {
   padding-bottom: 1.8em; }
 
