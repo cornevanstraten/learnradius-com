@@ -1,13 +1,23 @@
-<div>
+<div> <!-- circle show page | PDP -->
 <% include ../partials/header %>
 <section class="cta is-hidden-mobile">
   <div class="columns cta-content">
     <div class="column is-half-mobile cta-content--title label"><%=circle.title%></div>
     <div class="column is-half-mobile cta-content--price label">$<%=circle.price%> /lesson</div>
     <div class="column is-half-mobile cta-content--favorite">
-      <a class="button button__mobile is-radius-red is-large is-outlined button--favorite">
+     <form id="favform" action="/users/<%=currentUser._id%>" method="POST">
+          <input type="hidden" name="circle[id]" value="<%=circle.id%>">
+          <input type="hidden" name="circle[title]" value="<%=circle.title%>">
+        <% if(!isFav){ %>
+      <button type="submit" class="button button__mobile is-radius-red is-large is-outlined button--favorite">
         <i class="fa fa-heart-o"></i>
-      </a>
+      </button>
+      <% } else { %>
+      <button type="submit" class="button button__mobile is-radius-red is-large is-outlined button--favorite">
+        <i class="fa fa-heart"></i>
+      </button>
+      <% } %>
+      </form>
     </div>
     <div class="column is-half-mobile cta-content--join">
       <button class="joinButton button button__mobile is-radius-red is-large">
@@ -59,7 +69,19 @@
             </div>
           <div class="column is-4 pdp-actions">
                 <a class="button joinButton is-radius-red is-large"><i class="fa fa-plus-circle"></i> <p class="join"> Join</p></a> <br>
-                <a class="button is-radius-red is-large is-outlined button--favorite"><i class="fa fa-heart-o"></i></a>   
+                   <form id="favform" action="/users/<%=currentUser._id%>" method="POST">
+                        <input type="hidden" name="circle[id]" value="<%=circle.id%>">
+                        <input type="hidden" name="circle[title]" value="<%=circle.title%>">
+                      <% if(!isFav){ %>
+                    <button type="submit" class="button button__mobile is-radius-red is-large is-outlined button--favorite">
+                      <i class="fa fa-heart-o"></i>
+                    </button>
+                    <% } else { %>
+                    <button type="submit" class="button button__mobile is-radius-red is-large is-outlined button--favorite">
+                      <i class="fa fa-heart"></i>
+                    </button>
+                    <% } %>
+                    </form>
                 <p class="price">$ <%=circle.price%> <span class="thin"> /lesson</span></p>
       
           </div>

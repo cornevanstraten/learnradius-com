@@ -92,6 +92,7 @@ $(document).ready(function(){
     });
 });
 
+
 var header = $(".cta-content");
   $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
