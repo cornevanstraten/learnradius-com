@@ -90,7 +90,7 @@
                             <!--<img class="userloggedin" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_40,h_40/<%=agreement.studentDetails.avatar%>">-->
                             <p class="participant--name"><%=agreement.studentDetails.firstName%>
                             <%=agreement.studentDetails.lastName%></p>
-                            <a class="button is-primary is-outlined" href="/users/<%=agreement._id%>/endorsements/new"><span> endorse</span></a>
+                            <a class="button is-success is-outlined" href="/users/<%=agreement._id%>/endorsements/new"><span> endorse</span></a>
                             <a class="button removeButton is-light" agreement="<%=agreement._id%>"><span class="fa fa-user-times" agreement="<%=agreement._id%>"></span></a>
                                     <% include ../partials/removeModal.ejs %>
                         </a>
