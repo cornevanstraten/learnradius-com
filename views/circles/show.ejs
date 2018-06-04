@@ -20,9 +20,15 @@
       </form>
     </div>
     <div class="column is-half-mobile cta-content--join">
+      <% if(!visitorIsStudent){ %>
       <button class="joinButton button button__mobile is-radius-red is-large">
         <i class="fa fa-plus-circle"></i><p class="join"> Join</p>
       </button>
+      <% } else { %>
+        <button class="button button__mobile is-radius-red is-large" disabled>
+        <i class="fa fa-check-circle"></i><p class="join"> joined</p>
+      </button>
+      <% } %>
     </div>
   </div>
 </section>
@@ -68,7 +74,15 @@
             </div> 
             </div>
           <div class="column is-4 pdp-actions">
-                <a class="button joinButton is-radius-red is-large"><i class="fa fa-plus-circle"></i> <p class="join"> Join</p></a> <br>
+                  <% if(!visitorIsStudent){ %>
+                    <button class="joinButton button button__mobile is-radius-red is-large">
+                      <i class="fa fa-plus-circle"></i><p class="join"> Join</p>
+                    </button>
+                    <% } else { %>
+                      <button class="joinButton button button__mobile is-radius-red is-large" disabled>
+                      <i class="fa fa-check-circle"></i><p class="join"> joined</p>
+                    </button>
+                    <% } %>
                    <form id="favform" action="/users/<%=currentUser._id%>" method="POST">
                         <input type="hidden" name="circle[id]" value="<%=circle.id%>">
                         <input type="hidden" name="circle[title]" value="<%=circle.title%>">
@@ -93,7 +107,7 @@
       <section class="pdp-timeandlocation" id="tal">
         <div class="columns">
           <div class="column is-4 pdp-location">
-             <p><i class="fa fa-map-marker fa-2x"></i> Location: <%=educator.location%></p>
+             <p><i class="fa fa-map-marker fa-2x"></i> Location: <%=circle.location%></p>
           </div>
           <div class="column is-4 pdp-time">
             <p><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>  <%=circle.when%></p>
@@ -151,9 +165,13 @@
               </div>
           </div>  
           <div class="column is-1 pdp-review--recommend">
-             <% if(circles[i].appreciation !== 0) { %> 
-                        <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                        <% }; %>
+              <p style="font-size: .5em">
+                        <% if(review.recommend){%> 
+                        +1<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <% } else { %>
+                        -1<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                        <% } %>
+              </p>
           </div>  
         </div>
         <% }) %> 

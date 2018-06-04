@@ -195,7 +195,7 @@
                 </a>
               </div>
               
-                    <% if(i%1 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                    <% if(i%2 !==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
                               </div>
                               <div class="columns">
                     <% }; %>
@@ -263,7 +263,7 @@
                   </div>
                 </a>
               </div>
-                    <% if(i%1 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                    <% if(i%2 !==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
                             </div>
                               <div class="columns single-circle">
                     <% }; %>

@@ -84,7 +84,11 @@
                         <p class="title is-4"><%=user.circles[i].title%></p>
                       </div>
                       <div class="circle--appreciation column is-one-quarter">
-                        <%=user.circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <% if(user.circles[i].appreciation > 0){%>
+                        +<%=user.circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <% } else if (user.circles[i].appreciation < 0){ %>
+                        <%=user.circles[i].appreciation%> <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                        <% } %>
                       </div>
                     </div>
                     <div>
@@ -149,7 +153,7 @@
                 </a>
               </div>
               
-                    <% if(i%1 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                    <% if(i%2 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
                               </div>
                               <div class="columns">
                     <% }; %>
