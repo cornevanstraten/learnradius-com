@@ -7227,8 +7227,6 @@ h3 {
     font-size: .7em !important; } }
 .search-button {
   text-align: center; }
-  .search-button i {
-    margin-left: .5em; }
 
 .is-radius-red {
   background-color: #f8333c;
@@ -7275,8 +7273,24 @@ i.fa-heart, i.fa-heart-o {
 a.dropdown-item i:hover {
   color: #f8333c; }
 
-.is-outlined {
-  border: 2px solid #7a7a7a; }
+nav .is-outlined {
+  border: none; }
+  nav .is-outlined i {
+    color: #0a0a0a !important; }
+  nav .is-outlined:hover {
+    background-color: #fafafa !important;
+    margin-top: -2px;
+    margin-bottom: 7px;
+    box-shadow: 0 2px 10px 0px rgba(100, 100, 100, 0.4); }
+    nav .is-outlined:hover i {
+      color: #f8333c !important; }
+  nav .is-outlined:active {
+    background-color: white !important;
+    margin-top: 0px;
+    margin-bottom: 6px;
+    box-shadow: 0 1px 5px 0px rgba(100, 100, 100, 0.4); }
+    nav .is-outlined:active i {
+      color: #f8333c !important; }
 
 .landing-hero {
   background: -webkit-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url("/stylesheets/img/radius-header.jpeg");
@@ -7438,7 +7452,7 @@ a:hover i {
   nav .searchform--expand {
     visibility: none; }
     nav .searchform--expand--button {
-      margin: .8em 1em !important;
+      margin: .75em 0 1em 0 !important;
       z-index: 0; }
   nav .searchform .dropdown-content {
     width: 7em;
