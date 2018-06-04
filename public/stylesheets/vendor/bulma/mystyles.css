@@ -7433,6 +7433,8 @@ a:hover i {
     margin-left: 10em;
     width: 85%;
     transition: all 3s linear; }
+    nav .searchform--basic form {
+      display: flex; }
   nav .searchform--expand {
     visibility: none; }
     nav .searchform--expand--button {
