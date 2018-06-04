@@ -7554,6 +7554,13 @@ a:hover i {
     margin-top: -.5em;
     text-align: right;
     font-size: .8em; } }
+.page-footer {
+  height: 10vh;
+  background: lightgray;
+  box-shadow: 0 1px 5px 5px rgba(100, 100, 100, 0.5); }
+  .page-footer img {
+    margin: 2.4vh; }
+
 .dashboard .circle--history {
   padding: 1em 0; }
 .dashboard .edit-profile {

@@ -41,6 +41,7 @@ $colors: map-merge($colors, $addColors);
 @import "radius-sass/components/navbar";
 @import "radius-sass/components/sidebar";
 @import "radius-sass/components/circle-cards";
+@import "radius-sass/components/footer";
 
 @import "radius-sass/pages/dashboard";
 @import "radius-sass/pages/index";

@@ -151,7 +151,9 @@
               </div>
           </div>  
           <div class="column is-1 pdp-review--recommend">
-             <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
+             <% if(circles[i].appreciation !== 0) { %> 
+                        <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <% }; %>
           </div>  
         </div>
         <% }) %> 

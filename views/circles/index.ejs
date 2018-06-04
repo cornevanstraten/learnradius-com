@@ -41,7 +41,9 @@
                         <h3 class="title"><%=circles[i].title%></h3>
                       </div>
                       <div class="circle--appreciation column is-one-quarter">
+                        <% if(circles[i].appreciation !== 0) { %> 
                         <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <% }; %>
                       </div>
                     </div>
                     <div>
