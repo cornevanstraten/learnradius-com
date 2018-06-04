@@ -2,6 +2,13 @@
 Error: Undefined variable: "$radius-red".
         on line 10 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss
 
+
+1: img{
+2:     width: 100%;
+3: }
+4: 
+5: .is-danger{
+6:     background-color: $radius-red;
 5: img{
 6:     width: 100%;
 7: }
@@ -65,4 +72,6 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$radius-red\".\A         on line 10 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss\A \A 5: img{\A 6:     width: 100%;\A 7: }\A 8: \A 9: .is-danger{\A 10:     background-color: $radius-red;\A 11: }\A 12: \A 13: .rotate-out{\A 14:     background-color: $white !important;\A 15: }"; }
+
+  content: "Error: Undefined variable: \"$radius-red\".\A         on line 6 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss\A \A 1: img{\A 2:     width: 100%;\A 3: }\A 4: \A 5: .is-danger{\A 6:     background-color: $radius-red;\A 7: }\A 8: \A 9: .rotate-out{\A 10:     background-color: $white !important;\A 11: }"; }
+

@@ -11,15 +11,15 @@
             <h3 class="title has-text-grey"><%=user.username%></h3>
                 <p class="subtitle has-text-grey">edit your profile</p>
             <form action="/users/<%=user._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-              <div class="field">
-                    <label class="label" for="coverImage">cover photo</label>
-                    <div class="control has-icons-left">
-                    <input class="input" id="coverImage" type="text" name="user[coverImage]" value="<%=user.coverImage%>" required>
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-picture-o"></i>
-                    </span>
-                    </div>
-                </div> 
+              <!--<div class="field">-->
+              <!--      <label class="label" for="coverImage">cover photo</label>-->
+              <!--      <div class="control has-icons-left">-->
+              <!--      <input class="input" id="coverImage" type="text" name="user[coverImage]" value="" required>-->
+              <!--      <span class="icon is-small is-left">-->
+              <!--        <i class="fa fa-picture-o"></i>-->
+              <!--      </span>-->
+              <!--      </div>-->
+              <!--  </div> -->
                 <div class="columns">
                     <div class="column">
                         <figure class="image is-128x128">

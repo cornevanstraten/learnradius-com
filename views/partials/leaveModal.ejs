@@ -1,14 +1,16 @@
+
+
 <!-- leaveModal -->                        <!-- deleteModal -->
-<div id="leaveModal<%=agreement._id%>" class="modal">
+<div id="leaveModal<%=user.joinedCircles[i]._id%>" class="modal">
 <div class="modal-background"></div>
 <div class="modal-card">
   <header class="modal-card-head">
-    <p class="modal-card-title"> Leave <strong><%=agreement.circleDetails.title%></strong>?</p>
+    <p class="modal-card-title"> Leave <strong><%=user.joinedCircles[i].circleDetails.title%></strong>?</p>
     <button class="delete closeModal" aria-label="close"></button>
   </header>
   <section class="modal-card-body">
     <!-- Content ... -->
-    <p>Are you sure you want to leave this circle? This will terminate your enrollment in <%=agreement.circleDetails.title%>.
+    <p>Are you sure you want to leave this circle? This will terminate your enrollment in <%=user.joinedCircles[i].circleDetails.title%>.
     <br>
     <br>
     Your account will not be charged for future meetups of this circle.
@@ -16,9 +18,9 @@
 
   </section>
   <footer class="modal-card-foot">
-        <form action="/agreements/<%=agreement._id%>/leave?_method=PUT" method="POST">
+        <form action="/agreements/<%=user.joinedCircles[i]._id%>/leave?_method=PUT" method="POST">
             <div class="form-group">
-                <button type="submit" name="stop" class="button is-primary is-medium"><span class="icon"><i class="fa fa-minus-circle"></i></span> <span> Leave <strong><%=agreement.circleDetails.title%></strong></span></button>
+                <button type="submit" name="stop" class="button is-primary is-medium"><span class="icon"><i class="fa fa-minus-circle"></i></span> <span> Leave <strong><%=user.joinedCircles[i].circleDetails.title%></strong></span></button>
             </div>
     </form>
   </footer>
@@ -44,31 +46,3 @@
                         
                         
                         
-                        <div  class="modal">
-                          <div class="modal-dialog">
-                        
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Leave circle</h4>
-                              </div>
-                              <div class="modal-body text-right">
-                                  <h3>Leave <strong><%=agreement.circleDetails.title%></strong>?</h3>
-                                <p>Are you sure you want to leave this circle?</p>
-                                <p>
-                                  This will terminate your enrollment in <strong><%=agreement.circleDetails.title%></strong>. 
-                                  Your account will not be charged for future classes.
-                                </p>
-                                <form action="/agreements/<%=agreement._id%>/leave?_method=PUT" method="POST">
-                                    <div class="form-group">
-                                        <button class="btn btn-danger" name="stop" type="submit"><span class="fa fa-minus-circle"></span> Leave <strong><%=agreement.circleDetails.title%></strong> </button>
-                                    </div>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
