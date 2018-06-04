@@ -1,6 +1,6 @@
 //MIDDLEWARE
 var middlewareObj   = {}
-// var OpenClassroom   = require("../models/openclassroom");
+
 var Circle          = require("../models/circle");
 var Review          = require("../models/review");
 var User            = require("../models/user");

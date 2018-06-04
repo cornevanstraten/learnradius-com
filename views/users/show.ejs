@@ -1,127 +1,235 @@
 <!--User show page -->
 <% include ../partials/header %>
 
-<div class="up">
-  <section class="hero" id="hero">
-    <div class="up-hero">
-        <img src="<%=circle.image%>" alt="background image">  
-    </div>
-  </section>
+<div class="pdp">
+<section class="hero is-dark is-large" id="top">
+  <div class="hero-body">
+  </div>
+</section>
 
   <div class="columns">
     <div class="column sidebar--left is-hidden-mobile">
       <ul>
-        <li><a href="#hero">Overview</a></li>
-        <li><a href="#tal">Description</a></li>
-        <li><a href="#Reviews">Reviews</a></li>
+        <!--<li><a href="#hero">Overview</a></li>-->
+        <!--<li><a href="#tal">Description</a></li>-->
+        <!--<li><a href="#Reviews">Reviews</a></li>-->
       </ul>
     </div>
-    <div class="column pdp-content is-8">
+    
+    
+    <div class="column pdp-content is-8"> <!-- center column -->
       <section class="pdp-info" id="Overview">
         <div class="columns">
           <div class="column is-4">
             <div class="pdp-title">
-              <h1 class="title">
-                <%=circle.title%>
-              </h1>
               <p class="pdp-product-synopsis">
-                <%=circle.oneliner%>
+                <p>joined: <%=moment(user.joinedAt).format('ll')%></p>
               </p>
             </div>
           </div>
           <div class="column is-4 pdp-mentor">
             <div class="pdp-mentor--center">
-              <a href="/users/<%=circle.educator._id%>">
-                <img class="pdp-mentor--center--picture" src="<%=educator.avatar%>" alt="profile picture"/>
+              <a href="/users/<%=user.id%>">
+                <img class="pdp-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>"alt="profile picture"/>
                 <div class="pdp-mentor--center--name">
-                  <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
+                  <h2 class="title"><%=user.firstName%> <%=user.lastName%> <!-- Var 1stname + var lastname --></h2>
+                  <h2 class="title"><%=user.location%></h2>
                 </div>
               </a>
             </div> 
             </div>
-          <div class="column is-4 pdp-actions">
-                <a class="button is-radius-red is-large"><i class="fa fa-plus-circle"></i> <p class="join"> Join</p></a> <br>
-                <a class="button is-radius-red is-large is-outlined button--favorite"><i class="fa fa-heart-o"></i></a>   
-                <p class="price">$ <%=circle.price%> <span class="thin"> /lesson</span></p>
-          </div>
         </div>
       </section>
       
       <section class="pdp-timeandlocation" id="tal">
-        <div class="columns">
-          <div class="column is-4 pdp-location">
-             <p><i class="fa fa-map-marker fa-2x"></i> Location: <%=educator.location%></p>
-          </div>
-          <div class="column is-4 pdp-time">
-            <p><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>  <%=circle.when%></p>
-          </div>
-          <div class="column is-4 pdp-spots">
-            <p><i class="fa fa-users fa-2x" aria-hidden="true"></i> Spots available: <%=circle.spots%></p>
-          </div>
-        </div>
+        <h2 class="title">bio</h2>
+            <p><%=user.description%></p>
       </section>
       
-      <section class="pdp-what" id="Description">
+      <section class="hero">
+        <div class="hero-content">
+          
+        
+            <h2 class="title"><span class="icon"><i class="fa fa-thumb-tack"></i></span> <span> circles</span></h2>
+            <p>Circles hosted by <%=user.firstName%></p>
+            <br>
+
+
         <div class="columns">
-          <div class="column is-6">
-            <h2 class="title">Description</h2>
-            <p><%=circle.description%></p>
+          
+        <% for (var i = 0; i < user.circles.length; i++){%>
+        
+            <div class="column is-half single-circle">
+              <a href="/circles/<%=user.circles[i]._id%>" class="circle">
+                <div class="card circle">
+                  <figure class="image circle--image">
+                      <img src="<%=user.circles[i].image%>">
+                  </figure>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-left">
+                        <figure class="image mentor--image">
+                          <img src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>" alt="Placeholder image">
+                        </figure>
+                      </div>
+                      <div class="media-content mentor--name">
+                        <p class="subtitle is-6"><%=user.firstName%> <%=user.lastName%></p>
+                      </div>
+                    </div>
+                    <div class="content columns">
+                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                        <p class="title is-4"><%=user.circles[i].title%></p>
+                      </div>
+                      <div class="circle--appreciation column is-one-quarter">
+                        <%=user.circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div>
+                    <div class="circle--oneliner">
+                      <%=user.circles[i].oneliner %> 
+                    </div>
+                      <div class="columns circle--footer">
+                          <time datetime="2016-1-1" class="column is-half is-size-7">created: <br> <%=moment(user.circles[i].createdAt).format('ll')%></time>
+                        <div class="column is-half circle--more">
+                          <p>more</p>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              
+                    <% if(i%2 !==0 && i !== 0) {%> <!-- if row is filled to index[1], start new -->
+                      </div>
+                      <div class="columns">
+                    <% }; %>
+            <% } %>
           </div>
-          <div class="column is-6">
-            <ul>
-                <% circle.swbat.forEach(function(element){ %>
-                  <% if(element.length >0) { %>
-              <li><%=element%></li>
-                  <% } %>
-               <% }) %>
-            </ul>
           </div>
-        </div>
-      </section>
-      <section class="pdp-map">
-        <div class="columns">
-          <div class="column">
-            <img src="../stylesheets/img/rottermap.png" alt="map">
-          </div>
-        </div>
       </section>
       
-      <section class="pdp-reviews" id="Reviews">
-        <h2>Reviews (<%=circle.reviews.length%>)</h2>
-        
-        <div class="columns pdp-review">
-          <div class="column is-2">
-            <img class="pdp-review--picture" src="<%=educator.avatar%>" alt="profile picture"/>
-          </div>  
-          <div class="column">
-            <div class="pdp-review--author">
-                <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
-                <hr>
-                <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
+      
+      <section class="hero"> <!-- joined -->
+        <div class="hero-content">
+
+          
+          
+        <h2 class="title"><span class="icon"><i class="fa fa-check-circle"></i></span> <span> joined</span></h2>
+
+        <div class="columns circles single-circle">
+       
+          <% for (var i = 0; i < user.joinedCircles.length; i++){%>
+          <% if (!user.joinedCircles[i].endedAt){ %>
+          <div class="column is-half single-circle">
+            <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
+                <div class="card circle">
+                  <figure class="image circle--image">
+                      <img src="<%=user.joinedCircles[i].circleDetails.image%>">
+                  </figure>
+                  <div class="card-content">
+                    <div class="media">
+
+                    </div>
+                    <div class="content columns">
+                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                        <p class="title is-4"><%=user.joinedCircles[i].circleDetails.title%></p>
+                      </div>
+                    </div>
+                    <div>
+                    <div class="circle--oneliner">
+                      <%= user.joinedCircles[i].circleDetails.oneliner %> 
+                    </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
               </div>
-          </div>  
-          <div class="column is-1 pdp-review--recommend">
-             <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
-          </div>  
-        </div>
-        
-        <div class="columns pdp-review">
-          <div class="column is-2">
-            <img class="pdp-review--picture" src="<%=educator.avatar%>" alt="profile picture"/>
-          </div>  
-          <div class="column">
-            <div class="pdp-review--author">
-                <h2 class="title"><%=educator.firstName%> <%=educator.lastName%> <!-- Var 1stname + var lastname --></h2>
-                <hr>
-                <p>I'm getting much closer to launching. Last few things I have to get together. Just cranking away. I think everyone is starting to get excited </p>
-              </div>
-          </div>  
-          <div class="column is-1 pdp-review--recommend">
-             <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
-          </div>  
-        </div>
+              
+                    <% if(i%1 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                              </div>
+                              <div class="columns">
+                    <% }; %>
+                <% } %>
+                <% } %>
+                
+
+                
+                
+                
+                
+            </div>
+            </div>
       </section>
-    </div>
+      
+      <section class="hero"> <!-- learning history -->
+        <div class="hero-content">
+
+          
+          
+        <h2 class="title"><span class="icon"><i class="fa fa-briefcase"></i></span> <span> learning history</span></h2>
+
+        <div class="columns circles single-circle">
+       
+          <% for (var i = 0; i < user.joinedCircles.length; i++){%>
+          <% if (user.joinedCircles[i].endedAt){ %>
+          <div class="column is-half single-circle">
+            <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
+                <div class="card circle">
+                  <figure class="image circle--image">
+                      <img src="<%=user.joinedCircles[i].circleDetails.image%>">
+                  </figure>
+                  <div class="card-content">
+                    <div class="media">
+
+                    </div>
+                    <div class="content columns">
+                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                        <p class="title is-4"><%=user.joinedCircles[i].circleDetails.title%></p>
+                      </div>
+                    </div>
+                    
+                    <div class="circle--oneliner">
+                      <p><%= moment(user.joinedCircles[i].createdAt).format('ll') %> -
+                      <%= moment(user.joinedCircles[i].endedAt).format('ll') %></p>
+                    </div>
+                                  <div>
+                                    <% if(user.joinedCircles[i].endorsementRef){ %>
+                                        <hr>
+                                               <p>"<%=user.joinedCircles[i].endorsementRef.text%>"</p>
+                                               <p><strong><%=user.joinedCircles[i].educatorDetails.firstName%> <%=user.joinedCircles[i].educatorDetails.lastName%></strong> - <a href="/circles/<%=user.joinedCircles[i].circleRef%>"><%=user.joinedCircles[i].circleDetails.title%></a> educator</p>
+                                                <p><%=moment(user.joinedCircles[i].endorsementRef.createdAt).fromNow()%></p>
+                                     <% } %>
+                                      </div>
+                      </div>
+                    </div>
+                </a>
+              </div>
+              
+                    <% if(i%2 !==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                              </div>
+                              <div class="columns">
+                    <% }; %>
+                    
+                <% } %>
+                <% } %>
+            </div>
+            </div>
+      </section>
+
+
+
+      
+      
+      
+      
+      
+      
+
+    </div> <!-- closes center -->
+    
+    
+    
     <div class="column sidebar--right is-hidden-mobile">
       <a class="top is-hidden" href="#hero">
         <p><i class="fa fa-long-arrow-up" aria-hidden="true"></i></p>
@@ -129,200 +237,3 @@
     </div>
   </div>
 
-
-
-
-
-<!-- Product detail page -->
-<div class="content">
-    <!-- cover-photo -->
-    <div class="OCR-PD-cover row">
-        <img class="OCR-PD-cover-photo" src="<%=user.coverImage%>" alt="background image">
-        <div class="col-lg-8">
-
-        </div>
-        <div class="col-lg-4">
-
-        </div>
-    </div>
-    
-        <div class="OCR-UP-user-profile row">
-      <!-- user details -->
-      <div class="col-lg-3 OCR-profile-customize">
-        <!-- img -->
-        <div class="OCR-UP-teacher-picture">
-            <img class="OCR-UP-picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>" alt="profile picture"/>
-
-        </div>
-        <div class="OCR-UP-teacher-name">
-        <!-- h2 -->
-        <h2><%=user.firstName%> <%=user.lastName%></h2>
-        <h4><%=user.description%></h4>
-        </div>
-        <div class="OCR-UP-thumbs-rating">
-              <!-- negative vs positive review -->
-              <h3>Student Appreciation</h3>
-              <p>
-                <% if(user.appreciation >= 0){ %>
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> +<%=user.appreciation%>
-                <% } else { %>
-                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> -<%=user.appreciation%>
-                <% } %>
-              </p>
-        </div>
-
-        <div class="OCR-UP-teacher">
-
-            <div class="OCR-UP-teacher-type">
-              <p>
-                <i class="fa fa-clock-o"></i> Joined: <%= moment(user.joinedAt).fromNow() %>
-              </p>
-              <!-- Worldview -->
-              <% if (user.worldview !== "Other..") { %>
-              <p>
-                <i class="fa fa-globe" aria-hidden="true"></i> Worldview: <%=user.worldview%>
-              </p>
-              <% } %>
-              <p>
-                <i class="fa fa-map-marker"></i> Location: <%=user.location%>
-              </p>
-            </div>
-        </div>
-        <!-- buttons only visible for user -->
-        <% if(currentUser && user.id == currentUser._id){ %>
-        <div class="OCR-UP-teacher-mod-buttons">
-          <a class="btn btn-xl btn-block btn-primary" href="/users/<%=user.id%>/edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit Profile</a>
-          <a class="btn btn-xl btn-block btn-third" href="/users/<%=user.id%>/dashboard"><i class="fa fa-sliders" aria-hidden="true"></i> Dashboard</a>
-        </div>
-        <% } %>
-      </div>
-
-<!--Right side-->
-    <div class="OCR-UP-teacher-appreciation col-lg-9">
-        <div class="row">
-            <div class="OCR-UP-teacher-listings">
-              <!-- Other circles heading -->
-              <h2>Public profile</h2>
-              <% if (user.id == currentUser._id){ %>
-              <div class="float-right">
-                  <a class="btn btn-lg btn-third" href="/circles/new"><i class="fa fa-thumb-tack" aria-hidden="true"></i> New circle</a>
-              </div>
-              <% } %>
-              <h3><i class="fa fa-thumb-tack" style="color: #49d5f4;"></i> Circles by <%=user.firstName%> (<%=user.circles.length%>)</h3>
-                <br>
-                <br>
-             
-              
-
-              <!-- Hosted circles list -->
-              <div id="accordion">
-                <!-- real first -->
-                <% user.circles.forEach(function(circle){ %>
-                <div class="card">
-                  <div class="card-header row" id="headingOne">
-                      <div class="col-lg-4 circle-image">
-                          <img src="<%=circle.image%>" alt="circle image">
-                      </div>
-                      <div class="col-lg-4 circle-title">
-                        <p class="mb-0">
-                            <%=circle.title%>
-                        </p>
-                      </div>
-                      <div class="col-lg-3 circle-approval">
-                          <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%=circle.appreciation%></p>
-                      </div>
-                      <div class="col-lg-1 circle-approval-more">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#<%=circle.id%>" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  <div id="<%=circle.id%>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                      <div class="card-body">
-                        <div class="oneliner">
-                          <h3><%=circle.oneliner%></h3>
-                            <a class="btn btn-primary" href="/circles/<%=circle.id%>"><i class="fa fa-search-plus"></i> Learn more</a>
-                        </div>
-                        <!--circle reviews-->
-                        <% if(circle.reviews.length > 0) { %>
-
-                        <div class="OCR-UP-reviews">
-                            <!-- review  -->
-                            <%circle.reviews.forEach(function(review){ %>
-                            <div class="OCR-UP-review">
-                              <div class="row">
-                                <div class="col-lg-2">
-                                  <!-- spacial div needs a better solution -->
-                                </div>
-                                <div class="OCR-UP-picture-review-title col-lg-7">
-                                  <!-- review-title -->
-                                  <h3><%=review.author.firstName%> <%=review.author.lastName%>: <%=review.title%></h3>
-                                </div>
-                                <div class="OCR-product-validation col-lg-3">
-                                    <!-- negative vs positive review -->
-                                    <% if(review.recommend){ %>
-                                    <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> +1</p>
-                                    <% } else { %>
-                                      <p><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> -1</p>
-                                      <% } %>
-                                      <span class="pull-right"><%= moment(review.createdAt).fromNow()%></span>
-                                </div>
-                              </div>
-
-                              <div class="OCR-UP-product-reviewer row">
-                                  <div class="OCR-UP-picture-reviewer col-lg-2">
-                                    <!-- var user profile picture -->
-                                    <img class="" src="<%=review.author.avatar%>"/>
-                                  </div>
-                                  <div class="OCR-UP-picture-review-text col-lg-10">
-                                    <!-- review-text -->
-                                    <p><%=review.text%></p>
-                                  </div>
-                              </div>
-                            </div>
-                            <% }) %> <!--einde review -->
-                        </div>
-                        <% } %>
-                      </div>
-                    </div>
-                </div>
-                <% }) %>
-              </div> <!-- einde accordion -->
-            </div>
-        </div>
-
-        <br>
-        <hr>
-        <br>
-
-
-        <!-- endorsements -->
-         <div class="OCR-UP-reviews">
-           <% if(user.joinedCircles && user.joinedCircles.length > 0){ %>
-            <h3><i class="fa fa-check-circle" style="color: green"></i> Educators endorsing <%=user.firstName%></h3>
-           <% user.joinedCircles.forEach(function(agreement){ %>
-           <% if(agreement.endorsementRef){ %>
-           <br>
-           <div class="OCR-UP-review">
-                   <p><i class="fa fa-quote-left"></i> <%=agreement.endorsementRef.text%><i class="fa fa-quote-right"></i></p>
-                   <small> <%=agreement.educatorDetails.firstName%> <%=agreement.educatorDetails.lastName%></strong> - <a href="/circles/<%=agreement.circleRef%>"><%=agreement.circleDetails.title%></a> educator</small>
-                   <span class="pull-right"> <%=moment(agreement.endorsementRef.createdAt).fromNow()%>
-                   </span>
-           </div>
-               <% } %>
-             <% }) %>
-           <% } %>
-         </div>
-         <br>
-         <br>
-
-
-      </div>
-
-
-
-    </div>
-</div>
-
-
-
-
-<% include ../partials/footer %>
