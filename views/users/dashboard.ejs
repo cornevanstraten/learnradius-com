@@ -76,10 +76,9 @@
                 <% if(circle.students.length > 0) {  %>
               <div class="content">
                   <p><strong>Participants (<%=circle.students.length %>)</strong></p>
-                <%circle.agreements.forEach(function(agreement){%>
+                
                 <ul>
                   <%circle.agreements.forEach(function(agreement){%>
-                  
                     <% if(!agreement.endedAt){%>
                       <a href="/users/<%=agreement.studentRef%>">
                           <!--<img class="userloggedin" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_40,h_40/<%=agreement.studentDetails.avatar%>">-->
@@ -90,9 +89,9 @@
                                   <% include ../partials/removeModal.ejs %>
                       </a>
                     <% } %>
-                <% }) %>
+                    <% }) %>
                 </ul>
-                <% }) %>
+                
                 </div>
                 <% } else {%>
                 <p><%=circle.title%> has no participants at the moment</p>
