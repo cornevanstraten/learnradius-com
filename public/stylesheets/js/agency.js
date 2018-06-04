@@ -92,11 +92,6 @@ $(document).ready(function(){
     });
 });
 
-$('.button--favorite').hover(
-       function(){ $(this).html('<i class="fa fa-heart"></i>') },
-       function(){ $(this).html('<i class="fa fa-heart-o"></i>') }
-);
-
 var header = $(".cta-content");
   $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
