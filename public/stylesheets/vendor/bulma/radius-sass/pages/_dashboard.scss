@@ -1,15 +1,69 @@
-.dashboard{
+
+.dashboard {
+    .circle--history {
+        padding: 1em 0;
+    }
+    .edit-profile {
+        margin-top: -4em;
+        z-index: 99;
+        a{
+            background: $white !important;
+            &:hover {
+                background: darken($primary, 15%)!important;
+            }
+        }
+    }
+    .new-circle{
+        margin-top: 0em;
+        z-index: 5;
+    }
+    .card {
+        border-radius: 5px 5px 0 0;
+        img.circle--header {
+            border-radius: 3px 3px 0 0;
+            display: flex;
+            height: 10em;
+            object-fit: cover;
+            object-position: 0em;
+        }
+        .card-content {
+            min-height: 10em;
+            .created {
+                color: $black;
+                margin-top: -.4em;
+            }
+        }
+    }
     .hero-body{
-        padding: 4rem 1.5rem;
+        height: 40vh;
     }
     .pdp-info{ 
             padding: 2.3em 1em 3em 1em;
     }
-    .student{
-        margin-left: 0;
-        &--name {
-            color: $black;
-            
+    .participants{
+        padding-bottom: 1em;
+        .participant{
+            margin-left: 0;
+            font-size: 1.2em;
+            padding: .5em 0;        
+            &--name {
+                color: $black;
+                margin-bottom: .5em;
+            }
+        }
+    }
+    .card-footer {
+        width: 100%;
+        margin: 0;
+    }
+    .circle--footer {
+        padding: .2em;
+        a {
+            position: absolute;
+            bottom: -.2em;
+            left: 0;
+            padding-bottom: 1em;
+            padding-top: 1em;
         }
     }
 }
@@ -33,5 +87,43 @@
             left: -50%;
             transition: all .3s ease-in;
             }
-    }    
+    }  
+    
+}
+
+@media(min-width:768px) {
+    .dashboard {
+        .card {
+            img.circle--header {
+                height: 10em;
+                object-fit: cover;
+                object-position: 0em -6em;
+            }
+        }
+        .circle--history {
+        padding: 2em 0;
+    }
+        .hero-body{
+        }
+        .pdp-info{ 
+        }
+        .participants{
+            .participant{
+                &--name {
+                }
+            }
+        }
+        .card-footer {
+        }
+        .new-circle{
+        margin-top: -4em;
+        z-index: 5;
+    }
+    }
+    .dash-mentor {
+        &--center {
+            &--picture {
+                }
+        }    
+    }
 }

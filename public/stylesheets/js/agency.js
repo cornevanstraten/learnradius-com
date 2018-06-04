@@ -194,8 +194,7 @@ $(document).ready(function(){
       $('.card-content',this).height(highestBox);
     }); 
 
-});
-$(document).ready(function(){
+
     $('.circles').each(function(){  
       
       var highestBox = 0;
@@ -207,8 +206,6 @@ $(document).ready(function(){
       $('.circle--oneliner',this).height(highestBox);
     }); 
 
-});
-$(document).ready(function(){
     $('.circles').each(function(){  
       
       var highestBox = 0;
