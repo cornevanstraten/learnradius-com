@@ -7345,7 +7345,8 @@ a:hover i {
 
 .user-button img {
   border: .5em solid white;
-  border-radius: 50%; }
+  border-radius: 50%;
+  box-shadow: 0px 10px 10px -5px rgba(100, 100, 100, 0.5); }
 .user-button i {
   color: lightgrey;
   transition: all .2s; }
