@@ -1,8 +1,8 @@
 <!--User DASHBOARD -->
 <% include ../partials/header %>
 
-<div class="pdp">
-<section class="hero is-dark is-large" id="top">
+<div class="pdp dashboard">
+<section class="hero is-dark" id="top">
   <div class="hero-body">
   </div>
 </section>
@@ -24,25 +24,26 @@
         
         <div class="columns">
           <div class="column is-4">
-            <div class="pdp-title">
+            <div class="edit-profile">
+               <a href="/users/<%=user.id%>/edit" class="button is-radius-red is-outlined is-medium"><i class="fa fa-pencil-square-o"></i> <p class="edit"> edit profile</p></a> <br>
               <!--<h1 class="title">-->
               <!--   dashboard-->
               <!--</h1>-->
             </div>
           </div>
-          <div class="column is-4 pdp-mentor">
-            <div class="pdp-mentor--center">
+          <div class="column is-4 dash-mentor">
+            <div class="dash-mentor--center">
               <a href="/users/<%=user._id%>">
 
-                <img class="pdp-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>" alt="profile picture"/>
+                <img class="dash-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>" alt="profile picture"/>
                 <!--<div class="pdp-mentor--center--name">-->
                 <!--  <h2 class="title"><%=user.firstName%> <%=user.lastName%></h2>-->
                 <!--</div>-->
               </a>
             </div> 
             </div>
-            <div class="column is-4 pdp-actions">
-                <a href="/users/<%=user.id%>/edit" class="button is-radius-red is-medium"><i class="fa fa-pencil-square-o"></i> <p class="join"> edit profile</p></a> <br>
+            <div class="column is-4 new-circle">
+                <a href="/circles/new" class="button is-radius-red is-medium"><i class="fa fa-thumb-tack"></i> <p class="join"> new circle</p></a> <br>
                 <!--<a class="button is-radius-red is-large is-outlined button--favorite"><i class="fa fa-heart-o"></i></a>   -->
             </div>
         </div>
@@ -57,9 +58,11 @@
           
           
           
-          <div class="column is-11">
+          <div class="column">
         <% user.circles.reverse().forEach(function(circle){ %>
           <div class="card" id="<%=circle.id%>">
+                        
+            <img class="circle--header" src="<%=circle.image%>">
             <header class="card-header">
               <p class="card-header-title">
                 <a href="/circles/<%=circle.id%>">
@@ -74,34 +77,41 @@
             </header>
             <div class="card-content is-hidden manageCircle<%=circle.id%>"> <!--toggle is-hidden here-->
                 <% if(circle.students.length > 0) {  %>
-              <div class="content">
-                  <p><strong>Participants (<%=circle.students.length %>)</strong></p>
+
                 
-                <ul>
-                  <%circle.agreements.forEach(function(agreement){%>
-                    <% if(!agreement.endedAt){%>
-                      <a href="/users/<%=agreement.studentRef%>">
-                          <!--<img class="userloggedin" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_40,h_40/<%=agreement.studentDetails.avatar%>">-->
-                          <%=agreement.studentDetails.firstName%>
-                          <%=agreement.studentDetails.lastName%>
-                          <a class="button is-success" href="/users/<%=agreement._id%>/endorsements/new"><span> endorse</span></a>
-                          <a class="button removeButton is-light" agreement="<%=agreement._id%>"><span class="fa fa-user-times" agreement="<%=agreement._id%>"></span></a>
-                                  <% include ../partials/removeModal.ejs %>
-                      </a>
-                    <% } %>
+              <div class="content ">
+                  <h2>Participants (<%=circle.students.length %>)</h2>
+                  <br>
+                  <div class="participants columns">
+                    <%circle.agreements.forEach(function(agreement){%>
+                      <% if(!agreement.endedAt){%>
+                      <div class="column is-3">
+                        <a class="participant" href="/users/<%=agreement.studentRef%>">
+                            <!--<img class="userloggedin" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_40,h_40/<%=agreement.studentDetails.avatar%>">-->
+                            <p class="participant--name"><%=agreement.studentDetails.firstName%>
+                            <%=agreement.studentDetails.lastName%></p>
+                            <a class="button is-primary is-outlined" href="/users/<%=agreement._id%>/endorsements/new"><span> endorse</span></a>
+                            <a class="button removeButton is-light" agreement="<%=agreement._id%>"><span class="fa fa-user-times" agreement="<%=agreement._id%>"></span></a>
+                                    <% include ../partials/removeModal.ejs %>
+                        </a>
+                      </div>
+                      <% } %>
                     <% }) %>
-                </ul>
+                  </div>
                 
                 </div>
                 <% } else {%>
                 <p><%=circle.title%> has no participants at the moment</p>
                 <% } %>
-              
             </div>
-            <footer class="card-footer">
-              <a class="button deleteButton is-light card-footer-item" circle="<%=circle.id%>"><span class="icon"><i class="fa fa-trash-o" circle="<%=circle.id%>"></i></span></a>
-              <% include ../partials/deletemodal.ejs %>
-              <a href="/circles/<%=circle.id%>/edit" class="button is-success is-fullwidth card-footer-item"><span class="icon"><i class="fa fa-pencil-square-o"></i></span> <span> edit</span></a>
+            <footer class="card-footer columns">
+              <div class="column is-1">
+                <a class="button deleteButton is-light card-footer-item" circle="<%=circle.id%>"><span class="icon"><i class="fa fa-trash-o" circle="<%=circle.id%>"></i></span></a>
+                <% include ../partials/deletemodal.ejs %>
+              </div>
+              <div class="column is-11">
+                <a href="/circles/<%=circle.id%>/edit" class="button is-fullwidth card-footer-item is-light"><span class="icon"><i class="fa fa-pencil-square-o"></i></span> <span> edit</span></a>
+              </div>
             </footer>
           </div>
           <br>
@@ -202,7 +212,7 @@
       </section>
       
       
-      <section class="hero"> <!--- LEARNING HISTORY -->
+      <section class="hero circle--history"> <!--- LEARNING HISTORY -->
         <div class="hero-content">
           
         <h2 class="title"><span class="icon"><i class="fa fa-briefcase"></i></span> <span> learning history</span></h2>
@@ -211,7 +221,7 @@
           
           <% for (var i = 0; i < user.joinedCircles.length; i++){%>
           <% if (user.joinedCircles[i].endedAt){ %>
-          <div class="column is-half single-circle">
+          <div class="column is-half ">
             <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
                 <div class="card circle">
                   <figure class="image circle--image">
@@ -229,12 +239,11 @@
                       <!--</div>-->
                     </div>
                     <div class="content columns">
-                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                      <div class="column is-three-quarters is-three-quarters-mobile ">
                         <p class="title is-4"><%=user.joinedCircles[i].circleDetails.title%></p>
                       </div>
                     </div>
-                    <div>
-                    <div class="circle--oneliner">
+                    <div class="created">
                       <p><%= moment(user.joinedCircles[i].createdAt).format('ll') %> -
                       <%= moment(user.joinedCircles[i].endedAt).format('ll') %></p>
                     </div>
@@ -244,19 +253,19 @@
                           <% if(user.joinedCircles[i].reviewRef){ %>
                         <button class="button is-outlined is-fullwidth card-footer-item" disabled><span class="icon"><i class="fa fa-check"></i></span> <span> reviewed</span></button>
                        <% } else { %>
-                          <button href="/circles/<%=user.joinedCircles[i]._id%>/reviews/new" class="button is-primary is-fullwidth card-footer-item"><span class="icon"><i class="fa fa-comment-o"></i></span> <span> review</span></button>
+                          <a href="/circles/<%=user.joinedCircles[i]._id%>/reviews/new" class="button is-primary is-fullwidth card-footer-item"><span class="icon"><i class="fa fa-comment-o"></i></span> <span> review</span></a>
                        <% } %>
                        </div>
                     </footer>
                         
-                      </div>
+                      
                     </div>
                   </div>
                 </a>
               </div>
                     <% if(i%1 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
                             </div>
-                              <div class="columns">
+                              <div class="columns single-circle">
                     <% }; %>
                 <% } %>
                 <% } %>

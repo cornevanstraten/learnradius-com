@@ -7201,10 +7201,16 @@ img {
   width: 100%;
   height: 30em; }
 
-@media (max-width: 768px) {
-  h1, h2, h3, h4, h5 {
-    font-weight: bold !important; }
+div:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.1) !important; }
 
+h1, h2, h3, h4, h5 {
+  font-weight: bold !important; }
+
+h3 {
+  font-size: 1.2em !important; }
+
+@media (max-width: 768px) {
   h1 {
     font-size: 1.5em !important; }
 
@@ -7268,6 +7274,9 @@ i.fa-heart, i.fa-heart-o {
 
 a.dropdown-item i:hover {
   color: #f8333c; }
+
+.is-outlined {
+  border: 2px solid #7a7a7a; }
 
 .landing-hero {
   background: -webkit-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url("/stylesheets/img/radius-header.jpeg");
@@ -7345,7 +7354,8 @@ a:hover i {
 
 .user-button img {
   border: .5em solid white;
-  border-radius: 50%; }
+  border-radius: 50%;
+  box-shadow: 0px 10px 10px -5px rgba(100, 100, 100, 0.5); }
 .user-button i {
   color: lightgrey;
   transition: all .2s; }
@@ -7479,6 +7489,86 @@ a:hover i {
     margin-top: -.5em;
     text-align: right;
     font-size: .8em; } }
+.dashboard .circle--history {
+  padding: 1em 0; }
+.dashboard .edit-profile {
+  margin-top: -4em;
+  z-index: 99; }
+  .dashboard .edit-profile a {
+    background: white !important; }
+    .dashboard .edit-profile a:hover {
+      background: #d70711 !important; }
+.dashboard .new-circle {
+  margin-top: 0em;
+  z-index: 5; }
+.dashboard .card {
+  border-radius: 5px 5px 0 0; }
+  .dashboard .card img.circle--header {
+    border-radius: 3px 3px 0 0;
+    display: flex;
+    height: 10em;
+    object-fit: cover;
+    object-position: 0em; }
+  .dashboard .card .card-content {
+    min-height: 10em; }
+    .dashboard .card .card-content .created {
+      color: #0a0a0a;
+      margin-top: -.4em; }
+.dashboard .hero-body {
+  height: 40vh; }
+.dashboard .pdp-info {
+  padding: 2.3em 1em 3em 1em; }
+.dashboard .participants {
+  padding-bottom: 1em; }
+  .dashboard .participants .participant {
+    margin-left: 0;
+    font-size: 1.2em;
+    padding: .5em 0; }
+    .dashboard .participants .participant--name {
+      color: #0a0a0a;
+      margin-bottom: .5em; }
+.dashboard .card-footer {
+  width: 100%;
+  margin: 0; }
+.dashboard .circle--footer {
+  padding: .2em; }
+  .dashboard .circle--footer a {
+    position: absolute;
+    bottom: -.2em;
+    left: 0;
+    padding-bottom: 1em;
+    padding-top: 1em; }
+
+.dash-mentor {
+  margin-top: -5em;
+  margin-bottom: 1em; }
+  .dash-mentor--center {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 12vh; }
+    .dash-mentor--center--picture {
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      border: 10px solid white;
+      border-radius: 50%;
+      box-shadow: 0 1px 30px 30px rgba(100, 100, 100, 0.4);
+      z-index: 1;
+      position: relative;
+      left: -50%;
+      transition: all .3s ease-in; }
+
+@media (min-width: 768px) {
+  .dashboard .card img.circle--header {
+    height: 10em;
+    object-fit: cover;
+    object-position: 0em -6em; }
+  .dashboard .circle--history {
+    padding: 2em 0; }
+  .dashboard .new-circle {
+    margin-top: -4em;
+    z-index: 5; } }
 .three-steps .level-item {
   padding-bottom: 1.8em; }
 
