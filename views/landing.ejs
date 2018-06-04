@@ -114,42 +114,52 @@
             <h1 class="title">circles </h1>
             <h2 class="subtitle">recently added learning circles</h2>
           
-          <div class="columns">
-            
-            <%circles.forEach(function(circle){%>
-            <div class="column">
-                <div class="card">
-                    <figure class="image is-clipped">
-                      <img src="<%=circle.image%>">
-                    </figure>
+          <div class="columns circles">
+                        <% for (var i = 0; i < circles.length; i++){%>
+            <div class="column is-one-quarter single-circle">
+              <a href="/circles/<%=circles[i]._id%>" class="circle">
+                <div class="card circle">
+                  <figure class="image circle--image">
+                      <img src="<%=circles[i].image%>">
+                  </figure>
                   <div class="card-content">
                     <div class="media">
                       <div class="media-left">
-                        <figure class="image is-48x48">
-                          <img src="<%=circle.educator.avatar%>" alt="Placeholder image">
+                        <figure class="image mentor--image">
+                          <img src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=circles[i].educator.avatar%>" alt="Placeholder image">
                         </figure>
                       </div>
-                      <div class="media-content">
-                        <p class="title is-4"><%=circle.title%></p>
-                        <p class="subtitle is-6"><%=circle.educator.firstName%> <%=circle.educator.lastName%></p>
+                      <div class="media-content mentor--name">
+                        <p class="subtitle is-6"><%=circles[i].educator.firstName%> <%=circles[i].educator.lastName%></p>
                       </div>
                     </div>
-                    <div class="content">
-                      <%= circle.oneliner %> 
-                      <br>
-                      <time datetime="2016-1-1" class="is-size-7">created: <%=moment(circle.createdAt).fromNow()%></time>
+                    <div class="content columns">
+                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                        <h3 class="title"><%=circles[i].title%></h3>
+                      </div>
+                      <div class="circle--appreciation column is-one-quarter">
+                        <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div>
+                    <div class="circle--oneliner">
+                      <%= circles[i].oneliner %> 
+                    </div>
+                      <div class="columns circle--footer">
+                          <time datetime="2016-1-1" class="column is-half is-size-7">created: <br> <%=moment(circles[i].createdAt).format('ll')%></time>
+                        <div class="column is-half circle--more">
+                          <p>more</p>
+                        </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                    <footer class="card-footer">
-                        <span class="card-footer-item">
-                            <a href="/circles/<%=circle._id%>" class="button is-primary is-fullwidth">
-                                <i class="fa fa-search-plus"></i>
-                            </a>
-                        </span>
-                    </footer>
+                </a>
+              
                 </div>
-                </div>
-            <% }); %>
+            <% }; %>
+            
+
         </div>
       </div>
       </div>
@@ -161,9 +171,9 @@
       <h1 class="title">
         our mission:
       </h1>
-            <h2 class="subtitle is-one-half">
+            <p>
                   Helping you <strong>learn from the people around you</strong> by providing an <br> open marketplace for real life learning.
-             </h2>
+             <p>
     </div>
   </div>
       
@@ -192,62 +202,7 @@
     </div>
     </div>
  </section>
-   <section class="hero">
-  <div class="hero-body">
-     <div class="container">
-       <h1 class="title">our team </h1>
-       
-       <div class="columns">
-         <div class="column is-one-third">
-                     <div class="card">
-             <img class="rounded-circle" src="/stylesheets/img/team/OCRteamCorneVanStraten.png" alt="">
-             <h4>Corné</h4>
-             <p class="text-muted">back-end developer<br><strong>founder</strong></p>
-          
-          </div> 
-           
-         </div>
-        
-
-       </div>
-       
-       
-       <div class="card">
-                  <!--<div class="card-image">-->
-                    <figure class="image is-clipped">
-                      <img src="">
-                    </figure>
-                  <!--</div>-->
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-left">
-                        <figure class="image is-48x48">
-                          <img src="" alt="Placeholder image">
-                        </figure>
-                      </div>
-                      <div class="media-content">
-                        <h3 class="title is-4"></h3>
-                        <h3 class="subtitle is-6"></h3>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <br>
-                      <time datetime="2016-1-1" class="is-size-7">created: </time>
-                    </div>
-                  </div>
-                    <footer class="card-footer">
-                        <span class="card-footer-item">
-                            <a href="/circles/" class="button is-primary is-fullwidth">
-                                <i class="fa fa-search-plus"></i>
-                            </a>
-                        </span>
-                    </footer>
-                </div>
-     </div>
-     </div>
-   </section>
-
-
+ 
 
 
 
