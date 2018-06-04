@@ -1,0 +1,240 @@
+
+<!--User show page -->
+<% include ../partials/header %>
+
+<div class="pdp">
+<section class="hero is-dark is-large" id="top">
+  <div class="hero-body">
+  </div>
+</section>
+
+  <div class="columns">
+    <div class="column sidebar--left is-hidden-mobile">
+      <ul>
+        <!--<li><a href="#hero">Overview</a></li>-->
+        <!--<li><a href="#tal">Description</a></li>-->
+        <!--<li><a href="#Reviews">Reviews</a></li>-->
+      </ul>
+    </div>
+    
+    
+    <div class="column pdp-content is-8"> <!-- center column -->
+      <section class="pdp-info" id="Overview">
+        <div class="columns">
+          <div class="column is-4">
+            <div class="pdp-title">
+              <p class="pdp-product-synopsis">
+                <p>joined: <%=moment(user.joinedAt).format('ll')%></p>
+              </p>
+            </div>
+          </div>
+          <div class="column is-4 pdp-mentor">
+            <div class="pdp-mentor--center">
+              <a href="/users/<%=user.id%>">
+                <img class="pdp-mentor--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>"alt="profile picture"/>
+                <div class="pdp-mentor--center--name">
+                  <h2 class="title"><%=user.firstName%> <%=user.lastName%> <!-- Var 1stname + var lastname --></h2>
+                  <h2 class="title"><%=user.location%></h2>
+                </div>
+              </a>
+            </div> 
+            </div>
+        </div>
+      </section>
+      
+      <section class="pdp-timeandlocation" id="tal">
+        <h2 class="title">bio</h2>
+            <p><%=user.description%></p>
+      </section>
+      
+      <section class="hero">
+        <div class="hero-content">
+          
+        
+            <h2 class="title"><span class="icon"><i class="fa fa-thumb-tack"></i></span> <span> circles</span></h2>
+            <p>Circles hosted by <%=user.firstName%></p>
+            <br>
+
+
+        <div class="columns">
+          
+        <% for (var i = 0; i < user.circles.length; i++){%>
+        
+            <div class="column is-half single-circle">
+              <a href="/circles/<%=user.circles[i]._id%>" class="circle">
+                <div class="card circle">
+                  <figure class="image circle--image">
+                      <img src="<%=user.circles[i].image%>">
+                  </figure>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-left">
+                        <figure class="image mentor--image">
+                          <img src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>" alt="Placeholder image">
+                        </figure>
+                      </div>
+                      <div class="media-content mentor--name">
+                        <p class="subtitle is-6"><%=user.firstName%> <%=user.lastName%></p>
+                      </div>
+                    </div>
+                    <div class="content columns">
+                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                        <p class="title is-4"><%=user.circles[i].title%></p>
+                      </div>
+                      <div class="circle--appreciation column is-one-quarter">
+                        <%=user.circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div>
+                    <div class="circle--oneliner">
+                      <%=user.circles[i].oneliner %> 
+                    </div>
+                      <div class="columns circle--footer">
+                          <time datetime="2016-1-1" class="column is-half is-size-7">created: <br> <%=moment(user.circles[i].createdAt).format('ll')%></time>
+                        <div class="column is-half circle--more">
+                          <p>more</p>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              
+                    <% if(i%2 !==0 && i !== 0) {%> <!-- if row is filled to index[1], start new -->
+                      </div>
+                      <div class="columns">
+                    <% }; %>
+            <% } %>
+          </div>
+          </div>
+      </section>
+      
+      
+      <section class="hero"> <!-- joined -->
+        <div class="hero-content">
+
+          
+          
+        <h2 class="title"><span class="icon"><i class="fa fa-check-circle"></i></span> <span> joined</span></h2>
+
+        <div class="columns circles single-circle">
+       
+          <% for (var i = 0; i < user.joinedCircles.length; i++){%>
+          <% if (!user.joinedCircles[i].endedAt){ %>
+          <div class="column is-half single-circle">
+            <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
+                <div class="card circle">
+                  <figure class="image circle--image">
+                      <img src="<%=user.joinedCircles[i].circleDetails.image%>">
+                  </figure>
+                  <div class="card-content">
+                    <div class="media">
+
+                    </div>
+                    <div class="content columns">
+                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                        <p class="title is-4"><%=user.joinedCircles[i].circleDetails.title%></p>
+                      </div>
+                    </div>
+                    <div>
+                    <div class="circle--oneliner">
+                      <%= user.joinedCircles[i].circleDetails.oneliner %> 
+                    </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              
+                    <% if(i%1 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                              </div>
+                              <div class="columns">
+                    <% }; %>
+                <% } %>
+                <% } %>
+                
+
+                
+                
+                
+                
+            </div>
+            </div>
+      </section>
+      
+      <section class="hero"> <!-- learning history -->
+        <div class="hero-content">
+
+          
+          
+        <h2 class="title"><span class="icon"><i class="fa fa-briefcase"></i></span> <span> learning history</span></h2>
+
+        <div class="columns circles single-circle">
+       
+          <% for (var i = 0; i < user.joinedCircles.length; i++){%>
+          <% if (user.joinedCircles[i].endedAt){ %>
+          <div class="column is-half single-circle">
+            <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
+                <div class="card circle">
+                  <figure class="image circle--image">
+                      <img src="<%=user.joinedCircles[i].circleDetails.image%>">
+                  </figure>
+                  <div class="card-content">
+                    <div class="media">
+
+                    </div>
+                    <div class="content columns">
+                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                        <p class="title is-4"><%=user.joinedCircles[i].circleDetails.title%></p>
+                      </div>
+                    </div>
+                    
+                    <div class="circle--oneliner">
+                      <p><%= moment(user.joinedCircles[i].createdAt).format('ll') %> -
+                      <%= moment(user.joinedCircles[i].endedAt).format('ll') %></p>
+                    </div>
+                                  <div>
+                                    <% if(user.joinedCircles[i].endorsementRef){ %>
+                                        <hr>
+                                               <p>"<%=user.joinedCircles[i].endorsementRef.text%>"</p>
+                                               <p><strong><%=user.joinedCircles[i].educatorDetails.firstName%> <%=user.joinedCircles[i].educatorDetails.lastName%></strong> - <a href="/circles/<%=user.joinedCircles[i].circleRef%>"><%=user.joinedCircles[i].circleDetails.title%></a> educator</p>
+                                                <p><%=moment(user.joinedCircles[i].endorsementRef.createdAt).fromNow()%></p>
+                                     <% } %>
+                                      </div>
+                      </div>
+                    </div>
+                </a>
+              </div>
+              
+                    <% if(i%2 !==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                              </div>
+                              <div class="columns">
+                    <% }; %>
+                    
+                <% } %>
+                <% } %>
+            </div>
+            </div>
+      </section>
+
+
+
+      
+      
+      
+      
+      
+      
+
+    </div> <!-- closes center -->
+    
+    
+    
+    <div class="column sidebar--right is-hidden-mobile">
+      <a class="top is-hidden" href="#hero">
+        <p><i class="fa fa-long-arrow-up" aria-hidden="true"></i></p>
+      </a>
+    </div>
+  </div>
+

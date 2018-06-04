@@ -77,6 +77,7 @@
             </header>
             <div class="card-content is-hidden manageCircle<%=circle.id%>"> <!--toggle is-hidden here-->
                 <% if(circle.students.length > 0) {  %>
+
                 
               <div class="content ">
                   <h2>Participants (<%=circle.students.length %>)</h2>
@@ -97,8 +98,6 @@
                       <% } %>
                     <% }) %>
                   </div>
-                  <!--<ul>-->
-                  <!--</ul>-->
                 
                 </div>
                 <% } else {%>
