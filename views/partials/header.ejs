@@ -60,6 +60,7 @@
         <div class="navbar-end">
           <div class="searchform is-hidden-mobile is-hidden">
             <div class="searchform--basic field has-addons has-addons-center">
+              <form action="/circles" method="GET" >
               <p class="control">
                 <input class="input" type="text" placeholder="anything" name="subject">
               </p>
@@ -76,14 +77,19 @@
                         </span>
                       </p>
                       <p class="control">
-                        <input class="input" type="text" placeholder="30330" name="ZIP">
+                        <% if(currentUser){ %>
+                        <input class="input" type="text" value="<%=currentUser.zip%>" name="ZIP" required data-validation-required-message>
+                        <% } else { %>
+                        <input class="input" type="text" value="30303" name="ZIP" required data-validation-required-message>
+                        <% } %>
                       </p>
               </div>
               <p class="control">
-                <a class="button is-primary is-inverted search-button">
+                <button type="submit" class="button is-primary is-inverted search-button">
                    <i class="fa fa-search"> </i>
-                </a>
+                </button>
               </p>
+              </form>
             </div>
             
           </div>
