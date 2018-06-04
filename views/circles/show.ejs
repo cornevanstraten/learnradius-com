@@ -5,6 +5,7 @@
     <div class="column is-half-mobile cta-content--title label"><%=circle.title%></div>
     <div class="column is-half-mobile cta-content--price label">$<%=circle.price%> /lesson</div>
     <div class="column is-half-mobile cta-content--favorite">
+      <% if(currentUser){ %>
      <form id="favform" action="/users/<%=currentUser._id%>" method="POST">
           <input type="hidden" name="circle[id]" value="<%=circle.id%>">
           <input type="hidden" name="circle[title]" value="<%=circle.title%>">
@@ -18,6 +19,7 @@
       </button>
       <% } %>
       </form>
+      <% } %>
     </div>
     <div class="column is-half-mobile cta-content--join">
       <% if(!visitorIsStudent){ %>
@@ -83,6 +85,7 @@
                       <i class="fa fa-check-circle"></i><p class="join"> joined</p>
                     </button>
                     <% } %>
+                    <% if(currentUser){ %>
                    <form id="favform" action="/users/<%=currentUser._id%>" method="POST">
                         <input type="hidden" name="circle[id]" value="<%=circle.id%>">
                         <input type="hidden" name="circle[title]" value="<%=circle.title%>">
@@ -96,6 +99,7 @@
                     </button>
                     <% } %>
                     </form>
+                    <% } %>
                 <p class="price">$ <%=circle.price%> <span class="thin"> /lesson</span></p>
       
           </div>
