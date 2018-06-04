@@ -133,20 +133,6 @@
 
         <div class="columns circles single-circle">
                           <!--fav-->
-                <div class="column is-half">
-                  <div class="box">
-                      <h3><i class="fa fa-heart" style="color: red"></i> Favorites (<%=user.fav.length%>)</h3>
-                      <div class="content">
-                          <ul>
-                            <% user.fav.forEach(function(circle){ %>
-                              <li class="">
-                                <a href="/circles/<%=circle.id%>"> <%=circle.title%></a>
-                              </li>
-                            <% }) %>
-                          </ul>
-                      </div>
-                  </div>
-                </div>
           
           
           <% for (var i = 0; i < user.joinedCircles.length; i++){%>
@@ -195,7 +181,7 @@
                 </a>
               </div>
               
-                    <% if(i%2 !==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                    <% if(i%2 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
                               </div>
                               <div class="columns">
                     <% }; %>
@@ -206,7 +192,20 @@
                 
                 
                 
-                
+                  <div class="column is-half">
+                  <div class="box">
+                      <h3><i class="fa fa-heart" style="color: red"></i> Favorites (<%=user.fav.length%>)</h3>
+                      <div class="content">
+                          <ul>
+                            <% user.fav.forEach(function(circle){ %>
+                              <li class="">
+                                <a href="/circles/<%=circle.id%>"> <%=circle.title%></a>
+                              </li>
+                            <% }) %>
+                          </ul>
+                      </div>
+                  </div>
+                </div>
             </div>
             </div>
       </section>
