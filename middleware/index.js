@@ -44,16 +44,13 @@ middlewareObj.checkCircleOwnership = function(req, res, next){
 }
 
 
-
-
-//Check if a user is allowed to create an OpenClassroom 
 middlewareObj.checkEducator = function(req, res, next){
-    if(req.user.isEducator){
-        return next();
-    }
-    //!IMPORTANT: always put flash before the redirect
-    req.flash("error", "Please complete your user profile before creating an OpenClassroom");
-    res.redirect("/users/" + req.user.id);
+    return next();
+    // if(req.user.isEducator){
+    //     return next();
+    // }
+    // req.flash("error", "Please complete your user profile before creating an OpenClassroom");
+    // res.redirect("/users/" + req.user.id);
 }
 
 middlewareObj.isEducatorOrStudent = function(req, res, next){
