@@ -118,7 +118,7 @@ router.post("/", middleware.isLoggedIn, middleware.checkEducator, upload.single(
 router.get("/:id", function(req, res){
     //find the OC matching the id in the DB
     Circle.findById(req.params.id).populate("educator").populate({path: "reviews", populate: {path: "author"}}).populate("students").exec(function(err, foundCircle){
-        if(err){
+        if(err || !foundCircle){
             console.log(err);
             req.flash("error", "Circle not found");
             res.redirect("back")
