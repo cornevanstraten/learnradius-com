@@ -123,8 +123,7 @@ router.get("/users/:id/edit", middleware.checkUserProfileOwnership, function(req
 //UPDATE
 router.put("/users/:id/", middleware.checkUserProfileOwnership, upload.single('avatar_upload'), function(req, res){
     var newData = req.body.user
-    if(req.file){console.log(req.file)}
-    if(req.files){console.log(req.files)}
+    // if(req.file){console.log(req.file)}
 
       if(newData.description 
         //   && newData.avatar 

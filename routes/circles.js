@@ -119,7 +119,7 @@ router.get("/:id", function(req, res){
     //find the OC matching the id in the DB
     Circle.findById(req.params.id).populate("educator").populate({path: "reviews", populate: {path: "author"}}).populate("students").exec(function(err, foundCircle){
         if(err){
-            console.log(err);
+            console.log(err || foundCircle == null);
             req.flash("error", "Circle not found");
             res.redirect("back")
         } else {
