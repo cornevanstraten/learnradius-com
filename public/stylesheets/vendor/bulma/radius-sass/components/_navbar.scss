@@ -38,7 +38,7 @@ a:hover{
   top: 0;
   width: 100% !important;
   .logo {
-    margin-left: -4.5em;
+    margin-left: -3.5em;
   }
   .is-inverted {
       margin-top: -1px;
@@ -84,7 +84,7 @@ a:hover{
   .navbar {
     width: 100%;
     .logo {
-      margin-left: -4em;
+      // margin-left: -4em;
       }
   }
   .navbar > .container {
@@ -138,5 +138,30 @@ a:hover{
   }
   .navbar-end {
     margin-top: 0em;
+  }
+}
+@media(min-width:768px) {
+  .navbar{
+    .logo{
+      margin-left: -5em;
+    }
+  }
+  .user-button{
+    button{
+          margin-top: 1vh;
+    } 
+  }
+}
+
+@media(min-width: 1440px) {
+  .navbar {
+    .logo {
+      // margin-left: -8em;
+    }
+  }
+  .user-button {
+    button {
+          margin-top: 1vh;
+    } 
   }
 }

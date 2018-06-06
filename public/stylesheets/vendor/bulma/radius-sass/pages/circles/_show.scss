@@ -157,17 +157,15 @@
         text-align: center;
         .cta-content {
             position: fixed;
-            top: 6vh;
+            top: 0vh;
             left: 15%;
             z-index: 10;
             margin: 0 auto;
             padding: .3em;
-            transform: rotateX(90deg);
-            transition: all .7s ease;
+            transition: all 1s ease;
             width: 70%;
             height: 7vh;
             background: whitesmoke;
-            box-shadow: 0 20px 20px 20px rgba(100,100,100, 1);
             border-radius: 0 0 3px 3px;
             .button{
                 margin-top: -.5em;
@@ -175,7 +173,6 @@
         }
         .cta-visible{
             top: 7.5vh;
-            transform: rotateX(0deg);
             box-shadow: 0 1px 10px 0px rgba(100,100,100, 1); 
         }
     }
