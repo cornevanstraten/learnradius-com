@@ -7434,6 +7434,15 @@ a:hover i {
   top: 7.5vh;
   transition: top 0.2s ease-in-out; }
 
+@media (max-width: 320px) {
+  .navbar .logo {
+    position: fixed;
+    left: -2.5em;
+    top: 2.3vh; }
+  .navbar .user-button {
+    position: fixed;
+    right: .3em;
+    top: .4em; } }
 @media (min-width: 768px) {
   .navbar {
     width: 100%; }
