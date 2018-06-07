@@ -7406,7 +7406,7 @@ a:hover i {
   top: 0;
   width: 100% !important; }
   .navbar .logo {
-    margin-left: -3.5em; }
+    margin-left: -2.7em; }
   .navbar .is-inverted {
     margin-top: -1px;
     box-shadow: 0 1px 1px 1px rgba(100, 100, 100, 0.2); }
@@ -7469,9 +7469,6 @@ a:hover i {
   .navbar-end {
     margin-top: 0em; } }
 @media (min-width: 768px) {
-  .navbar .logo {
-    margin-left: -5em; }
-
   .user-button button {
     margin-top: 1vh; } }
 @media (min-width: 1440px) {
@@ -7488,7 +7485,7 @@ a:hover i {
   .sidebar--right i {
     position: fixed;
     right: 5em;
-    bottom: 1em;
+    bottom: 5em;
     font-size: 2em; }
 
 .card {
@@ -7565,9 +7562,12 @@ a:hover i {
     text-align: right;
     font-size: .8em; } }
 .page-footer {
-  height: 10vh;
+  position: relative;
+  margin-bottom: 0;
+  height: 17vh;
   background: lightgray;
-  box-shadow: 0 1px 5px 5px rgba(100, 100, 100, 0.5); }
+  box-shadow: 0 1px 5px 5px rgba(100, 100, 100, 0.5);
+  z-index: 99; }
   .page-footer img {
     margin: 2.4vh; }
 

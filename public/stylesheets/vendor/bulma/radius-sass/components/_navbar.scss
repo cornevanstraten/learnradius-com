@@ -38,7 +38,7 @@ a:hover{
   top: 0;
   width: 100% !important;
   .logo {
-    margin-left: -3.5em;
+    margin-left: -2.7em;
   }
   .is-inverted {
       margin-top: -1px;
@@ -56,13 +56,13 @@ a:hover{
 }
 .user-button {
   img{
-  border: .5em solid white;
-  border-radius: 50%;
-  box-shadow: 0px 10px 10px -5px rgba(100,100,100, .5);
+    border: .5em solid white;
+    border-radius: 50%;
+    box-shadow: 0px 10px 10px -5px rgba(100,100,100, .5);
   }
   i{
-  color: lightgrey;
-  transition: all .2s;
+    color: lightgrey;
+    transition: all .2s;
   }
 }
 
@@ -131,10 +131,6 @@ a:hover{
             max-height: 100%;
         }
     }
-    .link__login {
-      // margin: 1em 0;
-      // height: 100%;
-    }
   }
   .navbar-end {
     margin-top: 0em;
@@ -143,7 +139,7 @@ a:hover{
 @media(min-width:768px) {
   .navbar{
     .logo{
-      margin-left: -5em;
+      // margin-left: -5em;
     }
   }
   .user-button{

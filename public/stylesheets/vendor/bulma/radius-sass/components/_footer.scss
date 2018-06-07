@@ -1,7 +1,10 @@
 .page-footer {
-    height: 10vh;
+    position: relative;
+    margin-bottom: 0;
+    height: 17vh;
     background: lightgray;
     box-shadow: 0 1px 5px 5px rgba(100,100,100, .5);
+    z-index: 99;
     img {
         margin: 2.4vh;
     }
