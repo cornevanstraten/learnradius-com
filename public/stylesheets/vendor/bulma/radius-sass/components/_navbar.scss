@@ -56,9 +56,9 @@ a:hover{
 }
 .user-button {
   img{
-    border: .5em solid white;
+    border: .2em solid white;
     border-radius: 50%;
-    box-shadow: 0px 10px 10px -5px rgba(100,100,100, .5);
+
   }
   i{
     color: lightgrey;
@@ -102,7 +102,7 @@ a:hover{
   }
   .navbar > .container {
       min-height: none;
-      height: 7.5vh;
+      height: 4em;
     }
   
   nav{
@@ -121,7 +121,7 @@ a:hover{
           visibility: none ;
           
           &--button {
-            margin: .75em 0 1em 0 !important;
+            margin: .7em 0 1em 0 !important;
             z-index: 0;
           }
         }
@@ -157,7 +157,7 @@ a:hover{
   }
   .user-button{
     button{
-          margin-top: 1vh;
+          margin-top: .5em;
     } 
   }
 }
@@ -170,7 +170,7 @@ a:hover{
   }
   .user-button {
     button {
-          margin-top: 1vh;
+          margin-top: 1em;
     } 
   }
 }

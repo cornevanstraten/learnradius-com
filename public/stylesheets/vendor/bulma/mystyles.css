@@ -7419,9 +7419,8 @@ a:hover i {
       box-shadow: 0 1px 1px 1px rgba(236, 6, 98, 0.2); }
 
 .user-button img {
-  border: .5em solid white;
-  border-radius: 50%;
-  box-shadow: 0px 10px 10px -5px rgba(100, 100, 100, 0.5); }
+  border: .2em solid white;
+  border-radius: 50%; }
 .user-button i {
   color: lightgrey;
   transition: all .2s; }
@@ -7449,7 +7448,7 @@ a:hover i {
 
   .navbar > .container {
     min-height: none;
-    height: 7.5vh; }
+    height: 4em; }
 
   nav .searchform--basic {
     margin-top: 0.8em;
@@ -7462,7 +7461,7 @@ a:hover i {
   nav .searchform--expand {
     visibility: none; }
     nav .searchform--expand--button {
-      margin: .75em 0 1em 0 !important;
+      margin: .7em 0 1em 0 !important;
       z-index: 0; }
   nav .searchform .dropdown-content {
     width: 7em;
@@ -7479,10 +7478,10 @@ a:hover i {
     margin-top: 0em; } }
 @media (min-width: 768px) {
   .user-button button {
-    margin-top: 1vh; } }
+    margin-top: .5em; } }
 @media (min-width: 1440px) {
   .user-button button {
-    margin-top: 1vh; } }
+    margin-top: 1em; } }
 .sidebar--left {
   padding: 4em 3em;
   font-size: 1.3em;
