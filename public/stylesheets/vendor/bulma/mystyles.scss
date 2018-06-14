@@ -3,7 +3,7 @@
 @import "sass/utilities/functions";
 
 // 2. Set your own initial variables
-$turquoise: #ec0662;
+$turquoise: #f8333c;
 
 // 4. Setup your Custom Colors
 $linkedin: #0077b5;
@@ -12,8 +12,13 @@ $twitter: #55acee;
 $twitter-invert: findColorInvert($twitter);
 $github: #333;
 $github-invert: findColorInvert($github);
-$radius-red: #ec0662;
+$radius-red: #f8333c;
 $radius-invert: findColorInvert($radius-red);
+$radius-green: #007C61;
+$radius-green-invert: findColorInvert($radius-green);
+$radius-grey: #4a4a4a;
+$radius-grey-invert: findColorInvert($radius-grey);
+
 
 // 5. Add new color variables to the color map.
 @import "sass/utilities/derived-variables";
@@ -21,7 +26,8 @@ $addColors: (
   "twitter":($twitter, $twitter-invert),
   "linkedin": ($linkedin, $linkedin-invert),
   "github": ($github, $github-invert),
-  "radius-red": ($radius-red, $radius-invert)
+  "radius-red": ($radius-red, $radius-invert),
+  "radius-green": ($radius-green, $radius-green-invert)
 );
 $colors: map-merge($colors, $addColors);
 

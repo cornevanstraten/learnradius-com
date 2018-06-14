@@ -1,58 +1,107 @@
-.search-button{
-    text-align: center;
-}
-   
-.is-radius-red {
-    background-color: $radius-red;
-    width: 100%;
-    color: $white;
+.button {
+    margin-bottom: .2em;
+    border-radius: 3px;
+    border: none;
     transition: all .8s;
+    width: 100%;
     i{
         margin-right: 1em;
     }
     &:hover {
-        background-color: darken($radius-red, 15%) !important;
+        transition: transform 2s ease-in, background .3s ease-in, color .4s ease-in;
         margin-top: -2px;
         margin-bottom: 7px;
         box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.4);
-        i{color: $white !important;}
     }
-    &:active{
-        background-color: lighten($radius-red, 15%) !important;
+    &:active {
         margin-top: -1px;
         margin-bottom: 6px;
         box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.4);
-        i{color: $white !important;}
     }
 }
+
+.disabled {
+    padding: 0 !important;
+     &:hover {
+        transition: transform 2s ease-in, background .3s ease-in, color .4s ease-in;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0);
+    }
+    &:active {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0);
+    }
+}
+
+.is-radius-red {
+    background-color: $radius-red;
+    color: $white;
+        i {
+            &:hover {
+                color: $white;
+            }
+        }
+    &:hover {
+        background-color: darken($radius-red, 15%) !important;
+        i {
+            color: $white !important;
+        }
+    }
+    &:active{
+        background-color: lighten($radius-red, 15%) !important;
+        i{
+            color: $white !important;
+        }
+    }
+}
+.is-radius-green {
+    a {
+        background-color: $white !important;
+        color: $radius-green;
+        &:hover {
+            background-color: $radius-green !important;
+            color: $white;
+            i {
+                color: $radius-red;
+            }
+        }
+        &:active {
+            background-color: lighten($radius-green, 50%) !important;
+        }
+    }
+}
+.is-radius-grey {
+    a, button {
+        background-color: $white !important;
+        color: $radius-grey;
+        &:hover {
+            background-color: lightgrey !important;
+            color: $radius-grey;
+            i {
+                color: $radius-red;
+            }
+        }
+        &:active {
+            background-color: lighten($radius-grey, 50%) !important;
+        }
+    }
+}
+
+.search-button {
+    text-align: center;
+}
+
+.button.is-primary[disabled] {
+    padding: 0 !important;
+}
+   
         
 i.fa-heart, i.fa-heart-o {
     margin-left: 1em;
 }
     
-.button {
-    margin-bottom: .2em;
-    border: none;        
-    &:hover {
-        transition: transform 2s ease-in, background .3s ease-in, color .4s ease-in;
-        i {
-            transform: scale(1.5);
-            margin-top: -1px;
-        }
-    }
-    &:active{
-        i {
-            transform: scale(1.3);
-            margin-top: 0px;
-        }
-    }
-}
-.button{
-    color: $radius-red;
-    &:hover{
-        color: darken($radius-red, 15%);
-    }
-}
 a.dropdown-item{
     i{
         &:hover{
@@ -64,22 +113,23 @@ a.dropdown-item{
 nav{
     .is-outlined {
         border: none;
-          i{
-            color: $black !important;
-        }
+            i{
+                color: $black !important;
+            }
         &:hover {
             background-color: darken($white, 2%) !important;
-            margin-top: -2px;
-            margin-bottom: 7px;
-            box-shadow: 0 2px 10px 0px rgba(100, 100, 100, 0.4);
-            i{color: $primary !important;}
+            i {
+                color: $primary !important;
+            }
         }
-        &:active{
+        &:active {
             background-color: lighten($white, 15%) !important;
             margin-top: 0px;
             margin-bottom: 6px;
             box-shadow: 0 1px 5px 0px rgba(100, 100, 100, 0.4);
-            i{color: $primary !important;}
+            i {
+                color: $primary !important;
+            }
         }
     }
 }
