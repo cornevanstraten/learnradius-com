@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$black".
-        on line 26 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/_dashboard.scss
+        on line 25 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/_dashboard.scss
 
-21:             object-position: 0em;
-22:         }
-23:         .card-content {
-24:             min-height: 10em;
-25:             .created {
-26:                 color: $black;
-27:                 margin-top: -.4em;
-28:             }
-29:         }
-30:     }
-31:     .hero-body{
+20:             object-position: 0em;
+21:         }
+22:         .card-content {
+23:             min-height: 10em;
+24:             .created {
+25:                 color: $black;
+26:                 margin-top: -.4em;
+27:             }
+28:         }
+29:     }
+30:     .hero-body{
 
 Backtrace:
-/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/_dashboard.scss:26
+/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/_dashboard.scss:25
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
@@ -98,4 +98,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$black\".\A         on line 26 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/_dashboard.scss\A \A 21:             object-position: 0em;\A 22:         }\A 23:         .card-content {\A 24:             min-height: 10em;\A 25:             .created {\A 26:                 color: $black;\A 27:                 margin-top: -.4em;\A 28:             }\A 29:         }\A 30:     }\A 31:     .hero-body{"; }
+  content: "Error: Undefined variable: \"$black\".\A         on line 25 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/pages/_dashboard.scss\A \A 20:             object-position: 0em;\A 21:         }\A 22:         .card-content {\A 23:             min-height: 10em;\A 24:             .created {\A 25:                 color: $black;\A 26:                 margin-top: -.4em;\A 27:             }\A 28:         }\A 29:     }\A 30:     .hero-body{"; }

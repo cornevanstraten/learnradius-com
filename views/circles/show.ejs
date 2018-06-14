@@ -10,24 +10,24 @@
           <input type="hidden" name="circle[id]" value="<%=circle.id%>">
           <input type="hidden" name="circle[title]" value="<%=circle.title%>">
         <% if(!isFav){ %>
-      <button type="submit" class="button button__mobile is-radius-red is-large is-outlined button--favorite">
+      <button type="submit" class="is-fullwidth button button__mobile is-radius-red is-large is-outlined button--favorite">
         <i class="fa fa-heart-o"></i>
       </button>
       <% } else { %>
-      <button type="submit" class="button button__mobile is-radius-red is-large is-outlined button--favorite">
+      <button type="submit" class="is-fullwidth button button__mobile is-radius-red is-large is-outlined button--favorite">
         <i class="fa fa-heart"></i>
       </button>
       <% } %>
       </form>
       <% } %>
     </div>
-    <div class="column is-half-mobile cta-content--join">
+    <div class="column is-fullwidth is-half-mobile cta-content--join">
       <% if(!visitorIsStudent){ %>
-      <button class="joinButton button button__mobile is-radius-red is-large">
+      <button class="joinButton is-fullwidth button button__mobile is-radius-red is-large">
         <i class="fa fa-plus-circle"></i><p class="join"> Join</p>
       </button>
       <% } else { %>
-        <button class="button button__mobile is-radius-red is-large" disabled>
+        <button class="button is-fullwidth button__mobile is-radius-red is-large" disabled>
         <i class="fa fa-check-circle"></i><p class="join"> joined</p>
       </button>
       <% } %>
@@ -77,11 +77,11 @@
             </div>
           <div class="column is-4 pdp-actions">
                   <% if(!visitorIsStudent){ %>
-                    <button class="joinButton button button__mobile is-radius-red is-large">
+                    <button class="joinButton is-fullwidth button button__mobile is-radius-red is-large">
                       <i class="fa fa-plus-circle"></i><p class="join"> Join</p>
                     </button>
                     <% } else { %>
-                      <button class="joinButton button button__mobile is-radius-red is-large" disabled>
+                      <button class="joinButton is-fullwidth button button__mobile is-radius-red is-large" disabled>
                       <i class="fa fa-check-circle"></i><p class="join"> joined</p>
                     </button>
                     <% } %>
@@ -90,11 +90,11 @@
                         <input type="hidden" name="circle[id]" value="<%=circle.id%>">
                         <input type="hidden" name="circle[title]" value="<%=circle.title%>">
                       <% if(!isFav){ %>
-                    <button type="submit" class="button button__mobile is-radius-red is-large is-outlined button--favorite">
+                    <button type="submit" class="button is-fullwidth button__mobile is-radius-red is-large is-outlined button--favorite">
                       <i class="fa fa-heart-o"></i>
                     </button>
                     <% } else { %>
-                    <button type="submit" class="button button__mobile is-radius-red is-large is-outlined button--favorite">
+                    <button type="submit" class="button is-fullwidth button__mobile is-radius-red is-large is-outlined button--favorite">
                       <i class="fa fa-heart"></i>
                     </button>
                     <% } %>

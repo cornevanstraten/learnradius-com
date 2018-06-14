@@ -7418,6 +7418,9 @@ img {
 div:focus {
   outline: 2px solid rgba(255, 255, 255, 0.1) !important; }
 
+.hero-body {
+  padding: 4em 1.5em 4.5em 1.5em; }
+
 h1, h2, h3, h4, h5 {
   font-weight: bold !important; }
 
@@ -7447,17 +7450,13 @@ h3 {
   .button i {
     margin-right: 1em; }
   .button:hover {
-    transition: transform 2s ease-in, background .3s ease-in, color .4s ease-in;
-    margin-top: -2px;
-    margin-bottom: 7px;
+    margin-top: -3px;
+    margin-bottom: 4px;
     box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.4); }
   .button:active {
     margin-top: -1px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.4); }
-
-.button--new {
-  width: 100%; }
 
 .disabled {
   padding: 0 !important; }
@@ -7827,7 +7826,6 @@ nav .is-outlined {
   padding: 1em 0; }
 .dashboard .edit-profile {
   margin-top: -4em;
-  width: 100%;
   z-index: 99; }
 .dashboard .new-circle {
   margin-top: 0em;
