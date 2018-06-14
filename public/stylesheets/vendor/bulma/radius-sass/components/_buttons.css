@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$radius-red".
-        on line 6 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_buttons.scss
+        on line 39 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_buttons.scss
 
-1: .search-button{
-2:     text-align: center;
-3: }
-4:    
-5: .is-radius-red {
-6:     background-color: $radius-red;
-7:     width: 100%;
-8:     color: $white;
-9:     transition: all .8s;
-10:     i{
-11:         margin-right: 1em;
+34:         box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0);
+35:     }
+36: }
+37: 
+38: .is-radius-red {
+39:     background-color: $radius-red;
+40:     color: $white;
+41:         i {
+42:             &:hover {
+43:                 color: $white;
+44:             }
 
 Backtrace:
-/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_buttons.scss:6
+/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_buttons.scss:39
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$radius-red\".\A         on line 6 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_buttons.scss\A \A 1: .search-button{\A 2:     text-align: center;\A 3: }\A 4:    \A 5: .is-radius-red {\A 6:     background-color: $radius-red;\A 7:     width: 100%;\A 8:     color: $white;\A 9:     transition: all .8s;\A 10:     i{\A 11:         margin-right: 1em;"; }
+  content: "Error: Undefined variable: \"$radius-red\".\A         on line 39 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_buttons.scss\A \A 34:         box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0);\A 35:     }\A 36: }\A 37: \A 38: .is-radius-red {\A 39:     background-color: $radius-red;\A 40:     color: $white;\A 41:         i {\A 42:             &:hover {\A 43:                 color: $white;\A 44:             }"; }

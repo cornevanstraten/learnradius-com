@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$radius-red".
-        on line 10 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss
+        on line 14 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss
 
-5: img{
-6:     width: 100%;
-7: }
-8: 
-9: .is-danger{
-10:     background-color: $radius-red;
+9: img {
+10:     width: 100%;
 11: }
 12: 
-13: .rotate-out{
-14:     background-color: $white !important;
+13: .is-danger {
+14:     background-color: $radius-red;
 15: }
+16: 
+17: .rotate-out {
+18:     background-color: $white !important;
+19: }
 
 Backtrace:
-/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss:10
+/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss:14
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$radius-red\".\A         on line 10 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss\A \A 5: img{\A 6:     width: 100%;\A 7: }\A 8: \A 9: .is-danger{\A 10:     background-color: $radius-red;\A 11: }\A 12: \A 13: .rotate-out{\A 14:     background-color: $white !important;\A 15: }"; }
+  content: "Error: Undefined variable: \"$radius-red\".\A         on line 14 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/base/_base.scss\A \A 9: img {\A 10:     width: 100%;\A 11: }\A 12: \A 13: .is-danger {\A 14:     background-color: $radius-red;\A 15: }\A 16: \A 17: .rotate-out {\A 18:     background-color: $white !important;\A 19: }"; }

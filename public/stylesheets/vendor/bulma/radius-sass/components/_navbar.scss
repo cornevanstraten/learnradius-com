@@ -1,9 +1,3 @@
-a:hover{
-  i{
-  color: $radius-red;
-  } 
-}
-
 .navbar-item {
   display: flex;
 }
@@ -38,7 +32,7 @@ a:hover{
   top: 0;
   width: 100% !important;
   .logo {
-    margin-left: -4.5em;
+    margin-left: -2.7em;
   }
   .is-inverted {
       margin-top: -1px;
@@ -53,16 +47,24 @@ a:hover{
       box-shadow: 0 1px 1px 1px rgba($radius-red, .2);  
     }
   }
+  a:hover{
+    i{
+      color: $radius-red;
+    } 
+  }
 }
 .user-button {
-  img{
-  border: .5em solid white;
-  border-radius: 50%;
-  box-shadow: 0px 10px 10px -5px rgba(100,100,100, .5);
+  img {
+    border: .2em solid white;
+    border-radius: 50%;
+
   }
-  i{
-  color: lightgrey;
-  transition: all .2s;
+  i {
+    color: lightgrey;
+    transition: all .2s;
+  }
+  button {
+    border: none;
   }
 }
 
@@ -79,17 +81,30 @@ a:hover{
   // border-radius: 50%;
   // width: 90%;
 }
-
-@media(min-width:768px) {
+@media(max-width: 320px) {
+.navbar {
+    .logo {
+      position: fixed;
+      left: -2.5em;
+      top: 2.3vh;
+    }
+  .user-button {
+    position: fixed;
+    right: .3em;
+    top: .4em;
+    }
+  }
+}
+@media(min-width: 768px) {
   .navbar {
     width: 100%;
     .logo {
-      margin-left: -4em;
+      // margin-left: -4em;
       }
   }
   .navbar > .container {
       min-height: none;
-      height: 7.5vh;
+      height: 4em;
     }
   
   nav{
@@ -108,7 +123,7 @@ a:hover{
           visibility: none ;
           
           &--button {
-            margin: .75em 0 1em 0 !important;
+            margin: .7em 0 1em 0 !important;
             z-index: 0;
           }
         }
@@ -131,12 +146,33 @@ a:hover{
             max-height: 100%;
         }
     }
-    .link__login {
-      // margin: 1em 0;
-      // height: 100%;
-    }
   }
   .navbar-end {
     margin-top: 0em;
+  }
+}
+@media(min-width:768px) {
+  .navbar{
+    .logo{
+      // margin-left: -5em;
+    }
+  }
+  .user-button{
+    button{
+          margin-top: .5em;
+    } 
+  }
+}
+
+@media(min-width: 1440px) {
+  .navbar {
+    .logo {
+      margin-left: -1.5em;
+    }
+  }
+  .user-button {
+    button {
+          margin-top: .6em;
+    } 
   }
 }

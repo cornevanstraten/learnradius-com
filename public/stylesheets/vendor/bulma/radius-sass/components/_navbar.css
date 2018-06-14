@@ -1,21 +1,39 @@
 /*
-Error: Undefined variable: "$radius-red".
-        on line 3 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_navbar.scss
+Error: Undefined variable: "$white".
+        on line 43 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_navbar.scss
 
-1: a:hover{
-2:   i{
-3:   color: $radius-red;
-4:   } 
-5: }
-6: 
-7: .navbar-item {
-8:   display: flex;
+38:       margin-top: -1px;
+39:       box-shadow: 0 1px 1px 1px rgba(100,100,100, .2);  
+40:       &:hover {
+41:       margin-top: -2px;
+42:       box-shadow: 0 1px 10px 0px rgba(100,100,100, .2);  
+43:       background-color: $white, #fff;
+44:       }
+45:       &:active {
+46:       margin-top: -1px;
+47:       box-shadow: 0 1px 1px 1px rgba($radius-red, .2);  
+48:     }
 
 Backtrace:
-/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_navbar.scss:3
+/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_navbar.scss:43
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/list_literal.rb:63:in `map'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/list_literal.rb:63:in `_perform'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
@@ -73,4 +91,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$radius-red\".\A         on line 3 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_navbar.scss\A \A 1: a:hover{\A 2:   i{\A 3:   color: $radius-red;\A 4:   } \A 5: }\A 6: \A 7: .navbar-item {\A 8:   display: flex;"; }
+  content: "Error: Undefined variable: \"$white\".\A         on line 43 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_navbar.scss\A \A 38:       margin-top: -1px;\A 39:       box-shadow: 0 1px 1px 1px rgba(100,100,100, .2);  \A 40:       &:hover {\A 41:       margin-top: -2px;\A 42:       box-shadow: 0 1px 10px 0px rgba(100,100,100, .2);  \A 43:       background-color: $white, #fff;\A 44:       }\A 45:       &:active {\A 46:       margin-top: -1px;\A 47:       box-shadow: 0 1px 1px 1px rgba($radius-red, .2);  \A 48:     }"; }

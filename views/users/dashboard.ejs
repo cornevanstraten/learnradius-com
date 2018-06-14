@@ -24,8 +24,8 @@
         
         <div class="columns">
           <div class="column is-4">
-            <div class="edit-profile">
-               <a href="/users/<%=user.id%>/edit" class="button is-radius-red is-outlined is-medium"><i class="fa fa-pencil-square-o"></i> <p class="edit"> edit profile</p></a> <br>
+            <div class="edit-profile is-radius-grey">
+               <a href="/users/<%=user.id%>/edit" class="button is-medium"><i class="fa fa-pencil-square-o"></i> <p class="edit"> edit profile</p></a> <br>
               <!--<h1 class="title">-->
               <!--   dashboard-->
               <!--</h1>-->
@@ -165,12 +165,18 @@
                     <!--</div>-->
                     <footer>
                         <div class="columns circle--footer">
-                          <a class="button leaveButton is-dark is-outlined card-footer-item" agreement="<%=user.joinedCircles[i]._id%>"><span class="icon" ><i class="fa fa-sign-out" agreement="<%=user.joinedCircles[i]._id%>"></i></span><span agreement="<%=user.joinedCircles[i]._id%>"> leave</span></a>
-                          <% include ../partials/leaveModal.ejs %>
-                          <% if(user.joinedCircles[i].reviewRef){ %>
-                        <button class="button is-primary is-fullwidth card-footer-item" disabled><span class="icon"><i class="fa fa-check"></i></span> <span> reviewed</span></button>
+                          <div class="column thatLeaveButton is-radius-grey">
+                            <a class="button leaveButton  card-footer-item" agreement="<%=user.joinedCircles[i]._id%>"><span class="icon" ><i class="fa fa-sign-out" agreement="<%=user.joinedCircles[i]._id%>"></i></span><span agreement="<%=user.joinedCircles[i]._id%>"> leave</span></a>
+                            <% include ../partials/leaveModal.ejs %>
+                          </div>
+                            <% if(user.joinedCircles[i].reviewRef){ %>
+                          <div class="column thatReviewButton">
+                            <button class="button is-fullwidth card-footer-item disabled" disabled><span class="icon"><i class="fa fa-check"></i></span> <span> reviewed</span></button>
+                          </div>
                        <% } else { %>
-                          <a href="/circles/<%=user.joinedCircles[i]._id%>/reviews/new" class="button is-primary is-fullwidth card-footer-item"><span class="icon"><i class="fa fa-comment-o"></i></span> <span> review</span></a>
+                          <div class="column thatReviewButton is-radius-grey">
+                            <a href="/circles/<%=user.joinedCircles[i]._id%>/reviews/new" class="button is-radius-grey is-fullwidth card-footer-item"><span class="icon"><i class="fa fa-comment-o"></i></span> <span> review</span></a>
+                          </div>
                        <% } %>
                        </div>
                     </footer>
@@ -250,9 +256,13 @@
                         <div class="columns circle--footer">
                           <% include ../partials/leaveModal.ejs %> 
                           <% if(user.joinedCircles[i].reviewRef){ %>
-                        <button class="button is-outlined is-fullwidth card-footer-item" disabled><span class="icon"><i class="fa fa-check"></i></span> <span> reviewed</span></button>
+                          <div class="column">
+                            <button class="button is-outlined is-fullwidth card-footer-item disabled" disabled><span class="icon"><i class="fa fa-check"></i></span> <span> reviewed</span></button>
+                          </div>
                        <% } else { %>
-                          <a href="/circles/<%=user.joinedCircles[i]._id%>/reviews/new" class="button is-primary is-fullwidth card-footer-item"><span class="icon"><i class="fa fa-comment-o"></i></span> <span> review</span></a>
+                          <div class="column">
+                            <a href="/circles/<%=user.joinedCircles[i]._id%>/reviews/new" class="button is-radius-grey card-footer-item"><span class="icon"><i class="fa fa-comment-o"></i></span> <span> review</span></a>
+                          </div>
                        <% } %>
                        </div>
                     </footer>

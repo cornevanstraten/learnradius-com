@@ -1,21 +1,25 @@
-.hide{
+a {
+    color: #00A581;
+}
+
+.hide {
     display: none;
 }
 
-img{
+img {
     width: 100%;
 }
 
-.is-danger{
+.is-danger {
     background-color: $radius-red;
 }
 
-.rotate-out{
+.rotate-out {
     background-color: $white !important;
 }
 
 
-#map{
+#map {
     width: 100%;
     height: 30em;
 }
