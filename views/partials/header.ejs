@@ -144,31 +144,35 @@
     </div>
     
     <div class="mobile-search-bar hide is-hidden-desktop">
+      <form action="/circles" method="GET">
         <div class="searchform--mobile">
           <div class="field has-addons has-addons-center">
             <p class="control">
-              <input class="input" type="text" placeholder="anything" name="subject">
+              <input class="input" type="text" placeholder="anything" name="search">
             </p>
             <p class="control">
               <span class="select">
-                <select name="">
-                  <option>10 mi</option>
-                  <option>15 mi</option>
-                  <option>20 mi</option>
-                  <option>25 mi</option>
-                </select>
+              <select>
+                <option>5mi</option>
+                <option>10mi</option>
+                <option>15mi</option>
+                <option selected>20mi</option>
+              </select>
               </span>
             </p>
             <p class="control">
-              <input class="input" type="text" placeholder="30330" name="ZIP">
+              <% if(currentUser){ %>
+                      <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="<%=currentUser.zip%>" required data-validation-required-message="Please enter your Zip Code.">
+                    <% } else { %>
+                      <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="30303" required data-validation-required-message="Please enter your Zip Code.">
+              <% } %>
             </p>
-            <p class="control">
-              <a class="button is-primary search-button">
-                 <i class="fa fa-search"> </i> </span>
-              </a>
-            </p>
+            <div class="control">
+              <button type="submit" class="button is-primary is-medium is-fullwidth search-button"><span class="icon"><i class="fa fa-search"></i></span></button>
+            </div>
           </div>
         </div>
+        </form>
     </div>
 </nav>
 
