@@ -118,7 +118,7 @@ router.post("/", middleware.isLoggedIn, middleware.checkEducator, upload.single(
 router.get("/:id", function(req, res){
     //find the OC matching the id in the DB
     Circle.findById(req.params.id).populate("educator").populate({path: "reviews", populate: {path: "author"}}).populate("students").exec(function(err, foundCircle){
-        if(err){
+        if(err || !foundCircle){
             console.log(err);
             req.flash("error", "Circle not found");
             res.redirect("back")
@@ -200,9 +200,8 @@ router.delete("/:id/", middleware.checkCircleOwnership, function(req, res){
             res.redirect("back");
         } else {
             if (circle.students.length < 1) {//check if still active agreements 
-            var url = circle.image
-            if (url.indexOf("cloudinary.com/openclassroom/") >= 0){ //if one of our cloudinary images, delete it from Cloudinary
-                cloudinary.uploader.destroy(imageName(url), function(error, result){console.log("deleted:" + result)});
+            if (circle.image && circle.image.indexOf("cloudinary.com/openclassroom/") >= 0){ //if one of our cloudinary images, delete it from Cloudinary
+                cloudinary.uploader.destroy(imageName(circle.image), function(error, result){console.log("deleted:" + result)});
             }; 
                 Circle.findByIdAndRemove(req.params.id, function(err){
                     if (err){
