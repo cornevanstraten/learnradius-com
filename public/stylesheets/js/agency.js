@@ -70,14 +70,6 @@ $(window).scroll(function() {
     }
 });
 
-$(window).on('scroll', function(){
-    if ($(this).scrollTop() > 500) {
-        $('.searchform').removeClass('is-hidden');
-    } else {
-        $('.searchform').addClass('is-hidden');
-    }
-}); 
-
 $(document).ready(function(){
     $('.searchform--expand--button').click(function(){
         var link = $(this);
