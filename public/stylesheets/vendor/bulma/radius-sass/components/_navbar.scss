@@ -65,6 +65,7 @@
   }
   button {
     border: none;
+    background: transparent;
   }
 }
 
@@ -162,11 +163,6 @@
 }
 
 @media(min-width: 1440px) {
-  // .navbar {
-  //   .logo {
-  //     margin-left: -1.5em;
-  //   }
-  // }
   .user-button {
     button {
           margin-top: .6em;
