@@ -7424,6 +7424,12 @@ div:focus {
 .rounded {
   border-radius: 50%; }
 
+.review .IsFinal {
+  display: flex;
+  justify-content: center;
+  margin-bottom: .5em;
+  margin: 1em 0; }
+
 h1, h2, h3, h4, h5 {
   font-weight: bold !important; }
 

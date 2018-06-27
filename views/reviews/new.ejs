@@ -2,10 +2,8 @@
 <% include ../partials/header %>
 
 
-<section class="hero is-light is-fullheight">
+<section class="hero is-light is-fullheight review">
     <div class="hero-body">
-        
-   
         <div class="container">
                   <h1 class="title has-text-centered">
                     <span> review</span>
@@ -13,13 +11,8 @@
                   <h2 class="subtitle has-text-centered">
                     <%=agreement.circleDetails.title%>
                   </h2>
-                  
-                  
             <div class="column is-8 is-offset-2">
-            
-
             <form action="/circles/<%=agreement._id%>/reviews" method="POST">
-                
             <div class="box">
               <div class="field">  
                 <div class="control has-text-centered is-size-5">
@@ -37,25 +30,20 @@
                   </label>
                 </div>
               </div>
-                
-                
-
-                    <!--  <input id="recommendyes" type="radio" name="recommend" value="recommend" checked> -->
-                    <!--  <label for="recommendyes"> +1  <span class="fa fa-thumbs-o-up"></span></label>-->
-                    <!--<input  id="recommendno" type="radio" name="recommend" value="false"> -->
-                    <!--<label for="recommendno"> -1  <span class="fa fa-thumbs-o-down"></span></label>-->
-               <div class="field">
-                    <div class="control">
-                      <input class="input" type="text" name="review[title]" placeholder="Title">
-                    </span>
-                    </div>               
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" name="review[title]" placeholder="Title">
+                </div>               
               </div>                 
             <div class="field">  
-             <div class="control">
-                  <textarea rows="3" name="review[text]" placeholder="Write your review here.." class="textarea"></textarea>
-                </div>    
+              <div class="control">
+                <textarea rows="3" name="review[text]" placeholder="Write your review here.." class="textarea"></textarea>
+              </div>    
             </div>
-               
+            <div class="IsFinal">
+              <label for="IsFinal"><input type="checkbox" class="checkbox" name="IsFinal"
+               value="IsFinal" checked /> I understand that this review is final and can’t be edited after submission</label>
+            </div>
               <input type="submit" value="Submit" class="button is-primary is-fullwidth"><br>
             </form>
           </div>
