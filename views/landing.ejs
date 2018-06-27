@@ -1,7 +1,5 @@
 <% include ./partials/header %>
 
-
-
 <section class="hero">
   <div class="hero-body landing-hero">
     <div class="container">
@@ -67,141 +65,163 @@
 
 
 <!--How does it work-->
-    <section id="portfolio" class="hero is-light">
-      <div class="hero-body">
-      <div class="container">
-        <h2 class="title"> how does it work?</h2>
-          <p>Imagine you want to learn something. Whatever it may be, wouldn't it be ideal if you could find someone close to you that already knows what you want to learn, so that you could learn from them, directly? Our open marketplace makes this easy: </p>
-        <br>
-        <br>
-        <br>
-        <div class="level three-steps">
-          <div class="level-item  has-text-centered">
-            <div>
-              <p class="title"><span class="icon is-size-1"><i class="fa fa-search"></i></span></p>
-              <p class="heading is-size-6">find</p>
-              <p>find someone who masters <br>what you want to learn</p>
-            </div>
+<section id="portfolio" class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title"> how does it work?</h2>
+        <p>Imagine you want to learn something. Whatever it may be, wouldn't it be ideal if you could find someone close to you that already knows what you want to learn, so that you could learn from them, directly? Our open marketplace makes this easy: </p>
+      <br>
+      <br>
+      <br>
+      <div class="level three-steps">
+        <div class="level-item  has-text-centered">
+          <div>
+            <p class="title"><span class="icon is-size-1"><i class="fa fa-search"></i></span></p>
+            <p class="heading is-size-6">find</p>
+            <p>find someone who masters <br>what you want to learn</p>
           </div>
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="title"><span class="icon is-size-1"><i class="fa fa-check"></i></span></p>
-              <p class="heading is-size-6">join</p>
-              <p>join  his or her circle <br> by subscribing</p>
-            </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="title"><span class="icon is-size-1"><i class="fa fa-check"></i></span></p>
+            <p class="heading is-size-6">join</p>
+            <p>join  his or her circle <br> by subscribing</p>
           </div>
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="title"><span class="icon is-size-1"><i class="fa fa-cogs"></i></span></p>
-              <p class="heading is-size-6">learn</p>
-              <p>attend and learn directly <br>from the master</p>
-            </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="title"><span class="icon is-size-1"><i class="fa fa-cogs"></i></span></p>
+            <p class="heading is-size-6">learn</p>
+            <p>attend and learn directly <br>from the master</p>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-
-      </div>
-
-    </section>
-
-   <section class="hero">
-     <div class="hero-body">
-      <div class="container">
-
-    
-            <h1 class="title">circles </h1>
-            <h2 class="subtitle">recently added learning circles</h2>
-          
-          <div class="columns circles">
-                        <% for (var i = 0; i < circles.length; i++){%>
-            <div class="column is-one-quarter single-circle">
-              <a href="/circles/<%=circles[i]._id%>" class="circle">
-                <div class="card circle">
-                  <figure class="image circle--image">
-                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1440,h_500,c_fill/<%=circles[i].image%>">
-                  </figure>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-left">
-                        <figure class="image mentor--image">
-                          <img src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=circles[i].educator.avatar%>" alt="Placeholder image">
-                        </figure>
-                      </div>
-                      <div class="media-content mentor--name">
-                        <p class="subtitle is-6"><%=circles[i].educator.firstName%> <%=circles[i].educator.lastName%></p>
-                      </div>
+<section class="hero">
+ <div class="hero-body">
+  <div class="container">
+        <h1 class="title">circles </h1>
+        <h2 class="subtitle">recently added learning circles</h2>
+      <div class="columns circles">
+                    <% for (var i = 0; i < circles.length; i++){%>
+        <div class="column is-one-quarter single-circle">
+          <a href="/circles/<%=circles[i]._id%>" class="circle">
+            <div class="card circle">
+              <figure class="image circle--image">
+                  <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1440,h_500,c_fill/<%=circles[i].image%>">
+              </figure>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image mentor--image">
+                      <img src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=circles[i].educator.avatar%>" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="media-content mentor--name">
+                    <p class="subtitle is-6"><%=circles[i].educator.firstName%> <%=circles[i].educator.lastName%></p>
+                  </div>
+                </div>
+                <div class="content columns">
+                  <div class="column is-three-quarters is-three-quarters-mobile circle--title">
+                    <h3 class="title"><%=circles[i].title%></h3>
+                  </div>
+                  <div class="circle--appreciation column is-one-quarter">
+                    <% if(circles[i].appreciation !== 0) { %> 
+                    <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    <% }; %>
+                  </div>
+                </div>
+                <div>
+                <div class="circle--oneliner">
+                  <%= circles[i].oneliner %> 
+                </div>
+                  <div class="columns circle--footer">
+                      <time datetime="2016-1-1" class="column is-half is-size-7">created: <br> <%=moment(circles[i].createdAt).format('ll')%></time>
+                    <div class="column is-half circle--more">
+                      <p>more</p>
                     </div>
-                    <div class="content columns">
-                      <div class="column is-three-quarters is-three-quarters-mobile circle--title">
-                        <h3 class="title"><%=circles[i].title%></h3>
-                      </div>
-                      <div class="circle--appreciation column is-one-quarter">
-                        <% if(circles[i].appreciation !== 0) { %> 
-                        <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                        <% }; %>
-                      </div>
-                    </div>
-                    <div>
-                    <div class="circle--oneliner">
-                      <%= circles[i].oneliner %> 
-                    </div>
-                      <div class="columns circle--footer">
-                          <time datetime="2016-1-1" class="column is-half is-size-7">created: <br> <%=moment(circles[i].createdAt).format('ll')%></time>
-                        <div class="column is-half circle--more">
-                          <p>more</p>
-                        </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
-                </a>
-              
                 </div>
-            <% }; %>
-            
+              </div>
+            </a>
+          
+            </div>
+        <% }; %>
+        
 
-        </div>
-      </div>
-      </div>
+    </div>
+  </div>
+  </div>
 </section>
             
-<section class="hero is-dark bg-img2 .overlay">
+<section class="hero is-dark bg-img2 overlay">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
         our mission:
       </h1>
-            <p>
-                  Helping you <strong>learn from the people around you</strong> by providing an <br> open marketplace for real life learning.
-             <p>
+      <p>
+        Helping you <strong>learn from the people around you</strong> by providing an <br> open marketplace for real life learning.
+      <p>
     </div>
   </div>
-      
 </section>
 
- <section class="hero is-light">
+<section class="hero is-light">
   <div class="hero-body">
-    <div class="container">
-
-  
-          <h1 class="title">our vision </h1>
-          
-          <div class="columns">
-            <div class="column is-half">
-              We envision a future where
-          <strong>all learning is decentralized and customized to your individual needs</strong>. 
-          You are in charge of your own development, you pursue your own personal learning goals, and you call on skilled people around you for guidance. 
-  
+      <div class="container">
+            <h1 class="title">our vision </h1>
+            <div class="columns">
+              <div class="column is-half">
+                We envision a future where <strong>all learning is decentralized and customized to your individual needs </strong>. 
+                You are in charge of your own development, you pursue your own personal learning goals, and you call on skilled people around you for guidance.
+              </div>
+              <div class="column">
+                In this future, joining or hosting a learning circle is a completely <strong>natural way to spend your free time</strong>, 
+                because everyone realizes that learning new things is fun, exciting, and a great way to invest in yourself. 
+              </div>
             </div>
-            <div class="column">
-              In this future, joining or hosting a learning circle is a completely <strong>natural way to spend your free time</strong>, 
-            because everyone realizes that learning new things is fun, exciting, and a great way to invest in yourself. 
-          </div>
-          </div>
-
-    </div>
-    </div>
+      </div>
+  </div>
+</section>
+ 
+<section class="team">
+   <div class="container">
+     <h1 class="title">our team </h1>
+     <div class=" columns">
+       <div class="column is-4">
+         <div class="team__member">
+           <img class="rounded" src="/stylesheets/img/team/OCRteamGerritMaatkamp.jpg" alt="">
+           <h4>Gerrit</h4>
+           <p class="text-muted">front-end developer</p>
+           <p class="has-text-weight-semibold">designer</p>
+           <p class="text-muted">Austin, TX</p>
+         </div>
+       </div>
+       <div class="column is-4">
+         <div class="team__member">
+           <img class="rounded" src="/stylesheets/img/team/OCRteamCorneVanStraten.png" alt="">
+           <h4>Corné</h4>
+           <p class="text-muted">back-end developer</p>
+           <p class="has-text-weight-semibold">founder</p>
+           <p class="text-muted">Chattanooga, TN</p>
+         </div>
+       </div>
+       <div class="column is-4">
+          <div class="team__member">
+           <img class="rounded" src="/stylesheets/img/team/OCRteamKatieVanStraten.jpg" alt="">
+           <h4>Katie</h4>
+           <p class="text-muted">business-end developer</p>
+           <p class="has-text-weight-semibold">communicator</p>
+           <p class="text-muted">Chattanooga, TN</p>
+         </div>
+       </div>
+     </div>
+   </div>
  </section>
  
 

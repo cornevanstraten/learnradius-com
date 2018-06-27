@@ -7421,6 +7421,9 @@ div:focus {
 .hero-body {
   padding: 4em 1.5em 4.5em 1.5em; }
 
+.rounded {
+  border-radius: 50%; }
+
 h1, h2, h3, h4, h5 {
   font-weight: bold !important; }
 
@@ -7851,6 +7854,14 @@ nav .is-outlined {
   z-index: 99; }
   .page-footer img {
     margin: 2.4vh; }
+
+.team {
+  padding: 2em; }
+  .team__member {
+    padding: 3em; }
+    .team__member img {
+      height: 15em;
+      width: 15em; }
 
 .dashboard .circle--history {
   padding: 1em 0; }

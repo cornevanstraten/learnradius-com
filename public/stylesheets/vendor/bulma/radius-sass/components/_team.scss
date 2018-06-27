@@ -1,0 +1,10 @@
+.team {
+    padding: 2em;
+    &__member {
+        padding: 3em;
+        img {
+            height: 15em;
+            width: 15em;
+        }
+    }
+}
