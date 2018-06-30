@@ -223,7 +223,7 @@ var updateUser = function(newData, req, res){
             res.redirect("back")
         } else {
             req.flash("success", "User profile successfully updated")
-            res.redirect("/users/" + updatedUser.id)
+            res.redirect("/users/" + updatedUser.id +"/dashboard")
         }
     })
 }

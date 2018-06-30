@@ -57,33 +57,37 @@
         <h2 class="title"><span class="icon"><i class="fa fa-thumb-tack"></i></span> <span>circles</span></h2>
           
           
+      
+        <div class="columns circles single-circle">
           
-          <div class="column">
-        <% user.circles.reverse().forEach(function(circle){ %>
-          <div class="card" id="<%=circle.id%>">
-                        
-            <img class="circle--header" src="https://res.cloudinary.com/openclassroom/image/upload/w_1440,h_500,c_fill/<%=circle.image%>">
+
+        <% for (var i = 0; i < user.circles.length; i++){%>
+        <div class="column is-half single-circle">
+          <div class="card" id="<%=user.circles[i].id%>">
+            <figure class="image circle--image">
+              <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1000,h_400,c_fill/<%=user.circles[i].image%>">
+            </figure>
             <header class="card-header">
               <p class="card-header-title">
-                <a href="/circles/<%=circle.id%>">
-                <%=circle.title%>
+                <a href="/circles/<%=user.circles[i].id%>">
+                <%=user.circles[i].title%>
                 </a>
               </p>
-              <a href="#circless" class="card-header-icon" aria-label="more options" circle="<%=circle.id%>">
+              <a href="#circless" class="card-header-icon" aria-label="more options" circle="<%=user.circles[i].id%>">
                 <span class="icon">
-                  <i class="fa fa-chevron-down"aria-hidden="true" circle="<%=circle.id%>"></i>
+                  <i class="fa fa-chevron-down"aria-hidden="true" circle="<%=user.circles[i].id%>"></i>
                 </span>
               </a>
             </header>
-            <div class="card-content is-hidden manageCircle<%=circle.id%>"> <!--toggle is-hidden here-->
-                <% if(circle.students.length > 0) {  %>
+            <div class="card-content is-hidden manageCircle<%=user.circles[i].id%>"> <!--toggle is-hidden here-->
+                <% if(user.circles[i].students.length > 0) {  %>
 
                 
               <div class="content ">
-                  <h2>Participants (<%=circle.students.length %>)</h2>
+                  <h2>Participants (<%=user.circles[i].students.length %>)</h2>
                   <br>
                   <div class="participants columns">
-                    <%circle.agreements.forEach(function(agreement){%>
+                    <%user.circles[i].agreements.forEach(function(agreement){%>
                       <% if(!agreement.endedAt){%>
                       <div class="column is-3">
                         <a class="participant" href="/users/<%=agreement.studentRef%>">
@@ -101,22 +105,22 @@
                 
                 </div>
                 <% } else {%>
-                <p><%=circle.title%> has no participants at the moment</p>
+                <p><%=user.circles[i].title%> has no participants at the moment</p>
                 <% } %>
             </div>
             <footer class="card-footer columns">
               <div class="column is-1">
-                <a class="button deleteButton is-light card-footer-item" circle="<%=circle.id%>"><span class="icon"><i class="fa fa-trash-o" circle="<%=circle.id%>"></i></span></a>
+                <a class="button deleteButton is-light card-footer-item" circle="<%=user.circles[i].id%>"><span class="icon"><i class="fa fa-trash-o" circle="<%=user.circles[i].id%>"></i></span></a>
                 <% include ../partials/deletemodal.ejs %>
               </div>
               <div class="column is-11">
-                <a href="/circles/<%=circle.id%>/edit" class="button is-fullwidth card-footer-item is-light"><span class="icon"><i class="fa fa-pencil-square-o"></i></span> <span> edit</span></a>
+                <a href="/circles/<%=user.circles[i].id%>/edit" class="button is-fullwidth card-footer-item is-light"><span class="icon"><i class="fa fa-pencil-square-o"></i></span> <span> edit</span></a>
               </div>
             </footer>
           </div>
-          <br>
-          <% }) %>
-          </div>
+        </div>
+          <% } %>
+          
         </div>
       </section>
       <% } %>
@@ -132,7 +136,22 @@
         <h2 class="title"><span class="icon"><i class="fa fa-check-circle"></i></span> <span> joined</span></h2>
 
         <div class="columns circles single-circle">
-                          <!--fav-->
+            
+            <!--favorites-->
+            <div class="column is-half">
+                  <div class="box">
+                      <h3><i class="fa fa-heart" style="color: red"></i> Favorites (<%=user.fav.length%>)</h3>
+                      <div class="content">
+                          <ul>
+                            <% user.fav.forEach(function(circle){ %>
+                              <li class="">
+                                <a href="/circles/<%=circle.id%>"> <%=circle.title%></a>
+                              </li>
+                            <% }) %>
+                          </ul>
+                      </div>
+                  </div>
+                </div>
           
           
           <% for (var i = 0; i < user.joinedCircles.length; i++){%>
@@ -197,21 +216,7 @@
 
                 
                 
-                
-                  <div class="column is-half">
-                  <div class="box">
-                      <h3><i class="fa fa-heart" style="color: red"></i> Favorites (<%=user.fav.length%>)</h3>
-                      <div class="content">
-                          <ul>
-                            <% user.fav.forEach(function(circle){ %>
-                              <li class="">
-                                <a href="/circles/<%=circle.id%>"> <%=circle.title%></a>
-                              </li>
-                            <% }) %>
-                          </ul>
-                      </div>
-                  </div>
-                </div>
+            
             </div>
             </div>
       </section>
