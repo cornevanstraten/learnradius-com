@@ -8115,6 +8115,14 @@ nav .is-outlined {
 .profile section:not(:first-child) {
   padding: 1em;
   margin: 0; }
+  
+.fa-arrow-circle-up {
+  color: #3EC300;
+}
+
+.fa-arrow-circle-down {
+  color: #F2A730;
+}
 
 @media (min-width: 768px) {
   .profile section:not(:first-child) {
