@@ -19,7 +19,6 @@ $radius-green-invert: findColorInvert($radius-green);
 $radius-grey: #4a4a4a;
 $radius-grey-invert: findColorInvert($radius-grey);
 
-
 // 5. Add new color variables to the color map.
 @import "sass/utilities/derived-variables";
 $addColors: (
@@ -48,6 +47,7 @@ $colors: map-merge($colors, $addColors);
 @import "radius-sass/components/sidebar";
 @import "radius-sass/components/circle-cards";
 @import "radius-sass/components/footer";
+@import "radius-sass/components/team";
 
 @import "radius-sass/pages/dashboard";
 @import "radius-sass/pages/index";

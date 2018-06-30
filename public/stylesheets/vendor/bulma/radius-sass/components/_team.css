@@ -1,0 +1,9 @@
+.team {
+  padding: 2em; }
+  .team__member {
+    padding: 3em; }
+    .team__member img {
+      height: 15em;
+      width: 15em; }
+
+/*# sourceMappingURL=_team.css.map */
