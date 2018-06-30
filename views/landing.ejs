@@ -119,7 +119,7 @@
               <a href="/circles/<%=circles[i]._id%>" class="circle">
                 <div class="card circle">
                   <figure class="image circle--image">
-                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1440,h_500,c_fill/<%=circles[i].image%>">
+                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1000,h_500,c_fill/<%=circles[i].image%>">
                   </figure>
                   <div class="card-content">
                     <div class="media">
@@ -136,9 +136,9 @@
                       <div class="column is-three-quarters is-three-quarters-mobile circle--title">
                         <h3 class="title"><%=circles[i].title%></h3>
                       </div>
-                      <div class="circle--appreciation column is-one-quarter">
-                        <% if(circles[i].appreciation !== 0) { %> 
-                        <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                      <div class="circle--appreciation column is-one-third">
+                        <% if(circles[i].appreciation > 0) { %> 
+                        +<%=circles[i].appreciation%> <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
                         <% }; %>
                       </div>
                     </div>

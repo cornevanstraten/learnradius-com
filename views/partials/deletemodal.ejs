@@ -1,9 +1,9 @@
                         <!-- deleteModal -->
-                        <div id="deleteModal<%=circle.id%>" class="modal">
+                        <div id="deleteModal<%=user.circles[i].id%>" class="modal">
                         <div class="modal-background"></div>
                         <div class="modal-card">
                           <header class="modal-card-head">
-                            <p class="modal-card-title"><span class="icon"><i class="fa fa-trash-o"></i></span> Delete <strong><%=circle.title%></strong>?</p>
+                            <p class="modal-card-title"><span class="icon"><i class="fa fa-trash-o"></i></span> Delete <strong><%=user.circles[i].title%></strong>?</p>
                             <button class="delete closeModal" aria-label="close"></button>
                           </header>
                           <section class="modal-card-body">
@@ -13,9 +13,9 @@
                             Warning: this cannot be undone!</p>
                           </section>
                           <footer class="modal-card-foot">
-                              <form id="deleteform" action="/circles/<%=circle._id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+                              <form id="deleteform" action="/circles/<%=user.circles[i]._id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <button type="submit" class="button is-danger is-medium is-outlined"><span class="icon"><i class="fa fa-trash-o"></i></span> <span> delete <%=circle.title%></span></button>
+                                        <button type="submit" class="button is-danger is-medium is-outlined"><span class="icon"><i class="fa fa-trash-o"></i></span> <span> delete <%=user.circles[i].title%></span></button>
                                     </div>
                             </form>
                           </footer>
