@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>404 error</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="/stylesheets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" media="screen"  href="/stylesheets/vendor/bulma/mystyles.css">
+    
+    
+
+
+    </head>
+<body>
+
+<section class="hero is-dark is-fullheight">
+  <div class="hero-body hero-404">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        <span> 404 error <br>
+        sorry, we couldn't find this page anywhere</span>
+      </h1>
+      <h2 class="subtitle">
+        ..but we bet we can find you some interesting <br>
+        things to learn in your area :) 
+      </h2>
+      <div class="column is-4 is-offset-4">
+      <form action="/circles" method="GET" >
+      <!--<div class="field">-->
+      <!--  <div class="control">-->
+      <!--    <input name="search" class="input" type="text" placeholder="What do you want to learn?">-->
+      <!--  </div>-->
+      <!--</div>-->
+      
+      <div class="columns">
+      <div class="column is-one-half-tablet">
+        <div class="field">
+          <div class="control">
+            <div name="distance" class="select">
+              <select>
+                <option>5 miles</option>
+                <option>10 miles</option>
+                <option>15 miles</option>
+                <option selected>20 miles</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="column is-one-half-tablet r-search-location">
+        <div class="field">
+        <div class="control is-flex">
+          <% if(currentUser){ %>
+                      <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="<%=currentUser.zip%>" required data-validation-required-message="Please enter your Zip Code.">
+                    <% } else { %>
+                      <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="30303" required data-validation-required-message="Please enter your Zip Code.">
+          <% } %>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      <div class="field">
+        <div class="control">
+        <button type="submit" class="button is-primary is-medium is-fullwidth"><span class="icon"><i class="fa fa-search"></i></span> <span> find</span></button>
+      </div>
+      </div>
+      
+     
+    </form>
+      
+    </div>
+    </div>
+</div>
+</section>
+
+

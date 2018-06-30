@@ -69,6 +69,10 @@ app.use("/circles/:id/reviews", reviewRoutes);
 app.use("/users/:id/endorsements", endorsementRoutes);
 app.use("/agreements", agreementRoutes);
 
+app.get('*', function(req, res){
+  res.render("404")
+});
+
 
 
 app.listen(process.env.PORT, process.env.IP, function(){
