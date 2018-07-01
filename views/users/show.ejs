@@ -107,7 +107,7 @@
                 </a>
               </div>
               
-                    <% if(i%2 !==0 && i !== 0) {%> <!-- if row is filled to index[1], start new -->
+                    <% if((i+1)%2 == 0) {%> <!-- if row is filled to index[1], start new -->
                       </div>
                       <div class="columns">
                     <% }; %>
@@ -153,7 +153,7 @@
                 </a>
               </div>
               
-                    <% if(i%2 ==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+                    <% if((i+1)%2 == 0) {%> <!-- if the second card is placed on one line, start another -->
                               </div>
                               <div class="columns">
                     <% }; %>
