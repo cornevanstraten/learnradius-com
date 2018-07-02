@@ -2,32 +2,29 @@
 <% include ../partials/header %>
 
 <div class="profile">
-<section class="is-small is-dark" id="top">
-  <div class="hero-body--small hero-body--small__dark">
-  </div>
-</section>
-
+  <section class="is-small is-dark" id="top">
+    <div class="hero-body--small hero-body--small__dark">
+    </div>
+  </section>
   <div class="columns is-gapless">
     <div class="column sidebar--left is-hidden-mobile">
       <ul>
-        <!--<li><a href="#hero">Overview</a></li>-->
-        <!--<li><a href="#tal">Description</a></li>-->
-        <!--<li><a href="#Reviews">Reviews</a></li>-->
+        <li><a href="#hero">Overview</a></li>
+        <li><a href="#tal">Description</a></li>
+        <li><a href="#Reviews">Reviews</a></li>
       </ul>
     </div>
-    
-    
     <div class="column pdp-content is-8"> <!-- center column -->
       <section class="user" id="Overview">
             <div class="user--center">
               <a href="/users/<%=user.id%>">
-                <img class="user--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>"alt="profile picture"/>
+                <img class="user--center--picture" src="https://res.cloudinary.com/openclassroom/image/upload/g_face,c_thumb,w_240,h_240/<%=user.avatar%>" alt="profile picture"/>
               </a>
             </div> 
-                <div class="user--center--name">
-                  <h2 class="title"><%=user.firstName%> <%=user.lastName%> <!-- Var 1stname + var lastname --></h2>
-                  <h2 class="subtitle"><%=user.location%></h2>
-                </div>
+            <div class="user--center--name">
+              <h2 class="title"><%=user.firstName%> <%=user.lastName%> </h2>
+              <h2 class="subtitle"><%=user.location%></h2>
+            </div>
       </section>
       
       <section class="pdp-timeandlocation" id="tal">
@@ -36,7 +33,7 @@
           <div class="column is-6">
             <div class="pdp-title">
               <p class="pdp-product-synopsis">
-                <p><%=user.description%></p>
+                <%=user.description%>
               </p>
             </div>
           </div> 
@@ -51,22 +48,16 @@
       
       <section class="hero">
         <div class="hero-content">
-          
-        
-            <h2 class="title"><span class="icon"><i class="fa fa-thumb-tack"></i></span> <span> circles</span></h2>
+          <h2 class="title"><span class="icon"><i class="fa fa-thumb-tack"></i></span> <span> circles</span></h2>
             <p>Circles hosted by <%=user.firstName%></p>
             <br>
-
-
         <div class="columns">
-          
-        <% for (var i = 0; i < user.circles.length; i++){%>
-        
+          <% for (var i = 0; i < user.circles.length; i++){%>
             <div class="column is-half single-circle">
               <a href="/circles/<%=user.circles[i]._id%>" class="circle">
                 <div class="card circle">
                   <figure class="image circle--image">
-                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1000,h_400,c_fill/<%=user.circles[i].image%>">
+                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1000,h_400,c_fill/<%=user.circles[i].image%>" alt="circle-image">
                   </figure>
                   <div class="card-content">
                     <div class="media">
@@ -106,33 +97,25 @@
                   </div>
                 </a>
               </div>
-              
                     <% if((i+1)%2 == 0) {%> <!-- if row is filled to index[1], start new -->
                       </div>
                       <div class="columns">
                     <% }; %>
-            <% } %>
-          </div>
+              <% } %>
+            </div>
           </div>
       </section>
-      
-      
       <section class="hero"> <!-- joined -->
         <div class="hero-content">
-
-          
-          
-        <h2 class="title"><span class="icon"><i class="fa fa-check-circle"></i></span> <span> joined</span></h2>
-
-        <div class="columns circles single-circle">
-       
-          <% for (var i = 0; i < user.joinedCircles.length; i++){%>
-          <% if (!user.joinedCircles[i].endedAt){ %>
-          <div class="column is-half single-circle">
-            <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
+          <h2 class="title"><span class="icon"><i class="fa fa-check-circle"></i></span> <span> joined</span></h2>
+          <div class="columns circles single-circle">
+            <% for (var i = 0; i < user.joinedCircles.length; i++){%>
+            <% if (!user.joinedCircles[i].endedAt){ %>
+            <div class="column is-half single-circle">
+              <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
                 <div class="card circle">
                   <figure class="image">
-                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1000,h_500,c_fill/<%=user.joinedCircles[i].circleDetails.image%>">
+                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1000,h_500,c_fill/<%=user.joinedCircles[i].circleDetails.image%>" alt="joined-circles">
                   </figure>
                   <div class="card-content">
                     <div class="media">
@@ -157,16 +140,10 @@
                               </div>
                               <div class="columns">
                     <% }; %>
+                  <% } %>
                 <% } %>
-                <% } %>
-                
-
-                
-                
-                
-                
             </div>
-            </div>
+          </div>
       </section>
       
       <section class="hero"> <!-- learning history -->
@@ -177,14 +154,13 @@
         <h2 class="title"><span class="icon"><i class="fa fa-briefcase"></i></span> <span> learning history</span></h2>
 
         <div class="columns circles single-circle">
-       
           <% for (var i = 0; i < user.joinedCircles.length; i++){%>
-          <% if (user.joinedCircles[i].endedAt){ %>
-          <div class="column is-half single-circle">
-            <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
+            <% if (user.joinedCircles[i].endedAt){ %>
+            <div class="column is-half single-circle">
+              <a href="/circles/<%=user.joinedCircles[i].circleRef%>" class="circle">
                 <div class="card circle">
                   <figure class="image circle--image">
-                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1440,h_500,c_fill/<%=user.joinedCircles[i].circleDetails.image%>">
+                      <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1440,h_500,c_fill/<%=user.joinedCircles[i].circleDetails.image%>" alt="circle-image">
                   </figure>
                   <div class="card-content">
                     <div class="media">
@@ -200,47 +176,33 @@
                       <p><%= moment(user.joinedCircles[i].createdAt).format('ll') %> -
                       <%= moment(user.joinedCircles[i].endedAt).format('ll') %></p>
                     </div>
-                                  <div>
-                                    <% if(user.joinedCircles[i].endorsementRef){ %>
-                                        <hr>
-                                               <p>"<%=user.joinedCircles[i].endorsementRef.text%>"</p>
-                                               <p><strong><%=user.joinedCircles[i].educatorDetails.firstName%> <%=user.joinedCircles[i].educatorDetails.lastName%></strong> - <a href="/circles/<%=user.joinedCircles[i].circleRef%>"><%=user.joinedCircles[i].circleDetails.title%></a> educator</p>
-                                                <p><%=moment(user.joinedCircles[i].endorsementRef.createdAt).fromNow()%></p>
-                                     <% } %>
-                                      </div>
+                    <div>
+                      <% if(user.joinedCircles[i].endorsementRef){ %>
+                      <hr>
+                      <p>"<%=user.joinedCircles[i].endorsementRef.text%>"</p>
+                      <p><strong><%=user.joinedCircles[i].educatorDetails.firstName%> <%=user.joinedCircles[i].educatorDetails.lastName%></strong> - <a href="/circles/<%=user.joinedCircles[i].circleRef%>"><%=user.joinedCircles[i].circleDetails.title%></a> educator</p>
+                      <p><%=moment(user.joinedCircles[i].endorsementRef.createdAt).fromNow()%></p>
+                      <% } %>
+                    </div>
                       </div>
                     </div>
                 </a>
               </div>
-              
-                    <% if(i%2 !==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
-                              </div>
-                              <div class="columns">
-                    <% }; %>
-                    
-                <% } %>
-                <% } %>
-            </div>
-            </div>
+                <% if(i%2 !==0 && i !== 0) {%> <!-- if the second card is placed on one line, start another -->
+              <% }; %>
+            <% } %>
+          <% } %>
+        </div>
+        <!--<div class="columns">-->
+        <!--    </div>-->
+        </div>
       </section>
-
-
-
-      
-      
-      
-      
-      
-      
-
     </div> <!-- closes center -->
-    
-    
-    
     <div class="column sidebar--right is-hidden-mobile">
       <a class="top is-hidden" href="#hero">
         <p><i class="fa fa-long-arrow-up" aria-hidden="true"></i></p>
       </a>
     </div>
   </div>
+</div>
 

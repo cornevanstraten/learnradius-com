@@ -43,3 +43,8 @@ div:focus {
     margin-bottom: .5em;
     margin: 1em 0;
 }
+
+.modal.is-active {
+    display: flex;
+    z-index: 99;
+}
