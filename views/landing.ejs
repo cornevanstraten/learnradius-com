@@ -6,7 +6,7 @@
       <h1 class="title">
         <span> real life learning</span>
       </h1>
-      <h2 class="subtitle">
+      <h2 class="subtitle has-text-weight-semibold">
         learn directly from skilled  <br>  people near you
       </h2>
       <form action="/circles" method="GET" >
@@ -128,9 +128,9 @@
                   <div class="column is-three-quarters is-three-quarters-mobile circle--title">
                     <h3 class="title"><%=circles[i].title%></h3>
                   </div>
-                  <div class="circle--appreciation column is-one-quarter">
+                  <div class="circle--appreciation column is-one-third">
                     <% if(circles[i].appreciation !== 0) { %> 
-                    <%=circles[i].appreciation%> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    +<%=circles[i].appreciation%> <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
                     <% }; %>
                   </div>
                 </div>
@@ -176,14 +176,26 @@
       <div class="container">
             <h1 class="title">our vision </h1>
             <div class="columns">
-              <div class="column is-half">
-                We envision a future where <strong>all learning is decentralized and customized to your individual needs </strong>. 
-                You are in charge of your own development, you pursue your own personal learning goals, and you call on skilled people around you for guidance.
-              </div>
-              <div class="column">
-                In this future, joining or hosting a learning circle is a completely <strong>natural way to spend your free time</strong>, 
-                because everyone realizes that learning new things is fun, exciting, and a great way to invest in yourself. 
-              </div>
+              <div class="column is-two-thirds">
+                <div class="content">
+                  
+                
+                We want to live in a world where <strong>all learning is decentralized and customized to your individual needs.</strong>
+<br>
+<br>
+At radius, you are in charge of your own development:
+<ul>
+  <li>You pursue your own personal learning goals</li>
+  <li>You call on skilled people around you for guidance</li>
+  <li>You set your own budget to connect with others </li>
+</ul>
+
+<p>
+Join or host a learning circle! It is <strong>a wonderful way to spend your free time</strong>, because learning new things is fun, exciting, and a great way to invest in yourself. 
+</p>
+            </div>
+             </div>
+
             </div>
       </div>
   </div>
@@ -193,31 +205,31 @@
    <div class="container">
      <h1 class="title">our team </h1>
      <div class=" columns">
-       <div class="column is-4">
+       <div class="column is-4 has-text-centered">
          <div class="team__member">
            <img class="rounded" src="/stylesheets/img/team/OCRteamGerritMaatkamp.jpg" alt="">
-           <h4>Gerrit</h4>
+           <h4 class="is-size-5">Gerrit</h4>
            <p class="text-muted">front-end developer</p>
-           <p class="has-text-weight-semibold">designer</p>
-           <p class="text-muted">Austin, TX</p>
+           <p class="has-text-weight-semibold has-text-grey-dark">designer</p>
+           <!--<p class="">Austin, TX</p>-->
          </div>
        </div>
-       <div class="column is-4">
+       <div class="column is-4 has-text-centered">
          <div class="team__member">
            <img class="rounded" src="/stylesheets/img/team/OCRteamCorneVanStraten.png" alt="">
-           <h4>Corné</h4>
+           <h4 class="is-size-5">Corné</h4>
            <p class="text-muted">back-end developer</p>
-           <p class="has-text-weight-semibold">founder</p>
-           <p class="text-muted">Chattanooga, TN</p>
+           <p class="has-text-weight-semibold has-text-grey-dark">founder</p>
+           <!--<p class="text-muted">Chattanooga, TN</p>-->
          </div>
        </div>
-       <div class="column is-4">
+       <div class="column is-4 has-text-centered">
           <div class="team__member">
            <img class="rounded" src="/stylesheets/img/team/OCRteamKatieVanStraten.jpg" alt="">
-           <h4>Katie</h4>
+           <h4 class="is-size-5">Katie</h4>
            <p class="text-muted">business-end developer</p>
-           <p class="has-text-weight-semibold">communicator</p>
-           <p class="text-muted">Chattanooga, TN</p>
+           <p class="has-text-weight-semibold has-text-grey-dark">communicator</p>
+           <!--<p class="text-muted">Chattanooga, TN</p>-->
          </div>
        </div>
      </div>

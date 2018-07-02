@@ -157,15 +157,19 @@ $(window).on('scroll', function(){
 //review javascript 
 $("#min1").click(function(){
   $(".min1").removeClass("has-text-grey-light")
+  $(".min1arrow").removeClass("has-text-grey-light")
   $(".plus1").removeClass("is-size-3")
   $(".plus1").addClass("has-text-grey-light")
+  $(".plus1arrow").addClass("has-text-grey-light")
   $(".min1").addClass("is-size-3")
 })
 
 $("#plus1").click(function(){
   $(".plus1").removeClass("has-text-grey-light")
+  $(".plus1arrow").removeClass("has-text-grey-light")
   $(".min1").removeClass("is-size-3")
   $(".min1").addClass("has-text-grey-light")
+  $(".min1arrow").addClass("has-text-grey-light")
   $(".plus1").addClass("is-size-3")
 })
 
