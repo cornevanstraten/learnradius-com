@@ -7424,7 +7424,7 @@ div:focus {
 .rounded {
   border-radius: 50%; }
 
-.review .IsFinal {
+.IsFinal {
   display: flex;
   justify-content: center;
   margin-bottom: .5em;
@@ -7800,6 +7800,7 @@ nav .is-outlined {
     margin-top: 0px; }
   .circle--image img {
     height: 10em;
+    width: 20em;
     margin-bottom: .3em;
     box-shadow: 0 1px 5px 0px rgba(100, 100, 100, 0.8);
     border-radius: 3px; }

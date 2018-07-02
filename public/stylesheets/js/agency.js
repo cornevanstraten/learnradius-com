@@ -2,7 +2,7 @@
 
 $("#notification1").click(function(){
   $("#notification1").fadeOut();
-})
+});
 
 setTimeout(function(){ 
   $("#notification1").fadeOut();
@@ -14,17 +14,17 @@ setTimeout(function(){
 $(".newc1").click(function(){
   $(".ncb1").toggleClass("is-hidden");
   $(".ncb2").toggleClass("is-hidden");
-})
+});
 //from 2 to 3 or vice versa
 $(".newc2").click(function(){
   $(".ncb2").toggleClass("is-hidden");
   $(".ncb3").toggleClass("is-hidden");
-})
+});
 //from 1 to 3 or vice versa
 $(".newc3").click(function(){
   $(".ncb1").toggleClass("is-hidden");
   $(".ncb3").toggleClass("is-hidden");
-})
+});
 
 
 //MODALS
@@ -32,26 +32,26 @@ $(".newc3").click(function(){
 //joinmodal
 $(".joinButton").click(function(){
   $("#joinModal").addClass("is-active")
-})
+});
 //deletemodal
 $(".deleteButton").click(function(event){
   $("#deleteModal" + event.target.getAttribute("circle")).addClass("is-active")
-})
+});
 
 //leavemodal
 $(".leaveButton").click(function(event){
   $("#leaveModal" + event.target.getAttribute("agreement")).addClass("is-active")
-})
+});
 
 //removemodal
 $(".removeButton").click(function(event){
   $("#removeModal" + event.target.getAttribute("agreement")).addClass("is-active")
-})
+});
 
 //close modal (universal)
 $(".closeModal, .modal-background").click(function(){
   $(".modal").removeClass("is-active")
-})
+});
 
 
 //auto-focus for searchbar
@@ -172,7 +172,6 @@ $("#plus1").click(function(){
 //card height equalizer (deze code kan vast beter geschreven worden)
 $(document).ready(function(){
     $('.circles').each(function(){  
-      
       var highestBox = 0;
       $('.card-content', this).each(function(){
         if($(this).height() > highestBox) {
@@ -181,10 +180,8 @@ $(document).ready(function(){
       });  
       $('.card-content',this).height(highestBox);
     }); 
-
-
+    
     $('.circles').each(function(){  
-      
       var highestBox = 0;
       $('.circle--oneliner', this).each(function(){
         if($(this).height() > highestBox) {
@@ -193,9 +190,7 @@ $(document).ready(function(){
       });  
       $('.circle--oneliner',this).height(highestBox);
     }); 
-
     $('.circles').each(function(){  
-      
       var highestBox = 0;
       $('.circle--title', this).each(function(){
         if($(this).height() > highestBox) {
@@ -207,8 +202,17 @@ $(document).ready(function(){
 
 });
 
-
 // dashboard chevron
 $(".card-header-icon").click(function(event){
   $(".manageCircle" + event.target.getAttribute("circle")).toggleClass("is-hidden")
-})
+});
+
+//show zip field when zipcode is missing
+var zipInput = document.getElementById("zipinput");
+
+function openZip(){
+  if(zipInput.value.length > 0){
+    $(".searchform--expand").addClass("is-hidden");
+  }
+}
+openZip()
