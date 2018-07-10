@@ -1,10 +1,31 @@
 .team {
-    padding: 2em;
     &__member {
-        padding: 3em;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        border-radius: .3em;
         img {
             height: 15em;
             width: 15em;
         }
+    }
+    .founder{
+            z-index: 50;
+    }
+}
+@media(max-width: 1446px) {
+    .team {
+        &__member {
+            padding-top: 3em;
+            padding-bottom: 3em;
+            border-radius: .3em;
+                img {
+                    height: 15em;
+                    width: 15em;
+                }
+        }
+        .founder {
+            z-index: 80;
+        }
+        
     }
 }

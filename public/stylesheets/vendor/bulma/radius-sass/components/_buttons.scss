@@ -3,46 +3,15 @@
     border-radius: 3px;
     border: none;
     transition: all .3s;
-    &:hover {
-        margin-top: -2px;
-        margin-bottom: 4px;
-        box-shadow: 0 1px 10px 0px rgba($grey-darker, 0.4);
-    }
-    &:active {
-        margin-top: -1px;
-        margin-bottom: 4px;
-        box-shadow: 0 1px 10px 0px rgba($grey-darker, .4);
-    }
 }
 
 .button--outlined {
     border: 2px solid !important;
     padding-top: .2em;
-        &:hover {
-        margin-top: -3px;
-        margin-bottom: 4px;
-        box-shadow: 0 1px 10px 0px rgba($grey-darker, .4), inset 0 1px 10px 0px rgba($grey-darker, .4);
-    }
-    &:active {
-        margin-top: -1px;
-        margin-bottom: 4px;
-        box-shadow: 0 1px 10px 0px rgba($grey-darker, .4);
-    }
 }
 
 .disabled {
     padding: 0 !important;
-    &:hover {
-        transition: transform 2s ease-in, background .3s ease-in, color .4s ease-in;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        box-shadow: 0 1px 10px 0px rgba($grey-darker, 0);
-    }
-    &:active {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        box-shadow: 0 1px 10px 0px rgba($grey-darker, 0);
-    }
 }
 
 .is-radius-red {
@@ -70,48 +39,18 @@
     a {
         background-color: $white !important;
         color: $radius-green;
-        &:hover {
-            background-color: $radius-green !important;
-            color: $white;
-            i {
-                color: $radius-red;
-            }
-        }
-        &:active {
-            background-color: lighten($radius-green, 50%) !important;
-        }
     }
 }
 .is-radius-grey {
     a, button {
         background-color: $white !important;
         color: $radius-grey;
-        &:hover {
-            background-color: lightgrey !important;
-            color: $radius-grey;
-            i {
-                color: $radius-red;
-            }
-        }
-        &:active {
-            background-color: lighten($radius-grey, 50%) !important;
-        }
     }
 }
 .is-radius-white {
     border-color: $white !important;
     background: transparent !important;
     color: $white;
-    &:hover {
-            color: $white;
-            @include bg-opacity($radius-red, 0.85);
-            i {
-                color: $radius-red;
-            }
-        }
-        &:active {
-            background-color: lighten($radius-grey, 50%) !important;
-        }
 }
 
 .search-button {
@@ -141,20 +80,122 @@ nav{
             i{
                 color: $black !important;
             }
+    }
+}
+@media(min-width:768px) {
+    a.dropdown-item{
+        i{
+            &:hover{
+            color: $radius-red;    
+            }
+        }
+    }
+    nav{
+        .is-outlined {
+            &:hover {
+                background-color: darken($white, 2%) !important;
+                i {
+                    color: $primary !important;
+                }
+            }
+            &:active {
+                background-color: lighten($white, 15%) !important;
+                margin-top: 0px;
+                margin-bottom: 6px;
+                box-shadow: 0 1px 5px 0px rgba($grey-darker, .4);
+                i {
+                    color: $primary !important;
+                }
+            }
+        }
+    }
+    .button {
         &:hover {
-            background-color: darken($white, 2%) !important;
+            margin-top: -2px;
+            margin-bottom: 4px;
+            box-shadow: 0 1px 10px 0px rgba($grey-darker, 0.4);
+        }
+        &:active {
+            margin-top: -1px;
+            margin-bottom: 4px;
+            box-shadow: 0 1px 10px 0px rgba($grey-darker, .4);
+        }
+    }
+    .button--outlined {
+        &:hover {
+            margin-top: -3px;
+            margin-bottom: 4px;
+            box-shadow: 0 1px 10px 0px rgba($grey-darker, .4), inset 0 1px 10px 0px rgba($grey-darker, .4);
+        }
+        &:active {
+            margin-top: -1px;
+            margin-bottom: 4px;
+            box-shadow: 0 1px 10px 0px rgba($grey-darker, .4);
+        }
+    }
+    .disabled {
+        &:hover {
+            transition: transform 2s ease-in, background .3s ease-in, color .4s ease-in;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            box-shadow: 0 1px 10px 0px rgba($grey-darker, 0);
+        }
+        &:active {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            box-shadow: 0 1px 10px 0px rgba($grey-darker, 0);
+        }
+    }
+    .is-radius-red {
+        &:hover {
+            background-color: darken($radius-red, 15%) !important;
             i {
-                color: $primary !important;
+                color: $white !important;
+            }
+        }
+        &:active{
+            background-color: lighten($radius-red, 15%) !important;
+            i{
+                color: $white !important;
+            }
+        }
+    }
+    .is-radius-green {
+        a {
+            &:hover {
+                background-color: $radius-green !important;
+                color: $white;
+                i {
+                    color: $radius-red;
+                }
+            }
+            &:active {
+                background-color: lighten($radius-green, 50%) !important;
+            }
+        }
+    }
+    .is-radius-grey {
+        &:hover {
+            background-color: lightgrey !important;
+            color: $radius-grey;
+            i {
+                color: $radius-red;
             }
         }
         &:active {
-            background-color: lighten($white, 15%) !important;
-            margin-top: 0px;
-            margin-bottom: 6px;
-            box-shadow: 0 1px 5px 0px rgba($grey-darker, .4);
+            background-color: lighten($radius-grey, 50%) !important;
+        }
+    }
+    .is-radius-white {
+    &:hover {
+            color: $white;
+            @include bg-opacity($radius-red, 0.85);
             i {
-                color: $primary !important;
+                color: $radius-red;
             }
+        }
+        &:active {
+            background-color: lighten($radius-grey, 50%) !important;
         }
     }
 }

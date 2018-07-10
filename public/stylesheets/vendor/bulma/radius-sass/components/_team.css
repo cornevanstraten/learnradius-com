@@ -1,9 +1,22 @@
-.team {
-  padding: 2em; }
+.team__member {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  border-radius: .3em; }
+  .team__member img {
+    height: 15em;
+    width: 15em; }
+.team .founder {
+  z-index: 50; }
+
+@media (max-width: 1446px) {
   .team__member {
-    padding: 3em; }
+    padding-top: 3em;
+    padding-bottom: 3em;
+    border-radius: .3em; }
     .team__member img {
       height: 15em;
       width: 15em; }
+  .team .founder {
+    z-index: 80; } }
 
 /*# sourceMappingURL=_team.css.map */

@@ -32,7 +32,7 @@
   top: 0;
   width: 100% !important;
   .logo {
-    margin-left: -2.7em;
+    margin-left: -12em;
   }
   .is-inverted {
       margin-top: -1px;
@@ -99,6 +99,9 @@
 @media(min-width: 768px) {
   .navbar {
     width: 100%;
+     .logo{
+      margin-left: 0em;
+    }
   }
   .navbar > .container {
       min-height: none;
@@ -149,18 +152,12 @@
     margin-top: 0em;
   }
 }
-@media(min-width:768px) {
-  .navbar{
-    .logo{
-      // margin-left: -5em;
-    }
-  }
-  .user-button{
-    button{
-          margin-top: .5em;
-    } 
-  }
+.user-button{
+  button{
+        margin-top: .5em;
+  } 
 }
+
 
 @media(min-width: 1440px) {
   .user-button {

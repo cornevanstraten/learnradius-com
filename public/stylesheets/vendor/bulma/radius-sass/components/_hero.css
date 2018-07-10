@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$grey-darker".
-        on line 22 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_hero.scss
+        on line 21 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_hero.scss
 
-17: }
-18: 
-19: .hero-body--small{
-20:     height: 40vh;
-21:         &__dark{
-22:             background: $grey-darker !important;
-23:         }
-24: }    
-25: .user{
-26:     padding: 1em;
-27:     background: whitesmoke;
+16: }
+17: 
+18: .hero-body--small{
+19:     height: 40vh;
+20:         &__dark{
+21:             background: $grey-darker !important;
+22:         }
+23: }    
+24: .user{
+25:     padding: 1em;
+26:     background: whitesmoke;
 
 Backtrace:
-/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_hero.scss:22
+/home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_hero.scss:21
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
@@ -80,4 +80,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$grey-darker\".\A         on line 22 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_hero.scss\A \A 17: }\A 18: \A 19: .hero-body--small{\A 20:     height: 40vh;\A 21:         &__dark{\A 22:             background: $grey-darker !important;\A 23:         }\A 24: }    \A 25: .user{\A 26:     padding: 1em;\A 27:     background: whitesmoke;"; }
+  content: "Error: Undefined variable: \"$grey-darker\".\A         on line 21 of /home/ubuntu/workspace/radius/radius/public/stylesheets/vendor/bulma/radius-sass/components/_hero.scss\A \A 16: }\A 17: \A 18: .hero-body--small{\A 19:     height: 40vh;\A 20:         &__dark{\A 21:             background: $grey-darker !important;\A 22:         }\A 23: }    \A 24: .user{\A 25:     padding: 1em;\A 26:     background: whitesmoke;"; }
