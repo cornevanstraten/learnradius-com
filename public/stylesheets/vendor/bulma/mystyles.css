@@ -7436,6 +7436,12 @@ div:focus {
     padding: 5em 10em; }
     .hero-body .container {
       width: 80%; } }
+.fa-arrow-circle-up {
+  color: #3EC300; }
+
+.fa-arrow-circle-down {
+  color: #F2A730; }
+
 .test {
   background: #f8333c;
   border: 5px solid black; }
