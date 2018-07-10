@@ -7,40 +7,38 @@
         <span> real life learning</span>
       </h1>
       <h2 class="subtitle has-text-weight-semibold">
-        learn directly from skilled  <br>  people near you
+        learn directly from skilled people near you
       </h2>
       <form action="/circles" method="GET" >
       <div class="columns">
-      <div class="column is-one-quarter r-search">
+      <div class="column is-two-fifths r-search">
       
       <div class="columns">
-      <div class="column is-one-half-tablet r-search-distance">
-        <div class="field">
-          <div class="control">
-            <div name="distance" class="select">
-              <select>
-                <option>5 miles</option>
-                <option>10 miles</option>
-                <option>15 miles</option>
-                <option selected>20 miles</option>
-              </select>
+        <div class="column is-one-half-tablet r-search-distance">
+          <div class="field">
+            <div class="control">
+              <div name="distance" class="select">
+                <select>
+                  <option>5 miles</option>
+                  <option>10 miles</option>
+                  <option>15 miles</option>
+                  <option selected>20 miles</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      
-      
-      <div class="column is-one-half-tablet r-search-location">
-        <div class="field">
-        <div class="control is-flex">
-          <% if(currentUser){ %>
-                      <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="<%=currentUser.zip%>" required data-validation-required-message="Please enter your Zip Code.">
-                    <% } else { %>
-                      <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="30303" required data-validation-required-message="Please enter your Zip Code.">
-          <% } %>
+        <div class="column is-one-half-tablet r-search-location">
+          <div class="field">
+            <div class="control is-flex">
+              <% if(currentUser){ %>
+                          <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="<%=currentUser.zip%>" required data-validation-required-message="Please enter your Zip Code.">
+                        <% } else { %>
+                          <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="30303" required data-validation-required-message="Please enter your Zip Code.">
+              <% } %>
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
       </div>
       
       <div class="field">
@@ -202,10 +200,11 @@ Join or host a learning circle! It is <strong>a wonderful way to spend your free
 </section>
  
 <section class="team">
+  <div class="hero-body">
    <div class="container">
      <h1 class="title">our team </h1>
      <div class=" columns">
-       <div class="column is-4 has-text-centered">
+       <div class="column is-4 has-text-centered team__members">
          <div class="team__member">
            <img class="rounded" src="/stylesheets/img/team/OCRteamGerritMaatkamp.jpg" alt="">
            <h4 class="is-size-5">Gerrit</h4>
@@ -215,7 +214,7 @@ Join or host a learning circle! It is <strong>a wonderful way to spend your free
          </div>
        </div>
        <div class="column is-4 has-text-centered">
-         <div class="team__member">
+         <div class="team__member founder">
            <img class="rounded" src="/stylesheets/img/team/OCRteamCorneVanStraten.png" alt="">
            <h4 class="is-size-5">Corné</h4>
            <p class="text-muted">back-end developer</p>
@@ -234,6 +233,7 @@ Join or host a learning circle! It is <strong>a wonderful way to spend your free
        </div>
      </div>
    </div>
+  </div>
  </section>
  
 

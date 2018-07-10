@@ -220,3 +220,45 @@ function openZip(){
   }
 }
 openZip()
+
+
+//fix mobile menu
+
+// Write JS that only adds the 
+// on-hover class in there when when screensize is 
+// under a certain size.
+// is-hoverable
+
+// dropdown[0].addEventListener("mouseover", function( event ) {   
+//     // highlight the mouseover target
+//     dropdown[0].classList.add("is-active");
+
+//     // reset the color after a short delay
+//     setTimeout(function() {
+//       dropdown[0].classList.remove("is-active");
+//     }, 500);
+//   }, false);
+  
+// window.addEventListener('touchstart', function() {
+//   // the user touched the screen!
+// });
+
+function classToggle() {
+    this.classList.toggle('is-active');
+    this.classList.toggle(' ');
+}
+
+
+//add class above certain screensize
+var dropdown = document.getElementsByClassName("dropdown");
+	if (window.matchMedia("(min-width: 1000px)").matches) {
+		dropdown[0].classList.add("is-hoverable");
+	} else {
+		// dropdown[0].toggleClass('is-active');
+		dropdown[0].addEventListener('click', classToggle);
+    // $(window).click(function(){
+    //   dropdown[0].classList.remove("is-active");
+    // });
+	}
+
+

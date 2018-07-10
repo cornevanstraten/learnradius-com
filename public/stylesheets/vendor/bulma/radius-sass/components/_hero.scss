@@ -5,7 +5,6 @@
     background-size: cover;
     background-position: center center;
     height: 80vh;
-    padding: 9vh 2vh;
     h1,h2,p{
         color: #fff;
     }
@@ -51,7 +50,7 @@
 @media(min-width:768px) {
     .landing-hero{ 
         height: 80vh;
-        padding: 13em 0;
+        padding-top: 12em;
         h1,h2,p{
             color: #fff;
         }
@@ -63,7 +62,7 @@
                 padding-left: 0;
             }
             .select select{
-                width: 9em;
+                width: 11em;
             }
         }
         button[type=submit]{
