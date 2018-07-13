@@ -7433,7 +7433,7 @@ div:focus {
 
 @media (min-width: 768px) {
   .hero-body {
-    padding: 5em 10em; }
+    padding: 5em 0em; }
     .hero-body .container {
       width: 80%; } }
 .fa-arrow-circle-up {
@@ -7660,7 +7660,7 @@ nav .is-outlined {
 @media (min-width: 768px) {
   .landing-hero {
     height: 80vh;
-    padding-top: 12em; }
+    padding-top: 9em; }
     .landing-hero h1, .landing-hero h2, .landing-hero p {
       color: #fff; }
     .landing-hero .r-search .r-search-distance {
