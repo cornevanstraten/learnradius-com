@@ -37,7 +37,7 @@ cloudinary.config({
 
 //ROOT route
 router.get("/", function(req, res){
-    Circle.find({}).sort({ $natural: -1 }).limit(4).populate("educator").exec(function(err, foundCircles){
+    Circle.find({}).sort({ $natural: -1 }).limit(3).populate("educator").exec(function(err, foundCircles){
         if (err) {
                 console.log(err)
                 res.redirect("back")

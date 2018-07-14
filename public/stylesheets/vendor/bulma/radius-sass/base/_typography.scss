@@ -1,7 +1,7 @@
 h1, h2, h3, h4, h5 {
     font-weight: bold !important;
     line-height: 2.6em;
-    color: $primary;
+    // color: $primary;
 }
 p {
     line-height: 2.3em;
@@ -10,7 +10,7 @@ h3 {
     font-size: 1.2em !important;
 }
 .title {
-    color: $primary;
+    // color: $primary;
 }
 @media (max-width: 768px){
     h1 {
