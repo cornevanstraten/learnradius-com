@@ -49,12 +49,20 @@ div:focus {
 
 @media (min-width: 768px){
     .hero-body {
-        padding: 5em 10em;
+        padding: 5em 0em;
         .container{
             width: 80%;
         }
 }
 
+}
+
+.fa-arrow-circle-up {
+ color: #3EC300;
+}
+
+.fa-arrow-circle-down {
+ color: #F2A730;
 }
 
 
