@@ -7659,12 +7659,6 @@ nav .is-outlined {
     padding-top: 9em; }
     .landing-hero h1, .landing-hero h2, .landing-hero p {
       color: #fff; }
-    .landing-hero .r-search .r-search-distance {
-      padding-right: 0; }
-    .landing-hero .r-search .r-search-location {
-      padding-left: 0; }
-    .landing-hero .r-search .select select {
-      width: 11em; }
     .landing-hero button[type=submit] {
       margin-top: -.5em;
       margin-bottom: 0; }
@@ -7794,7 +7788,7 @@ nav .is-outlined {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
   nav .navbar-item img {
-    max-height: 75%; }
+    max-height: 85%; }
 
   .navbar-end {
     margin-top: 0em; } }
@@ -7922,6 +7916,111 @@ nav .is-outlined {
       width: 15em; }
   .team .founder {
     z-index: 80; } }
+.searchconsole {
+  background: white;
+  padding-left: 2em;
+  padding-right: 2em;
+  background: -webkit-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url(/stylesheets/img/radius-header.jpeg);
+  background: -moz-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url(/stylesheets/img/radius-header.jpeg);
+  background: -o-linear-gradient(left, #131313 0%, rgba(28, 28, 28, 0.44) 50%, rgba(210, 210, 210, 0) 90%, rgba(255, 255, 255, 0) 100%), url(/stylesheets/img/radius-header.jpeg);
+  background-size: cover;
+  background-position: center center;
+  height: 80vh; }
+  .searchconsole .vertical {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  .searchconsole form {
+    margin: 1em auto; }
+    .searchconsole form .searchspecifics {
+      background: whitesmoke;
+      margin: 1em;
+      padding: 1em;
+      border-radius: 5px;
+      box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+      width: 48%; }
+    .searchconsole form .location {
+      margin: 1.9em 0 0 0;
+      width: 100%; }
+      .searchconsole form .location select, .searchconsole form .location input {
+        width: 18.65em; }
+    .searchconsole form .slidecontainer {
+      margin-left: 5px;
+      margin-right: 5px; }
+      .searchconsole form .slidecontainer .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: .2em;
+        background: #7a7a7a;
+        outline: none;
+        opacity: 0.9;
+        border-radius: 10px; }
+      .searchconsole form .slidecontainer .slider:hover {
+        opacity: 1; }
+      .searchconsole form .slidecontainer .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 1.2em;
+        height: 1.2em;
+        background: #007C61;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: opacity .5s, background .5s; }
+        .searchconsole form .slidecontainer .slider::-webkit-slider-thumb:hover {
+          background: #f8333c; }
+        .searchconsole form .slidecontainer .slider::-webkit-slider-thumb:active {
+          margin-top: -2px;
+          box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.2); }
+      .searchconsole form .slidecontainer .slider::-moz-range-thumb {
+        width: 1.2em;
+        height: 1.2em;
+        background: #007C61;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: opacity .5s, background .5s; }
+        .searchconsole form .slidecontainer .slider::-moz-range-thumb:hover {
+          background: #f8333c; }
+        .searchconsole form .slidecontainer .slider::-moz-range-thumb:active {
+          margin-top: -2px;
+          box-shadow: 0 1px 10px 0px rgba(100, 100, 100, 0.2); }
+    .searchconsole form .types {
+      display: flex;
+      margin: 2em 0; }
+      .searchconsole form .types input[type="checkbox"] {
+        display: none;
+        transition: background 1s linear; }
+      .searchconsole form .types input[type="checkbox"]:checked + label i {
+        background: #007C61;
+        color: white;
+        border: #007C61;
+        height: 2.2em; }
+      .searchconsole form .types .type {
+        margin: .5em; }
+        .searchconsole form .types .type .mycheckbox i {
+          border: 2px solid darkgray;
+          background: white;
+          color: white;
+          border-radius: 3px;
+          width: 2em;
+          height: 2.2em;
+          text-align: center;
+          padding: .5em;
+          margin: 0 .5em; }
+  .searchconsole .control {
+    border: none; }
+  .searchconsole .submitbutton {
+    margin-top: 1.7em;
+    display: flex;
+    justify-content: center; }
+    .searchconsole .submitbutton button {
+      width: 13em;
+      margin-top: -.4em;
+      margin-left: .5em; }
+  .searchconsole #back {
+    margin-left: .2em; }
+
 .dashboard .circle--history {
   padding: 1em 0; }
 .dashboard .edit-profile {

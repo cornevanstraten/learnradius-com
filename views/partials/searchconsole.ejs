@@ -1,0 +1,67 @@
+<div class="searchconsole is-hidden" id="searchconsole">
+    <div class="vertical">
+      <form action="/circles" method="GET">
+        <div class="is-grouped is-grouped-centered columns">
+            <div class="column searchspecifics is-6 field ">
+              <div class="control searchinput">
+                <label>Search</label>
+                <input class="input" type="text" placeholder="anything" name="search">
+              </div>
+              <div class="location field has-addons">
+                <div class="control distance">
+                  <span class="select">
+                    <select id="distance" name="distance">
+                      <option>5mi</option>
+                      <option>10mi</option>
+                      <option>15mi</option>
+                      <option selected>20mi</option>
+                    </select>
+                  </span>
+                </div>
+                <div class="control zipinput">
+                    <!--<label>ZIP</label>              -->
+                    <% if(currentUser){ %>
+                            <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="<%=currentUser.zip%>" required data-validation-required-message="Please enter your Zip Code.">
+                          <% } else { %>
+                            <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="30303" required data-validation-required-message="Please enter your Zip Code.">
+                    <% } %>
+                  </div>
+              </div>
+            </div>
+            <div class="column searchspecifics is-6 field">
+              <div class="control slidecontainer">
+                <label>Max Price/Lesson $ <span id="pricedisplay">10</span></label>              
+                <input type="range" min="0" max="100" value="10" class="slider" id="price" name="price" oninput="getPrice()" step="5">
+              </div>
+              <div class="field types">
+                <div class="type">
+                  <input id="workshop" type="checkbox" name="checkbox" value="value" checked>
+                  <label class="mycheckbox" for="workshop"><i class="fa fa-check"></i>  workshop</label>
+                </div>
+                <div class="type">
+                  <input id="lecture" type="checkbox" name="checkbox" value="value" checked> 
+                  <label class="mycheckbox" for="lecture"><i class="fa fa-check"></i> lecture</label>
+                </div>
+                <div class="type">
+                  <input id="Apprenticeship" type="checkbox" name="checkbox" value="value" checked>
+                  <label class="mycheckbox" for="Apprenticeship"><i class="fa fa-check"></i>  Apprenticeship</label>
+                </div>
+                <div class="type">
+                  <input id="Fieldtrip" type="checkbox" name="checkbox" value="value" checked>
+                  <label class="mycheckbox" for="Fieldtrip"><i class="fa fa-check"></i>  Fieldtrip</label>
+                </div>
+              </div>
+            </div>
+        </div>
+      </form>
+      <div class="control submitbutton">
+        <button type="submit" class="button is-radius-white button--outlined is-large search-button"><span class="icon"><i class="fa fa-search"></i>  Search</span></button>
+      </div>
+      <a class="" id="back">back</a>
+    </div>
+              <!-- sort: old to new -->
+              <!-- sort: new to old -->
+              <!-- sort: low to high-->
+              <!-- button type submit -->
+          
+</div>

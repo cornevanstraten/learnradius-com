@@ -1,62 +1,53 @@
 <% include ./partials/header %>
 
-<section class="hero">
+<% include ./partials/searchconsole %>
+<section class="hero" id="landing-hero">
   <div class="hero-body landing-hero">
     <div class="container">
-      <h1 class="title">
-        <span> real life learning</span>
-      </h1>
-      <h2 class="subtitle has-text-weight-semibold">
-        learn directly from skilled people near you
-      </h2>
-      <form action="/circles" method="GET" >
-      <div class="columns">
-      <div class="column is-two-fifths r-search">
-      
-      <div class="columns">
-        <div class="column is-one-half-tablet r-search-distance">
-          <div class="field">
-            <div class="control">
-              <div name="distance" class="select">
-                <select>
-                  <option>5 miles</option>
-                  <option>10 miles</option>
-                  <option>15 miles</option>
-                  <option selected>20 miles</option>
-                </select>
+      <div class="colums">
+        <div class="column is-one-quarter">
+          <h1 class="title">
+            <span> real life learning</span>
+          </h1>
+          <h2 class="subtitle has-text-weight-semibold">
+            learn directly from skilled people near you
+          </h2>
+          <form action="/circles" method="GET" r-search>
+            <div class="field has-addons r-search__radius">
+              <p class="control">
+                <span class="select">
+                  <select>
+                    <option>5 miles</option>
+                    <option>10 miles</option>
+                    <option>15 miles</option>
+                    <option selected>20 miles</option>
+                  </select>
+                </span>
+              </p>
+              <p class="control">
+                <% if(currentUser){ %>
+                            <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="<%=currentUser.zip%>" required data-validation-required-message="Please enter your Zip Code.">
+                          <% } else { %>
+                            <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="30303" required data-validation-required-message="Please enter your Zip Code.">
+                <% } %>
+              </p>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button type="submit" class="button is-primary is-medium is-fullwidth"><span class="icon"><i class="fa fa-globe"></i></span> <span> discover</span></button>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="column is-one-half-tablet r-search-location">
-          <div class="field">
-            <div class="control is-flex">
-              <% if(currentUser){ %>
-                          <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="<%=currentUser.zip%>" required data-validation-required-message="Please enter your Zip Code.">
-                        <% } else { %>
-                          <input class="input" id="ZIP" name="ZIP" type="text" placeholder="ZIP" value="30303" required data-validation-required-message="Please enter your Zip Code.">
-              <% } %>
+            <div class="field">
             </div>
-          </div>
+          </form>
+              <div class="control" id="specify">
+                <button id="" type="link" class="button button--outlined is-radius-white button--outlined is-medium is-fullwidth"><span class="icon"><i class="fa fa-search"></i></span> <span> specify</span></button>
+              </div>
+        </div>
+        <div class="column">
+          
         </div>
       </div>
-      
-      <div class="field">
-        <div class="control">
-          <button type="submit" class="button is-primary is-medium is-fullwidth"><span class="icon"><i class="fa fa-globe"></i></span> <span> discover</span></button>
-        </div>
-      </div>
-      <div class="field">
-        <div class="control">
-          <button type="" class="button button--outlined is-radius-white button--outlined is-medium is-fullwidth"><span class="icon"><i class="fa fa-search"></i></span> <span> specify</span></button>
-        </div>
-      </div>
-      
-      
-    </div> <!---end column --> 
-    </div> <!---end columns --> 
-    </form>
-      
     </div>
   </div>
 </section>
@@ -105,11 +96,11 @@
         <h2 class="subtitle">recently added learning circles</h2>
       <div class="columns circles">
                     <% for (var i = 0; i < circles.length; i++){%>
-        <div class="column is-one-third single-circle">
+        <div class="column is-one-quarter single-circle">
           <a href="/circles/<%=circles[i]._id%>" class="circle">
             <div class="card circle">
               <figure class="image circle--image">
-                  <img src="https://res.cloudinary.com/openclassroom/image/upload/w_800,h_400,c_fill/<%=circles[i].image%>">
+                  <img src="https://res.cloudinary.com/openclassroom/image/upload/w_1440,h_500,c_fill/<%=circles[i].image%>">
               </figure>
               <div class="card-content">
                 <div class="media">
