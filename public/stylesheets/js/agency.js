@@ -254,11 +254,39 @@ var dropdown = document.getElementsByClassName("dropdown");
 	if (window.matchMedia("(min-width: 1000px)").matches) {
 		dropdown[0].classList.add("is-hoverable");
 	} else {
-		// dropdown[0].toggleClass('is-active');
 		dropdown[0].addEventListener('click', classToggle);
-    // $(window).click(function(){
-    //   dropdown[0].classList.remove("is-active");
-    // });
 	}
 
 
+//search console
+//price
+function getPrice() {
+    var p = document.getElementById("price").value;
+    document.getElementById("pricedisplay").innerHTML = " " + p;
+}
+//distance
+function getDistance() {
+    var d = document.getElementById("distance").value;
+    document.getElementById("distancedisplay").innerHTML = " " + d;
+}
+
+//specify button
+var landingHero = document.getElementById("landing-hero");
+var searchConsole = document.getElementById("searchconsole");
+
+function specificSearch() {
+    landingHero.classList.add('is-hidden');
+    searchConsole.classList.remove('is-hidden');
+}
+
+
+var specify = document.getElementById("specify");
+specify.addEventListener('click', specificSearch);
+
+//back button
+function specificBack() {
+    searchConsole.classList.add('is-hidden');
+    landingHero.classList.remove('is-hidden');
+}
+var back = document.getElementById("back");
+back.addEventListener('click', specificBack);
