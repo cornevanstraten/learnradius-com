@@ -24,7 +24,6 @@ var endorsementRoutes   = require("./routes/endorsements.js");
 var agreementRoutes     = require("./routes/agreements.js");
 
 var url = process.env.DATABASEURL || "mongodb://localhost/cr_prototype"
-// var url = "mongodb://corneengert:c0rne&g3rt@ds225078.mlab.com:25078/openclassroompt"
 
 mongoose.connect(url, {useMongoClient: true})
 app.use(bodyParser.urlencoded({extended: true}));
