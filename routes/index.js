@@ -124,7 +124,6 @@ router.get("/users/:id/edit", middleware.checkUserProfileOwnership, function(req
 router.put("/users/:id/", middleware.checkUserProfileOwnership, upload.single('avatar_upload'), function(req, res){
     var newData = req.body.user
     // if(req.file){console.log(req.file)}
-
       if(newData.description 
         //   && newData.avatar 
           && newData.firstName 
@@ -205,7 +204,7 @@ router.post("/users/:id", middleware.isLoggedIn, function(req, res){
             })
 } )
 
-var isFav = function(req){ 
+var isFav = function(req){ //checks if circle is already favorited 
             var answer = false
             if(req.user){
                 req.user.fav.forEach(function(circle){
