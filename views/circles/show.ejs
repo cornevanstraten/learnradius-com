@@ -86,7 +86,7 @@
                     </button>
                     <% } %>
                     <% if(currentUser){ %>
-                   <form id="favform" action="/users/<%=currentUser._id%>" method="POST">
+                   <form id="favform" action="/users/<%=currentUser._id%>/fav?_method=PUT" method="POST">
                         <input type="hidden" name="circle[id]" value="<%=circle.id%>">
                         <input type="hidden" name="circle[title]" value="<%=circle.title%>">
                       <% if(!isFav){ %>

@@ -181,7 +181,7 @@ router.get("/blog", function(req, res){
 });
 
 //favorite
-router.post("/users/:id", middleware.isLoggedIn, function(req, res){
+router.put("/users/:id/fav", middleware.isLoggedIn, function(req, res){
     User.findById(req.params.id, function(err, foundUser){
                 if(err){
                     res.redirect("back");
@@ -193,13 +193,16 @@ router.post("/users/:id", middleware.isLoggedIn, function(req, res){
                                     foundUser.fav.splice(i, 1);
                                 }
                             }
-                    foundUser.save();
-                    res.redirect("back");
                     } else {
                     foundUser.fav.push(req.body.circle.id);
-                    foundUser.save();
-                    res.redirect("back");
                     }
+                    User.findByIdAndUpdate(req.params.id, {$set: foundUser}, function(err, foundUser){
+                        if(err){
+                            console.log(err);
+                        }
+                    // foundUser.save();
+                    res.redirect("back");
+                    })
                 }
             })
 } )
