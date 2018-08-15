@@ -10,7 +10,11 @@ var circleSchema = new mongoose.Schema({
     category: String,
     title: String, //title 
     price: String,
-    image: String,
+    // image: String,
+    image: {
+        public_id: String,
+        version: String
+    },
     oneliner: String, //subtitle
     location: String, //transform into {streetAddress, city, GA, ZIP}
         lat: Number,

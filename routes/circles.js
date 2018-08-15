@@ -55,6 +55,8 @@ router.get("/", function(req, res){
                 {title: regex},
                 {description: regex},
                 {oneliner: regex}
+                //{type: }
+                //{price: }
                 ]}).populate("educator").exec(function(err, foundCircles){
             if (err) {
                 console.log(err)
@@ -101,8 +103,12 @@ router.post("/", middleware.isLoggedIn, middleware.checkEducator, upload.single(
               }
             if(req.file){
             cloudinary.uploader.upload(req.file.path, function(result) {
-                newData.image = imageName(result.secure_url); // add cloudinary url for the image to the campground object under image property
-                //Circle.create
+                var newImage = { 
+                    public_id: result.public_id,
+                    version:    result.version
+                }
+                newData.image = newImage; // add cloudinary url for the image to the campground object under image property
+                // newData.image.version = result.version; // add cloudinary url for the image to the campground object under image property
                 createListing(newData, req, res);
             });
                 } else {
@@ -173,14 +179,18 @@ router.put("/:id", middleware.checkCircleOwnership, upload.single('image_upload'
               }
             //picture stuff
             if(newData.image !== req.body.oldImage){ //if new picture; do picture stuff
-                if (req.body.oldImage.indexOf("cloudinary.com/openclassroom/") >= 0){ //if old one was cloudinary, delete
-                    cloudinary.uploader.destroy( imageName(req.body.oldImage), function(error, result){console.log("deleted:" + result)});
-                }
+                // if (req.body.oldImage.indexOf("cloudinary.com/openclassroom/") >= 0){ //if old one was cloudinary, delete
+                //     cloudinary.uploader.destroy( imageName(req.body.oldImage), function(error, result){console.log("deleted:" + result)});
+                // }
                 if (req.file){
                     cloudinary.uploader.upload(req.file.path, function(result) {
-                        newData.image = imageName(result.secure_url); // add cloudinary url for the image to the campground object under image property
+                        var newImage = { 
+                            public_id: req.body.oldImage,
+                            version:    result.version
+                        }
+                        newData.image = newImage
                         updateListing(newData, req, res);
-                    });
+                    }, {public_id: req.body.oldImage, invalidate: true});
                 } else {
                     updateListing(newData, req, res);
                 }
@@ -200,9 +210,9 @@ router.delete("/:id/", middleware.checkCircleOwnership, function(req, res){
             res.redirect("back");
         } else {
             if (circle.students.length < 1) {//check if still active agreements 
-            if (circle.image && circle.image.indexOf("cloudinary.com/openclassroom/") >= 0){ //if one of our cloudinary images, delete it from Cloudinary
-                cloudinary.uploader.destroy(imageName(circle.image), function(error, result){console.log("deleted:" + result)});
-            }; 
+            // if (circle.image){
+            //     cloudinary.uploader.destroy(imageName(circle.image), function(error, result){console.log("deleted:" + result)});
+            // }; 
                 Circle.findByIdAndRemove(req.params.id, function(err){
                     if (err){
                         req.flash("error", "Circle does not exist");
@@ -274,18 +284,33 @@ var createListing = function(newData, req, res){
                 req.flash("error", err.message)
                 res.redirect("/")
             } else {
-                User.findById(newData.educator, function(err, educator){
-                    if(err){
-                        console.log(err)
-                        req.flash("error", err.message)
-                        res.redirect("/")
-                    } else {
-                        educator.circles.push(circle); //push listing to user array  
-                        educator.save();
-                        req.flash("success", "Circle successfully created")
-                        res.redirect("/circles");
-                    }
-                })
+                User.findByIdAndUpdate(req.user._id, 
+                    { $push: { circles: circle } }, 
+                    { 'new': true}, 
+                    function(err, educator){
+                            if(err){
+                                console.log(err)
+                                req.flash("error", err.message)
+                                res.redirect("/")
+                            } else {
+                                educator.circles.push(circle); //push listing to user array  
+                                educator.save();
+                                req.flash("success", "Circle successfully created")
+                                res.redirect("/circles");
+                            }
+                        });
+                // User.findById(newData.educator, function(err, educator){
+                //     if(err){
+                //         console.log(err)
+                //         req.flash("error", err.message)
+                //         res.redirect("/")
+                //     } else {
+                //         educator.circles.push(circle); //push listing to user array  
+                //         educator.save();
+                //         req.flash("success", "Circle successfully created")
+                //         res.redirect("/circles");
+                //     }
+                // })
                 }
         });//closes circle.create
 }
@@ -306,13 +331,11 @@ var updateListing = function(newData, req, res){
 
 var addZip = function(req){
     if(req.user && req.query.ZIP) {
-        User.findById(req.user.id, function(err, user){
+        User.findByIdAndUpdate(req.user.id, {$set: {zip: req.query.ZIP}}, function(err, user){
             if (err) {
+                console.log(err);
                 return
-            } else {
-                user.zip = req.query.ZIP;
-                user.save();
-            }
+            } 
         })
     }
 }
