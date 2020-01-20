@@ -16,7 +16,7 @@
     "heroku-ssl-redirect": "0.0.4",
     "method-override": "^2.3.10",
     "moment": "^2.20.1",
-    "mongoose": "^4.13.8",
+    "mongoose": "^5.8.9",
     "multer": "^1.3.0",
     "node-geocoder": "^3.22.0",
     "passport": "^0.4.0",
